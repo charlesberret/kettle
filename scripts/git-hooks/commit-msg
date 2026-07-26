@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Kettle family — commit-msg hook (macOS bash 3.2–compatible).
-# See docs/COMMIT.md. Install: ./scripts/install-git-hooks.sh
+# See docs/reference/commit-conventions.md. Install: ./scripts/install-git-hooks.sh
 set -euo pipefail
 
 MSG_FILE="${1:-}"

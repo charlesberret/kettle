@@ -1,17 +1,61 @@
-# Docs
+# Kettle documentation
 
-| Doc | Purpose |
-|-----|---------|
-| [`HOME.md`](./HOME.md) | Product home charter |
-| [`ROADMAP.md`](./ROADMAP.md) | Phases and sequencing |
-| [`RELEASE.md`](./RELEASE.md) | Ideal release bars and gate IDs |
-| [`WORKFLOW.md`](./WORKFLOW.md) | Issues, labels, agents, automation |
-| [`COMMIT.md`](./COMMIT.md) | Commit message conventions + hooks |
-| [`briefs/`](./briefs/) | Work packages (pre- and co-Issue) |
+Docs in this repository follow **[Diátaxis](https://diataxis.fr/)**: four
+kinds of documentation for four needs. Keep them distinct — do not mix a
+tutorial’s hand-holding with reference tables, or turn an explanation into a
+command dump.
 
-Local private design may live in `../.local/` (gitignored). Start agents on
-[`WORKFLOW.md`](./WORKFLOW.md) + [`briefs/`](./briefs/) or GitHub Issues when remotes exist.
+```text
+                 tutorials          how-to guides
+              (learning-oriented)  (goal-oriented)
+                      │                   │
+                      └─────────┬─────────┘
+                                │
+                      ┌─────────┴─────────┐
+                      │                   │
+                 explanation           reference
+             (understanding)         (information)
+```
+
+| Kind | Need | In this tree |
+|------|------|----------------|
+| **[Tutorials](./tutorials/)** | “Take me through a first success” | Learning path: first sitting |
+| **[How-to guides](./how-to/)** | “I need to achieve X” | Concrete tasks: release check, hooks, contribute |
+| **[Reference](./reference/)** | “What are the facts / gates / names?” | Release gates, commit conventions |
+| **[Explanation](./explanation/)** | “Why is it built this way?” | Architecture, product home, roadmap |
+
+## Quick links
+
+| I want to… | Start here |
+|------------|------------|
+| Understand what this repo is for | [explanation/product-home](./explanation/product-home.md) |
+| See how the family fits together | [explanation/architecture](./explanation/architecture.md) |
+| Learn by doing a first pass | [tutorials/first-sitting](./tutorials/first-sitting.md) |
+| Check whether we can ship a preview | [how-to/check-release-readiness](./how-to/check-release-readiness.md) |
+| Know commit message shape | [reference/commit-conventions](./reference/commit-conventions.md) · system: `~/cloud/sync/system/commit-conventions.md` |
+| See sequencing | [explanation/roadmap](./explanation/roadmap.md) |
+
+## Writing rules (short)
+
+| Kind | Do | Don’t |
+|------|-----|--------|
+| Tutorial | Lead a newcomer step by step to a known good end | Branch into every option |
+| How-to | Assume competence; solve one problem | Teach from zero |
+| Reference | Be complete and neutral; name facts | Narrate a story |
+| Explanation | Discuss why, trade-offs, context | Become an install recipe |
+
+Implementation detail (API, CLI flags, Desk layout) lives with **code** —
+especially [`kettle-core`](https://github.com/charlesberret/kettle-core). This
+home repo owns the **public story, family map, and release definition**.
+
+## Local ops notes
+
+Machine-local handoffs and design scratch: **`.local/`** (gitignored), not under
+`docs/`.
+
+## Checks
 
 ```sh
+python3 scripts/check-docs.py
 ./scripts/release-ready.sh
 ```

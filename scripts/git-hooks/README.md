@@ -2,7 +2,7 @@
 
 | Hook | Role |
 |------|------|
-| `commit-msg` | Enforce [`docs/COMMIT.md`](../../docs/COMMIT.md) message shape |
+| `commit-msg` | Enforce [`docs/reference/commit-conventions.md`](../../docs/reference/commit-conventions.md) message shape |
 
 ## Install (this repo)
 

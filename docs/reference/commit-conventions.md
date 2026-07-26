@@ -49,4 +49,5 @@ Brief: 01
 Gate: G-core-test
 ```
 
-Link `docs/briefs/` and `docs/RELEASE.md` gate IDs when a commit is meant to move them.
+Link work packages and [release gate](./release-gates.md) IDs when a commit is
+meant to move them.

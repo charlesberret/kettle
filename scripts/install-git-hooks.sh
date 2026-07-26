@@ -21,4 +21,4 @@ git -C "$ROOT" config core.hooksPath "$rel"
 
 echo "install-git-hooks: core.hooksPath=$rel"
 echo "  commit-msg → $HOOKS/commit-msg"
-echo "  See docs/COMMIT.md"
+echo "  See docs/reference/commit-conventions.md"
