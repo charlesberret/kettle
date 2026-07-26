@@ -1,107 +1,52 @@
 # Commit conventions (Kettle family)
 
-**Status:** **settled for the Kettle family** (`kettle`, `kettle-core`,
-`kettle-vscode`, desktop, later adapters). An implementation repo may document a
-stricter local rule.
+**Fleet default (canonical):**  
+`~/cloud/sync/system/commit-conventions.md`  
+— promoted 2026-07-25 as the system-wide agent commit format.
 
-**System-wide:** marked **for consideration** as the default agent commit format
-across the fleet — **not yet global**. Decision pending:
-`~/cloud/sync/system/inbox.md` → “Default agent commit format (system-wide)?”.
-Pointer also in `~/cloud/sync/system/CLAUDE-base.md` § Preferences. Until that decision is
-**yes**, agents outside Kettle should not treat this as law.
+This file is the **Kettle-local** note: same message shape, plus where hooks live
+for this family. If the two ever disagree, **system `commit-conventions.md` wins**
+for shape; this file wins for **Kettle hook install paths**.
 
-These conventions keep the independent Kettle repositories easy to read.
+## Message shape
 
-## Message format
+See the system doc. Short form:
 
 ```text
 <optional-type>: <imperative subject>
 
-<body: why, not every file list>
+<body: why>
 
 <footer: optional trailers>
 ```
 
-### Subject
+Types: `feat` `fix` `docs` `chore` `refactor` `test` `ci` `style` (+ optional scope).
 
-- **Imperative mood**, present tense: “Add…”, “Fix…”, “Document…”, not “Added” / “Fixes”
-- **≤72 characters** (soft); hard fail if **>100**
-- **Capitalize** first letter; **no trailing period** on the subject line
-- One logical change per commit when practical
+## Kettle automation
 
-### Optional type prefix (recommended)
-
-Conventional-commits–style, lowercase, optional scope:
-
-| Type | Use |
-|------|-----|
-| `feat` | User-visible capability |
-| `fix` | Bug fix |
-| `docs` | Documentation only |
-| `chore` | Tooling and maintenance |
-| `refactor` | No intended behavior change |
-| `test` | Tests only |
-| `ci` | CI / release gates / hooks |
-| `style` | Formatting only |
-
-Examples:
-
-```text
-docs: add release gates and workflow
-
-chore(vscode): ignore .local for ops notes
-
-fix(core): prefer .kettle desk path over legacy
-
-feat(cli): add --json to queue listing
-```
-
-Bare subjects without a type are also valid:
-
-```text
-Prepare Kettle product home
-```
-
-### Body
-
-- Separate from subject with a **blank line**
-- Wrap ~72–100 chars; explain **why** and any migration/compatibility notes
-- Bullet lists fine
-
-### Footers (optional)
-
-```text
-Fixes: #123
-```
-
-Link work packages and release gates when the commit is meant to move them.
-
-## What not to do
-
-- Commit secrets, `.local/`, or machine paths that shouldn’t be public  
-- Mix unrelated refactors with a feature fix  
-- “WIP” / “fix stuff” as the final message on `main` (amend or squash first)  
-- Force-push `main` without an explicit human ask  
-
-## Automation
-
-Install the family **commit-msg** hook (validates subject length, forbids subject
-trailing period when using a type prefix, blocks empty messages):
+Install the family **commit-msg** hook:
 
 ```sh
-# from any family repo that vendors scripts/git-hooks/
+# from kettle home
 ./scripts/install-git-hooks.sh
 ```
 
-Or point Git at shared hooks (this home repo):
+Or point any family repo at shared hooks:
 
 ```sh
 git config core.hooksPath /path/to/kettle/scripts/git-hooks
 ```
 
-(`commit-msg` must be executable; see `scripts/git-hooks/README.md`.)
+See `scripts/git-hooks/README.md`. Escape hatch: `git commit --no-verify`.
 
-CI may later run the same checks on PR titles; the hook is the day-to-day enforcer.
+Hook is optional for contributors; agents writing in this family should still
+match the message shape.
 
-The hook is optional. Pull requests are judged on a clear history and readable
-intent, not on whether a contributor installed local tooling.
+## Trailers useful here
+
+```text
+Brief: 01
+Gate: G-core-test
+```
+
+Link `docs/briefs/` and `docs/RELEASE.md` gate IDs when a commit is meant to move them.
