@@ -22,6 +22,18 @@ Scaffold only. Planning notes live in `planning/` (gitignored, local only).
 
 Local planning (gitignored): `planning/roadmap.md`, `planning/family.md`.
 
+## Roadmap & checks
+
+- [`docs/ROADMAP.md`](./docs/ROADMAP.md) — phases  
+- [`docs/RELEASE.md`](./docs/RELEASE.md) — what “0.1” means  
+- [`docs/WORKFLOW.md`](./docs/WORKFLOW.md) — issues, labels, agents  
+- [`docs/briefs/`](./docs/briefs/) — claimable work packages  
+
+```sh
+./scripts/release-ready.sh          # family gates report
+./scripts/release-ready.sh --strict
+```
+
 ## Develop
 
 Nothing to build yet. When packages appear:

@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Product roadmap
+    url: https://github.com/charlesberret/kettle/blob/main/docs/ROADMAP.md
+    about: Sequencing, phases, and non-goals
+  - name: Release gates
+    url: https://github.com/charlesberret/kettle/blob/main/docs/RELEASE.md
+    about: What “shipped” means and how it is checked

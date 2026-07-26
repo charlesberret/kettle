@@ -1,5 +1,16 @@
 # Docs
 
-Public documentation for Kettle. Start with [`HOME.md`](./HOME.md).
+| Doc | Purpose |
+|-----|---------|
+| [`HOME.md`](./HOME.md) | Product home charter |
+| [`ROADMAP.md`](./ROADMAP.md) | Phases and sequencing |
+| [`RELEASE.md`](./RELEASE.md) | Ideal release bars and gate IDs |
+| [`WORKFLOW.md`](./WORKFLOW.md) | Issues, labels, agents, automation |
+| [`briefs/`](./briefs/) | Work packages (pre- and co-Issue) |
 
-Local design scratch: `../planning/` (gitignored).
+Local private design may live in `../planning/` (gitignored). Start agents on
+[`WORKFLOW.md`](./WORKFLOW.md) + [`briefs/`](./briefs/) or GitHub Issues when remotes exist.
+
+```sh
+./scripts/release-ready.sh
+```
