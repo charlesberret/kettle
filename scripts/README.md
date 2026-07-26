@@ -11,3 +11,6 @@
 ```
 
 Environment overrides: `KETTLE_CORE`, `KETTLE_VSCODE`, `SETSWEEP_CORE`.
+
+| [`install-git-hooks.sh`](./install-git-hooks.sh) | Enable `commit-msg` hook (`git-hooks/`) |
+| [`git-hooks/commit-msg`](./git-hooks/commit-msg) | Validate commit messages ([docs/COMMIT.md](../docs/COMMIT.md)) |

@@ -95,6 +95,14 @@ Dot-directory marks “not product source.” Do not commit secrets. Promote cle
 - CLI × chat signature → prefer core protocol/copy, then thin UI adapters  
 - Desktop does not invent product UI  
 
+## Commits
+
+Message shape and automation: [`COMMIT.md`](./COMMIT.md).
+
+```sh
+./scripts/install-git-hooks.sh   # enable commit-msg checks for this repo
+```
+
 ## Commands
 
 ```sh

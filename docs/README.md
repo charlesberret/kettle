@@ -6,6 +6,7 @@
 | [`ROADMAP.md`](./ROADMAP.md) | Phases and sequencing |
 | [`RELEASE.md`](./RELEASE.md) | Ideal release bars and gate IDs |
 | [`WORKFLOW.md`](./WORKFLOW.md) | Issues, labels, agents, automation |
+| [`COMMIT.md`](./COMMIT.md) | Commit message conventions + hooks |
 | [`briefs/`](./briefs/) | Work packages (pre- and co-Issue) |
 
 Local private design may live in `../.local/` (gitignored). Start agents on
