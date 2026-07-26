@@ -10,14 +10,26 @@ Agents prepare and propagate; you read and rule.
 
 Scaffold only. Planning notes live in `planning/` (gitignored, local only).
 
+## Family
+
+| Repo | Role |
+|------|------|
+| **kettle** (this) | Product home + core |
+| [kettle-vscode](../kettle-vscode) | VS Code / Cursor extension |
+| kettle-obsidian | Later |
+| kettle-desktop | Later |
+
+Local planning map: `planning/family.md` (gitignored).
+
 ## Layout (intended)
 
 ```text
 kettle/
   docs/           public product docs
   planning/       local notes & design (not in git)
-  packages/       viewports / clients (later)
+  packages/       optional shared client later
   scripts/        maintainer helpers
+  (core tree)     grows here as Setsweep core migrates
 ```
 
 ## Develop
