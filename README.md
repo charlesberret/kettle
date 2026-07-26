@@ -14,23 +14,13 @@ Scaffold only. Planning notes live in `planning/` (gitignored, local only).
 
 | Repo | Role |
 |------|------|
-| **kettle** (this) | Product home + core |
+| **kettle** (this) | Product home (docs, star target) |
+| [kettle-core](../kettle-core) | Core: API, desk, CLI, web UI |
 | [kettle-vscode](../kettle-vscode) | VS Code / Cursor extension |
+| kettle-desktop | macOS app (exists as setsweep-desktop; low focus) |
 | kettle-obsidian | Later |
-| kettle-desktop | Later |
 
-Local planning map: `planning/family.md` (gitignored).
-
-## Layout (intended)
-
-```text
-kettle/
-  docs/           public product docs
-  planning/       local notes & design (not in git)
-  packages/       optional shared client later
-  scripts/        maintainer helpers
-  (core tree)     grows here as Setsweep core migrates
-```
+Local planning (gitignored): `planning/roadmap.md`, `planning/family.md`.
 
 ## Develop
 
