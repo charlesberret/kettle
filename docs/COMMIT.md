@@ -1,7 +1,16 @@
 # Commit conventions (Kettle family)
 
-These conventions keep the independent Kettle repositories easy to read. An
-implementation repository may document a stricter local rule.
+**Status:** **settled for the Kettle family** (`kettle`, `kettle-core`,
+`kettle-vscode`, desktop, later adapters). An implementation repo may document a
+stricter local rule.
+
+**System-wide:** marked **for consideration** as the default agent commit format
+across the fleet — **not yet global**. Decision pending:
+`~/cloud/sync/system/inbox.md` → “Default agent commit format (system-wide)?”.
+Pointer also in `~/cloud/sync/system/CLAUDE-base.md` § Preferences. Until that decision is
+**yes**, agents outside Kettle should not treat this as law.
+
+These conventions keep the independent Kettle repositories easy to read.
 
 ## Message format
 
