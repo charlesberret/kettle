@@ -1,0 +1,44 @@
+name: Bug report
+description: Report a reproducible problem in Kettle
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: Do not report security vulnerabilities here. Follow SECURITY.md.
+  - type: dropdown
+    id: repository
+    attributes:
+      label: Affected surface
+      options:
+        - Core, CLI, or browser
+        - VS Code or Cursor
+        - Desktop
+        - Product documentation
+        - Unsure
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened?
+      description: Include what you expected and what happened instead.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction
+      description: Give the smallest set of steps that reproduces the problem.
+    validations:
+      required: true
+  - type: input
+    id: versions
+    attributes:
+      label: Versions
+      placeholder: Core commit, extension version, OS, and host version
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: Diagnostics
+      description: Include relevant logs after removing private paths and project data.

@@ -11,4 +11,4 @@ that, and to [reference](../reference/) for exhaustive lists.
 | [Contribute a change](./contribute.md) | Pick a repo and open work correctly |
 
 Root [`CONTRIBUTING.md`](../../CONTRIBUTING.md) is the short public entry; the
-contribute how-to expands the path for agents and regulars.
+contribute how-to expands the path for contributors and maintainers.

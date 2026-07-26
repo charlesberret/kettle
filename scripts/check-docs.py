@@ -9,9 +9,26 @@ from pathlib import Path
 from urllib.parse import unquote
 
 
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = (
+    Path(sys.argv[1]).expanduser().resolve()
+    if len(sys.argv) == 2
+    else Path(__file__).resolve().parent.parent
+)
 LINK = re.compile(r"(?<!!)\[[^\]]+\]\(([^)]+)\)")
-SKIP_DIRS = {".git", ".local", "planning"}
+SKIP_DIRS = {
+    ".git",
+    ".build-venv",
+    ".local",
+    ".venv",
+    "__pycache__",
+    "build",
+    "dist",
+    "node_modules",
+    "out",
+    "planning",
+    "resources",
+    "venv",
+}
 
 
 def markdown_files() -> list[Path]:
@@ -23,6 +40,9 @@ def markdown_files() -> list[Path]:
 
 
 def main() -> int:
+    if len(sys.argv) > 2:
+        print("usage: check-docs.py [repository-root]", file=sys.stderr)
+        return 2
     failures: list[str] = []
     for source in markdown_files():
         for raw in LINK.findall(source.read_text(encoding="utf-8")):

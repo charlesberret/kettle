@@ -32,7 +32,7 @@ command dump.
 | See how the family fits together | [explanation/architecture](./explanation/architecture.md) |
 | Learn by doing a first pass | [tutorials/first-sitting](./tutorials/first-sitting.md) |
 | Check whether we can ship a preview | [how-to/check-release-readiness](./how-to/check-release-readiness.md) |
-| Know commit message shape | [reference/commit-conventions](./reference/commit-conventions.md) · system: `~/cloud/sync/system/commit-conventions.md` |
+| Know commit message shape | [reference/commit-conventions](./reference/commit-conventions.md) |
 | See sequencing | [explanation/roadmap](./explanation/roadmap.md) |
 
 ## Writing rules (short)

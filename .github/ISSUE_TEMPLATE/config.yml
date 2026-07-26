@@ -1,8 +1,8 @@
 blank_issues_enabled: true
 contact_links:
-  - name: Product roadmap
-    url: https://github.com/charlesberret/kettle/blob/main/docs/ROADMAP.md
-    about: Sequencing, phases, and non-goals
-  - name: Release gates
-    url: https://github.com/charlesberret/kettle/blob/main/docs/RELEASE.md
-    about: What “shipped” means and how it is checked
+  - name: Security report
+    url: https://github.com/charlesberret/kettle/security/advisories/new
+    about: Report a vulnerability privately
+  - name: Architecture and ownership
+    url: https://github.com/charlesberret/kettle/blob/main/docs/explanation/architecture.md
+    about: Find the repository that owns a proposed change

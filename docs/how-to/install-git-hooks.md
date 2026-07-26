@@ -31,5 +31,4 @@ Prefer fixing the message.
 
 ## Related
 
-- Fleet message shape: `~/cloud/sync/system/commit-conventions.md`  
-- [Reference: commit conventions](../reference/commit-conventions.md)  
+- [Reference: commit conventions](../reference/commit-conventions.md)
