@@ -9,7 +9,7 @@ Local checkouts may live under `~/cloud/git-projects/kettle`. Public name: **Ket
 | Path | In git? | Purpose |
 |------|---------|---------|
 | `docs/` | yes | Public product docs, architecture, shipping notes |
-| `planning/` | **no** (gitignored) | Private design, renames, open questions, scratch |
+| `planning/` | **no** (gitignored) | Private design, renames, open questions, scratch — **same name in every family repo** |
 
 Do not put secrets in either tree. Keep launch strategy and unfinished naming debates in `planning/`.
 

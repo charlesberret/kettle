@@ -71,6 +71,20 @@ row or manual procedure.
 Do not free-roam the whole roadmap. Do not archive legacy remotes or force-push
 without an explicit human ask.
 
+
+## Local `planning/` directories
+
+Every Kettle-family checkout ignores a top-level **`planning/`** directory:
+
+| Path | In git? | Use |
+|------|---------|-----|
+| `docs/` | yes | Durable public / shared process |
+| **`planning/`** | **no** | Local design, agent handoffs, scratch |
+
+**Why `planning/` not something else?** It names *product* design work (not random temp files). More generic alternatives (`local/`, `notes/`, `scratch/`) are fine for junk; we reserve **`planning/`** for intentional, handoff-quality notes.
+
+Do not commit secrets. Promote cleaned facts into `docs/` when they should be shared.
+
 ## Until GitHub remotes exist
 
 - Track work as briefs under [`briefs/`](./briefs/) (`status: ready | in_progress | done`)  
