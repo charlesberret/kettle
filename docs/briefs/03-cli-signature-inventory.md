@@ -18,7 +18,7 @@ Document current CLI surface vs north-star, and list **shared spine** fixes
 
 - Core CLI: setsweep-core / kettle-core `cli.py` (or equivalent)
 - Plugin chat: kettle-vscode Desk stream
-- Product notes: home `docs/ROADMAP.md`; local planning `cli.md` / `agent-surfaces.md` if present
+- Product notes: home `docs/ROADMAP.md`; local `.local/cli.md` / `.local/agent-surfaces.md` if present
 
 ## Non-goals
 

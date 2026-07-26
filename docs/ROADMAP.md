@@ -92,4 +92,4 @@ P5  Obsidian / MCP / Marketplace — on demand
 
 ---
 
-*Update when phase gates flip. Private scratch may live in local `planning/` (gitignored).*
+*Update when phase gates flip. Private scratch may live in local `.local/` (gitignored).*

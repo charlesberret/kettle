@@ -10,7 +10,7 @@ How roadmapping, work division, agents, and release checks stay orderly.
 | **Execution** | GitHub Issues + one Project (when remotes exist); briefs until then | Who does what |
 | **Gates** | [`RELEASE.md`](./RELEASE.md) + [`scripts/release-ready.sh`](../scripts/release-ready.sh) | Done / ship |
 
-Private design scratch may stay in local `planning/` (gitignored). Durable process
+Private design scratch may stay in local `.local/` (gitignored). Durable process
 belongs here under `docs/`.
 
 ## Phases → board
@@ -62,7 +62,7 @@ row or manual procedure.
 
 ## Agents
 
-1. Read product home `README` + `docs/ROADMAP.md` (and local `planning/HANDOFF.md` if present).  
+1. Read product home `README` + `docs/ROADMAP.md` (and local `.local/HANDOFF.md` if present).  
 2. Claim one `Ready` + `agent-ok` issue.  
 3. Implement; run local checks listed in Acceptance.  
 4. Open PR in the **repo that owns the code**.  
@@ -72,18 +72,16 @@ Do not free-roam the whole roadmap. Do not archive legacy remotes or force-push
 without an explicit human ask.
 
 
-## Local `planning/` directories
+## Local `.local/` directories
 
-Every Kettle-family checkout ignores a top-level **`planning/`** directory:
+Every Kettle-family checkout ignores a top-level **`.local/`** directory (dotfile = ops / machine-local only):
 
 | Path | In git? | Use |
 |------|---------|-----|
 | `docs/` | yes | Durable public / shared process |
-| **`planning/`** | **no** | Local design, agent handoffs, scratch |
+| **`.local/`** | **no** | Ops notes, agent handoffs, design scratch |
 
-**Why `planning/` not something else?** It names *product* design work (not random temp files). More generic alternatives (`local/`, `notes/`, `scratch/`) are fine for junk; we reserve **`planning/`** for intentional, handoff-quality notes.
-
-Do not commit secrets. Promote cleaned facts into `docs/` when they should be shared.
+Dot-directory marks “not product source.” Do not commit secrets. Promote cleaned facts into `docs/` when they should be shared.
 
 ## Until GitHub remotes exist
 

@@ -8,7 +8,7 @@
 | [`WORKFLOW.md`](./WORKFLOW.md) | Issues, labels, agents, automation |
 | [`briefs/`](./briefs/) | Work packages (pre- and co-Issue) |
 
-Local private design may live in `../planning/` (gitignored). Start agents on
+Local private design may live in `../.local/` (gitignored). Start agents on
 [`WORKFLOW.md`](./WORKFLOW.md) + [`briefs/`](./briefs/) or GitHub Issues when remotes exist.
 
 ```sh

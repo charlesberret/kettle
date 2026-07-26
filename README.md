@@ -8,7 +8,7 @@ Agents prepare and propagate; you read and rule.
 
 ## Status
 
-Scaffold only. Planning notes live in `planning/` (gitignored, local only).
+Scaffold only. Local ops notes live in `.local/` (gitignored).
 
 ## Family
 
@@ -20,7 +20,7 @@ Scaffold only. Planning notes live in `planning/` (gitignored, local only).
 | kettle-desktop | macOS app (exists as setsweep-desktop; low focus) |
 | kettle-obsidian | Later |
 
-Local planning (gitignored): `planning/roadmap.md`, `planning/family.md`.
+Local ops notes (gitignored): `.local/roadmap.md`, `.local/family.md`.
 
 ## Roadmap & checks
 

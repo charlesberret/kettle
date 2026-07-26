@@ -38,5 +38,5 @@ name support as needed.
 
 ## Start
 
-Read home `docs/ROADMAP.md` P0 and local `planning/rename-from-setsweep.md` if present.
+Read home `docs/ROADMAP.md` P0 and local `.local/rename-from-setsweep.md` if present.
 Prefer one transplant session over gradual half-copies.
