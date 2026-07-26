@@ -1,16 +1,16 @@
 # Commit conventions (Kettle family)
 
-**Status:** settled for the family (2026-07). Same rules in `kettle`, `kettle-core`,
-`kettle-vscode`, desktop, and later adapters unless a repo documents an exception.
+These conventions keep the independent Kettle repositories easy to read. An
+implementation repository may document a stricter local rule.
 
 ## Message format
 
 ```text
 <optional-type>: <imperative subject>
 
-<body — why, not every file list>
+<body: why, not every file list>
 
-<footer — optional trailers>
+<footer: optional trailers>
 ```
 
 ### Subject
@@ -28,8 +28,8 @@ Conventional-commits–style, lowercase, optional scope:
 |------|-----|
 | `feat` | User-visible capability |
 | `fix` | Bug fix |
-| `docs` | Docs / briefs / README only |
-| `chore` | Tooling, ignore rules, scaffolding |
+| `docs` | Documentation only |
+| `chore` | Tooling and maintenance |
 | `refactor` | No intended behavior change |
 | `test` | Tests only |
 | `ci` | CI / release gates / hooks |
@@ -47,10 +47,10 @@ fix(core): prefer .kettle desk path over legacy
 feat(cli): add --json to queue listing
 ```
 
-Bare subjects without a type are still OK for early scaffolding:
+Bare subjects without a type are also valid:
 
 ```text
-Initial Kettle scaffold
+Prepare Kettle product home
 ```
 
 ### Body
@@ -62,9 +62,7 @@ Initial Kettle scaffold
 ### Footers (optional)
 
 ```text
-Brief: 01
-Gate: G-core-test
-Co-authored-by: …
+Fixes: #123
 ```
 
 Link work packages and release gates when the commit is meant to move them.
@@ -96,13 +94,5 @@ git config core.hooksPath /path/to/kettle/scripts/git-hooks
 
 CI may later run the same checks on PR titles; the hook is the day-to-day enforcer.
 
-## Agents
-
-When creating commits for Charles:
-
-1. Follow this file  
-2. Prefer `type: subject` + short body  
-3. HEREDOC in the shell so newlines survive  
-4. Never update git config or force-push unless asked  
-
-See also [`WORKFLOW.md`](./WORKFLOW.md).
+The hook is optional. Pull requests are judged on a clear history and readable
+intent, not on whether a contributor installed local tooling.
