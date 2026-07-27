@@ -14,5 +14,9 @@ Include the affected version or commit, reproduction steps, impact, and any
 suggested mitigation. Do not include private project data unless it is
 essential and you have agreed on a secure transfer method.
 
+Code-of-conduct concerns may use the
+[Kettle product-home private report](https://github.com/charlesberret/kettle/security/advisories/new);
+identify the report as a conduct matter rather than a vulnerability.
+
 Kettle currently supports a single-user, loopback-only core. Remote or
 multi-user deployment is not supported.

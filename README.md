@@ -17,10 +17,11 @@ small macOS shell.
 
 ## Status
 
-Kettle is a **pre-release open-source project**. The core, VS Code/Cursor
-extension, and desktop shell are implemented and tested from source. Public
-package registries, the Visual Studio Marketplace, code signing, and
-notarization are still ahead.
+Kettle is a **pre-release project being prepared for a public open-source
+preview**. Its GitHub repositories are currently private while the first
+release is assembled. The core, VS Code/Cursor extension, and desktop shell are
+implemented and tested from source; package registries, the Visual Studio
+Marketplace, code signing, and notarization are still ahead.
 
 The current preview is best suited to contributors and curious early users who
 are comfortable with a local Python installation.

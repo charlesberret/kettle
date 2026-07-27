@@ -9,10 +9,10 @@ deliberate intimidation, and sustained disruption are not acceptable in
 project spaces.
 
 Maintainers may edit or remove contributions and restrict participation when
-needed to protect a constructive environment. Report conduct concerns
-privately through the maintainer contact linked from the
-[Kettle product home](https://github.com/charlesberret/kettle). Reports will be
-handled as confidentially as practical.
+needed to protect a constructive environment. Report conduct concerns through
+the private channel described in the
+[security policy](./SECURITY.md), and identify the report as a code-of-conduct
+matter. Reports will be handled as confidentially as practical.
 
 This policy applies to project repositories, issue trackers, review threads,
 and public events where someone represents Kettle.

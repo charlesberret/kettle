@@ -26,6 +26,7 @@ The first public preview is ready when:
 | Desktop shell logic is green | `npm test` in `kettle-desktop` |
 | Repositories agree on contracts | `kettle-core/tools/check_family.py` |
 | Release inputs are reproducible | all publishable Git worktrees clean |
+| Source is publicly reachable | family links and clone commands work without authentication |
 
 Manual release evidence:
 
@@ -35,6 +36,8 @@ Manual release evidence:
 - verify approval does not itself apply or transmit work;
 - sweep and confirm the resulting Desk and Git state;
 - inspect the packaged VSIX in VS Code or Cursor;
+- verify repository descriptions, topics, issue forms, licenses, and private
+  vulnerability reporting on GitHub;
 - confirm public copy does not claim unsigned or unpublished artifacts exist.
 
 ## Distribution bars

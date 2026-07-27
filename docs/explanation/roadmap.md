@@ -19,8 +19,10 @@ outside its original workshop.
 - Add a per-boot local authentication design before widening integrations.
 - Run a stranger-path dogfood pass: install, found a Desk, review an entry,
   comment, approve, and sweep without maintainer-only knowledge.
-- Publish source repositories with concise release notes and contribution
-  guidance.
+- Finish repository descriptions, topics, issue routing, and private
+  vulnerability reporting.
+- Make the source repositories public only when their cross-repository links
+  and clone instructions work without authentication.
 
 ## Next: dependable distribution
 
