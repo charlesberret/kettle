@@ -8,6 +8,7 @@ system is shaped this way. Not step-by-step instructions.
 | [Product home](./product-home.md) | What this repository owns |
 | [Architecture](./architecture.md) | Family map, ownership, dependency direction |
 | [Roadmap](./roadmap.md) | Where the product is going next |
+| [Soft release](./soft-release.md) | Names, registries, dogfood bar, when to post |
 
 Deep core invariants: `kettle-core/ARCHITECTURE.md`. Platform matrix and
 viewport parity: `kettle-core/docs/PLATFORMS.md` (when present).
