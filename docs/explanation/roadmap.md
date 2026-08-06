@@ -20,6 +20,9 @@ outside its original workshop.
 - Run a stranger-path dogfood pass: install, found a Desk, review an entry,
   comment, approve, and sweep without maintainer-only knowledge
   ([checklist](../how-to/stranger-path-qa.md)).
+- Define curator excellence around the recommended
+  [Hybrid Desk Notebook](./curator-frameworks.md) and run improvement work
+  against the [curator scoring benchmark](../reference/curator-scoring.md).
 - Finish repository descriptions, topics, issue routing, and private
   vulnerability reporting.
 - Make the source repositories public only when their cross-repository links
