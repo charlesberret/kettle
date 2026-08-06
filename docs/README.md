@@ -22,7 +22,7 @@ command dump.
 | **[Tutorials](./tutorials/)** | “Take me through a first success” | Learning path: first sitting |
 | **[How-to guides](./how-to/)** | “I need to achieve X” | Concrete tasks: release check, stranger-path QA, hooks, contribute |
 | **[Reference](./reference/)** | “What are the facts / gates / names?” | Release gates, commit conventions |
-| **[Explanation](./explanation/)** | “Why is it built this way?” | Architecture, product home, roadmap |
+| **[Explanation](./explanation/)** | “Why is it built this way?” | Architecture, product home, roadmap, soft release |
 
 ## Quick links
 
@@ -35,6 +35,7 @@ command dump.
 | Check whether we can ship a preview | [how-to/check-release-readiness](./how-to/check-release-readiness.md) |
 | Know commit message shape | [reference/commit-conventions](./reference/commit-conventions.md) |
 | See sequencing | [explanation/roadmap](./explanation/roadmap.md) |
+| Plan a soft release (names, channels, buzz) | [explanation/soft-release](./explanation/soft-release.md) |
 
 ## Writing rules (short)
 
