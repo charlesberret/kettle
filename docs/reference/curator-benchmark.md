@@ -32,17 +32,20 @@ Automated secondary-scorer IRR on this run:
 
 ## Independent dual scoring (Hybrid sample)
 
-Two scorers graded three Hybrid runs from artifacts only:
+Two scorers graded three Hybrid runs from artifacts only (`run.json`,
+`transcript.txt`):
 
-| Fixture | Scorer A | Scorer B | Surface agreement ≤1pt |
+| Fixture | Scorer A (product) | Scorer B (engineering) | Surfaces ≤1pt |
 |---|---:|---:|---:|
-| `coding_novice_sparse_bugfix` | 4.075 | 3.875 | 100% |
-| `writing_novice_dense_launch` | 3.975 | 3.800 | 100% |
-| `operations_expert_noisy_incident` | 4.050 | 3.900 | 100% |
+| `coding_novice_sparse_bugfix` | 3.675 | 3.575 | 7/7 |
+| `writing_novice_dense_launch` | 3.125 | 3.200 | 7/7 |
+| `operations_expert_noisy_incident` | 3.450 | 3.500 | 7/7 |
 
-Independent scores sit **just under** the 4.2 ambition while automated heuristics
-sit just above it. Treat 4.2 as the goal for reconciled independent scoring, not
-only the heuristic simulator.
+Pooled independent mean: **3.42**. Surface agreement within 1 point: **100%**.
+
+Independent scores sit well below the automated heuristic (4.417). Treat **4.2**
+as the goal for reconciled independent scoring — the auto lab is useful for
+relative framework ranking, not as the final quality claim.
 ## Surface emphasis for the next improvement round
 
 Hybrid already clears 4.2 as a simulated prototype. The stretch to 4.5 should

@@ -6,6 +6,10 @@
   "run": {
     "run_id": "hybrid_desk_notebook__operations_expert_noisy_incident",
     "fixture_id": "operations_expert_noisy_incident",
+    "fixture_version": "1.0",
+    "created_at": "2026-08-06T06:08:37Z",
+    "model_or_agent_version": "curator-lab-sim-1",
+    "provider": "deterministic-simulator",
     "scorer_id": "scorer_a",
     "scorer_role": "product"
   },
@@ -13,58 +17,72 @@
     "interview": {
       "score": 4.0,
       "evidence": [
-        "Noise omission and causal caution in sweep are strong; interview still light on criteria text."
+        "Opening asks what approval should mean for incident review and runbook update.",
+        "User requests a tight queue with timeline claims, speculative causal hypotheses, runbook diffs, ownered follow-ups, and raw log spam omitted.",
+        "Curator adapts second prompt for expert/noisy context by promising terse, risk-ordered briefs and asks for hard nos."
       ],
-      "notes": "Noise omission and causal caution in sweep are strong; interview still light on criteria text."
+      "notes": "Efficient and well targeted to the expert SRE context. The charter captures no invented causality and evidence-backed residual risk, though it could be stronger on severity/ownership decision rules."
     },
     "batch_selection": {
-      "score": 4.5,
-      "evidence": [
-        "Noise omission and causal caution in sweep are strong; interview still light on criteria text."
-      ],
-      "notes": "Noise omission and causal caution in sweep are strong; interview still light on criteria text."
-    },
-    "briefs": {
       "score": 4.0,
       "evidence": [
-        "Noise omission and causal caution in sweep are strong; interview still light on criteria text."
+        "Queue includes incident timeline draft, causal hypothesis memo, runbook mitigation steps, and follow-up owners list.",
+        "High-risk timeline and causality items are ranked before medium-risk runbook and owner entries.",
+        "Raw log spam is explicitly omitted, and source evidence is preserved for pager export, cause memo, runbook diff, and owners list."
       ],
-      "notes": "Noise omission and causal caution in sweep are strong; interview still light on criteria text."
+      "notes": "Strong selection for noisy incident output: it extracts the four requested review intents and orders by risk. It stops short of 5 because omissions and priority rationale are still formulaic."
     },
-    "tags": {
+    "briefs": {
       "score": 3.5,
       "evidence": [
-        "Noise omission and causal caution in sweep are strong; interview still light on criteria text."
+        "All 4 briefs include what changed, source evidence, risk, confidence, recommended action, decision hook, caveat, and compressed expert persona note.",
+        "Causal hypothesis brief explicitly says deploy overlap is suggested without being proved and tags confidence low.",
+        "Runbook brief identifies rollback and cache-flush steps with source paths."
       ],
-      "notes": "Noise omission and causal caution in sweep are strong; interview still light on criteria text."
+      "notes": "Briefs are concise and mostly well matched to expert needs. They are not quite strong because why-it-matters language is generic, owner names/severity are absent, and silent config/runbook risk is not deeply exposed."
+    },
+    "tags": {
+      "score": 3.0,
+      "evidence": [
+        "Tags consistently encode domain:operations, artifact_type, risk, action_needed, and confidence.",
+        "Causal hypothesis is marked risk:high and confidence:low; owner list is action_needed:approve and confidence:high.",
+        "Tags do not encode timeline, causality/speculative, runbook, owner, severity, or follow-up category."
+      ],
+      "notes": "Baseline useful filtering, but the taxonomy is too generic for an expert incident desk and noisy-output synthesis."
     },
     "chat": {
       "score": 3.5,
       "evidence": [
-        "Noise omission and causal caution in sweep are strong; interview still light on criteria text."
+        "Chat sample references current_entry_id timeline-draft and explains it leads because of residual risk under the charter.",
+        "It preserves approval as a reversible ruling bookmark, not publish.",
+        "Run marks uses_desk_state, captures_reversible_action, persona_adapted, and high continuity."
       ],
-      "notes": "Noise omission and causal caution in sweep are strong; interview still light on criteria text."
+      "notes": "Solid context maintenance and terse expert tone. It remains a single generic orientation sample rather than a rich incident-review conversation."
     },
     "sweep_reasoning": {
-      "score": 4.5,
+      "score": 2.5,
       "evidence": [
-        "Noise omission and causal caution in sweep are strong; interview still light on criteria text."
+        "Sweep topics include timeline, causality, runbook, and owners.",
+        "It preserves decision state and traceability and records no fabricated approvals.",
+        "The explicit insight says the batch shares a dependency chain across behavior and verification entries, which is not incident-specific and misses owner/severity/action-item synthesis."
       ],
-      "notes": "Noise omission and causal caution in sweep are strong; interview still light on criteria text."
+      "notes": "Partly useful and faithful, but synthesis is too generic for noisy incident review. It does not produce durable incident intelligence such as supported vs speculative causal claims, action owners, or runbook/config residual risk."
     },
     "ux_quality": {
-      "score": 4.0,
+      "score": 3.0,
       "evidence": [
-        "Noise omission and causal caution in sweep are strong; interview still light on criteria text."
+        "Prompting is concise and respects expert preference for a tight, risk-ordered queue.",
+        "The visible desk state supports inspection and reversibility.",
+        "Generic phrasing in sweep and repeated simulator copy reduce the expert-product feel."
       ],
-      "notes": "Noise omission and causal caution in sweep are strong; interview still light on criteria text."
+      "notes": "Clear and steady baseline, but not polished or distinctive for an expert SRE workflow."
     }
   },
   "efficiency": {
-    "total_tokens": 326,
+    "total_tokens": 333,
     "tokens_to_useful_charter": 105,
-    "tokens_per_approved_entry": 108,
-    "brief_tokens_per_entry_mean": 10,
+    "tokens_per_approved_entry": 83,
+    "brief_tokens_per_entry_mean": 9,
     "redundant_token_rate": 0.11,
     "evidence_token_ratio": 0.55,
     "time_to_first_question_ms": 408,
@@ -84,7 +102,7 @@
     "average_decision_text_length": 48,
     "scroll_depth_per_entry": 1.1,
     "user_reversal_count": 0,
-    "perceived_load_1_7": 3
+    "perceived_load_1_7": 2
   },
   "adaptability": {
     "project_type": "operations",
@@ -95,7 +113,8 @@
       "expertise_mismatch": false,
       "density_mismatch": false,
       "charter_drift": false
-    }
+    },
+    "notes": "Good expert/noisy adaptation in the interview and queue. I did not mark density_mismatch because raw log spam is omitted and causal uncertainty is labeled, but tags and sweep underuse incident-specific structure."
   },
   "critical_failures": {
     "fabricated_approval": false,
@@ -107,10 +126,10 @@
   },
   "composite": {
     "efficiency_multiplier": 1.0,
-    "surface_weighted_score": 4.05,
-    "overall_score_0_5": 4.05,
+    "surface_weighted_score": 3.45,
+    "overall_score_0_5": 3.45,
     "computed_by": "scorer",
-    "notes": ""
+    "notes": "No major efficiency misses or blocked waits observed, so multiplier is 1.00."
   },
-  "freeform_notes": "Noise omission and causal caution in sweep are strong; interview still light on criteria text."
+  "freeform_notes": "Best surfaces are interview and batch selection. Main product gap is that sweep and tags are too generic for expert incident work, even though the queue correctly extracts signal from noisy input."
 }

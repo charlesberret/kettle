@@ -1,16 +1,19 @@
 # Independent scoring summary
 
-Two independent scorers graded three Hybrid Desk Notebook runs.
+Two independent scorers graded three Hybrid Desk Notebook runs from `run.json` and `transcript.txt` only.
 
-| Fixture | Scorer A overall | Scorer B overall | Δ | Within 1pt surfaces |
+| Fixture | Scorer A (product) | Scorer B (engineering) | Δ | Surfaces within 1pt |
 |---|---:|---:|---:|---:|
-| `coding_novice_sparse_bugfix` | 4.075 | 3.875 | 0.200 | 100% |
-| `writing_novice_dense_launch` | 3.975 | 3.8 | 0.175 | 100% |
-| `operations_expert_noisy_incident` | 4.05 | 3.9 | 0.150 | 100% |
+| `coding_novice_sparse_bugfix` | 3.675 | 3.575 | 0.100 | 7/7 |
+| `writing_novice_dense_launch` | 3.125 | 3.2 | 0.075 | 7/7 |
+| `operations_expert_noisy_incident` | 3.45 | 3.5 | 0.050 | 7/7 |
+
+Mean overall — Scorer A: **3.417**; Scorer B: **3.425**; pooled mean: **3.421**
+Surface agreement within 1 point: **21/21 (100%)**
 
 ## Calibration notes
 
-- Both scorers agree Hybrid is above usable baseline and near/above the 4.2 ambition on these fixtures after efficiency.
-- Largest shared deduction: tags (missing sweep topics) and occasional charter-field gaps.
-- Scorer B is consistently slightly stricter on briefs/UX; all surface pairs remain within 1 point.
-- Recommendation: keep Hybrid as the implementation target; next round should close tag and interview gaps toward stretch 4.5.
+- Independent scores are materially below the automated heuristic (Hybrid auto mean 4.417).
+- Shared deductions: empty `review_criteria`, thin/generic sweep synthesis, chat limited to one sample, tags too generic on writing/ops.
+- Ambition **4.2** remains the goal for reconciled independent scoring; stretch **4.5**.
+- Detailed notes: `independent_scoring_notes_a.md`, `independent_scoring_notes_b.md`.
