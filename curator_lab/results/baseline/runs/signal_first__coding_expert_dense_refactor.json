@@ -1,0 +1,242 @@
+{
+  "adaptability_flags": {
+    "charter_drift": true,
+    "density_mismatch": false,
+    "expertise_mismatch": false,
+    "mode_mismatch": false
+  },
+  "briefs": [
+    {
+      "caveats": "",
+      "confidence": "medium",
+      "decision_hook": null,
+      "entry_id": "public-api-rename",
+      "evidence": [
+        "src/types.ts"
+      ],
+      "persona_note": null,
+      "recommended_action": "comment",
+      "risk": "high",
+      "source_evidence": [
+        "src/types.ts"
+      ],
+      "text": "Renames state to status in exported ReviewStatus.",
+      "title": "Rename public ReviewStatus field",
+      "token_estimate": 9,
+      "unsupported_claims": 0,
+      "what_changed": "Renames state to status in exported ReviewStatus.",
+      "why_it_matters": "Risk high affects the review goal."
+    },
+    {
+      "caveats": "",
+      "confidence": "high",
+      "decision_hook": null,
+      "entry_id": "vitest-failure",
+      "evidence": [
+        "test output"
+      ],
+      "persona_note": null,
+      "recommended_action": "investigate",
+      "risk": "high",
+      "source_evidence": [
+        "test output"
+      ],
+      "text": "One refactor test fails because the mocked clock no longer advances.",
+      "title": "Vitest failure from mocked clock",
+      "token_estimate": 15,
+      "unsupported_claims": 0,
+      "what_changed": "One refactor test fails because the mocked clock no longer advances.",
+      "why_it_matters": "Risk high affects the review goal."
+    },
+    {
+      "caveats": "",
+      "confidence": "medium",
+      "decision_hook": null,
+      "entry_id": "tsconfig-paths",
+      "evidence": [
+        "tsconfig.json"
+      ],
+      "persona_note": null,
+      "recommended_action": "inspect",
+      "risk": "medium",
+      "source_evidence": [
+        "tsconfig.json"
+      ],
+      "text": "Adds @services/* path alias used by the extracted service.",
+      "title": "tsconfig path alias update",
+      "token_estimate": 11,
+      "unsupported_claims": 0,
+      "what_changed": "Adds @services/* path alias used by the extracted service.",
+      "why_it_matters": "Risk medium affects the review goal."
+    }
+  ],
+  "charter": {
+    "approval_means": "accepted for this review state, not published",
+    "audience": "local human reviewer",
+    "decision_rules": [],
+    "density_adapted": true,
+    "examples_and_non_examples": false,
+    "exclusions": "",
+    "persona_adapted": true,
+    "purpose": "Separate API-safe refactors from config/test failures.",
+    "queue_strategy": "artifact_signal",
+    "review_criteria": "",
+    "traceability_rate": 0.55,
+    "voice": "fast triage"
+  },
+  "chat_sample": [
+    {
+      "captures_reversible_action": true,
+      "continuity": "low",
+      "current_entry_id": "public-api-rename",
+      "persona_adapted": true,
+      "role": "curator",
+      "text": "Entry public-api-rename leads because of residual risk under the charter. Approval remains a reversible ruling bookmark, not publish.",
+      "uses_desk_state": false
+    }
+  ],
+  "cognitive_load": {
+    "attention_switch_count": 4,
+    "average_decision_text_length": 48,
+    "manual_correction_count": 2,
+    "perceived_load_1_7": 3,
+    "scroll_depth_per_entry": 1.1,
+    "unresolved_question_count": 1,
+    "user_clarification_count": 0,
+    "user_reversal_count": 0
+  },
+  "created_at": "2026-08-06T00:00:00Z",
+  "critical_failures": {
+    "cannot_inspect_or_reverse": false,
+    "fabricated_approval": false,
+    "fabricated_source_or_file_state": false,
+    "lost_source_traceability": false,
+    "non_local_or_irreversible_action": false,
+    "sensitive_data_exposure": false
+  },
+  "efficiency_metrics": {
+    "blocked_wait_events": 0,
+    "brief_tokens_per_entry_mean": 11,
+    "evidence_token_ratio": 0.35,
+    "median_entry_open_latency_ms": 180,
+    "redundant_token_rate": 0.08,
+    "review_session_wall_clock_ms": 6560,
+    "sweep_latency_ms": 574,
+    "time_to_first_question_ms": 328,
+    "time_to_first_queue_ms": 1699,
+    "time_to_useful_charter_ms": 1476,
+    "tokens_per_approved_entry": 67,
+    "tokens_to_useful_charter": 42,
+    "total_tokens": 201,
+    "turns_to_useful_charter": 2
+  },
+  "fixture_id": "coding_expert_dense_refactor",
+  "fixture_version": "1.0",
+  "framework_id": "signal_first",
+  "model_or_agent_version": "curator-lab-sim-1",
+  "omitted_items": [
+    {
+      "id": "extract-review-service",
+      "reason": "omitted",
+      "title": "Extract ReviewService from route handler"
+    },
+    {
+      "id": "eslint-formatting",
+      "reason": "omitted",
+      "title": "ESLint formatting noise"
+    },
+    {
+      "id": "duplicate-service-note",
+      "reason": "omitted",
+      "title": "Duplicate note about ReviewService"
+    }
+  ],
+  "provider": "deterministic-simulator",
+  "queue_selection": [
+    {
+      "id": "public-api-rename",
+      "rank": 1,
+      "reason": "Matches expected review value.",
+      "risk": "high",
+      "source_evidence": [
+        "src/types.ts",
+        "docs/api.md"
+      ],
+      "title": "Rename public ReviewStatus field"
+    },
+    {
+      "id": "vitest-failure",
+      "rank": 2,
+      "reason": "Matches expected review value.",
+      "risk": "high",
+      "source_evidence": [
+        "test output",
+        "tests/review-service.test.ts"
+      ],
+      "title": "Vitest failure from mocked clock"
+    },
+    {
+      "id": "tsconfig-paths",
+      "rank": 3,
+      "reason": "Matches expected review value.",
+      "risk": "medium",
+      "source_evidence": [
+        "tsconfig.json"
+      ],
+      "title": "tsconfig path alias update"
+    }
+  ],
+  "run_id": "signal_first__coding_expert_dense_refactor",
+  "sweep_insights": {
+    "cross_entry_patterns": false,
+    "decision_state_preserved": true,
+    "fabricated_approvals": false,
+    "insights": [],
+    "patterns": [],
+    "preserves_decision_state": true,
+    "reusable_rules": false,
+    "summary": "Sweep across 3 entries for TypeScript refactor with tests and config.",
+    "topics": [
+      "api",
+      "tests"
+    ],
+    "traceability": true
+  },
+  "tags": {
+    "public-api-rename": [
+      "risk:high",
+      "action_needed:comment",
+      "confidence:medium",
+      "docs",
+      "writing"
+    ],
+    "tsconfig-paths": [
+      "risk:medium",
+      "action_needed:inspect",
+      "confidence:medium",
+      "docs",
+      "writing"
+    ],
+    "vitest-failure": [
+      "risk:high",
+      "action_needed:investigate",
+      "confidence:high",
+      "docs",
+      "writing"
+    ]
+  },
+  "transcript": [
+    {
+      "role": "curator",
+      "text": "I scanned artifacts for TypeScript refactor with tests and config. What should approval mean on this desk?"
+    },
+    {
+      "role": "user",
+      "text": "Keep the queue dense and evidence-linked. I care about behavior drift, public API changes, tsconfig, and failed tests more than style churn."
+    },
+    {
+      "role": "curator",
+      "text": "Understood. I will learn from rulings."
+    }
+  ]
+}

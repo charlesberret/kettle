@@ -1,0 +1,3 @@
+curator: I scanned artifacts for Product launch copy package. What should approval mean on this desk?
+user: I have a lot of launch copy from an agent. Please group it by channel, explain the approval choice in plain language, and keep risky claims out of approved copy.
+curator: Understood. I will learn from rulings.

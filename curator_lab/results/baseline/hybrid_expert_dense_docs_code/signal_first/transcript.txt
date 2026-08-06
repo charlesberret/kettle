@@ -1,0 +1,3 @@
+curator: I scanned artifacts for Docs and code examples. What should approval mean on this desk?
+user: I need a tight queue connecting docs claims to code examples. Prioritize API mismatches, runnable examples, and source evidence.
+curator: Understood. I will learn from rulings.

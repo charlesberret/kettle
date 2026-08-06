@@ -1,0 +1,237 @@
+{
+  "run_id": "signal_first__operations_expert_noisy_incident",
+  "framework_id": "signal_first",
+  "fixture_id": "operations_expert_noisy_incident",
+  "fixture_version": "1.0",
+  "created_at": "2026-08-06T00:00:00Z",
+  "model_or_agent_version": "curator-lab-sim-1",
+  "provider": "deterministic-simulator",
+  "transcript": [
+    {
+      "role": "curator",
+      "text": "I scanned artifacts for Incident review and runbook update. What should approval mean on this desk?"
+    },
+    {
+      "role": "user",
+      "text": "I want a tight queue: timeline claims, causal hypotheses marked speculative, runbook diffs, and ownered follow-ups. Omit raw log spam."
+    },
+    {
+      "role": "curator",
+      "text": "Understood. I will learn from rulings."
+    }
+  ],
+  "charter": {
+    "purpose": "Extract actionable incident truth without inventing causality from noisy logs.",
+    "audience": "local human reviewer",
+    "review_criteria": "",
+    "exclusions": "",
+    "queue_strategy": "artifact_signal",
+    "decision_rules": [],
+    "persona_adapted": true,
+    "density_adapted": true,
+    "examples_and_non_examples": false,
+    "traceability_rate": 0.55,
+    "approval_means": "accepted for this review state, not published",
+    "voice": "fast triage"
+  },
+  "queue_selection": [
+    {
+      "id": "causal-hypothesis",
+      "rank": 1,
+      "title": "Causal hypothesis memo",
+      "risk": "high",
+      "reason": "Matches expected review value.",
+      "source_evidence": [
+        "agent_output/cause.md"
+      ]
+    },
+    {
+      "id": "timeline-draft",
+      "rank": 2,
+      "title": "Incident timeline draft",
+      "risk": "high",
+      "reason": "Matches expected review value.",
+      "source_evidence": [
+        "agent_output/timeline.md",
+        "pager_export.json"
+      ]
+    },
+    {
+      "id": "runbook-patch",
+      "rank": 3,
+      "title": "Runbook mitigation steps",
+      "risk": "medium",
+      "reason": "Matches expected review value.",
+      "source_evidence": [
+        "runbooks/api-latency.md",
+        "agent_output/runbook.diff"
+      ]
+    }
+  ],
+  "omitted_items": [
+    {
+      "id": "action-owners",
+      "title": "Follow-up owners list",
+      "reason": "omitted"
+    },
+    {
+      "id": "raw-log-spam",
+      "title": "Unfiltered log paste",
+      "reason": "omitted"
+    }
+  ],
+  "briefs": [
+    {
+      "entry_id": "causal-hypothesis",
+      "title": "Causal hypothesis memo",
+      "what_changed": "Suggests deploy overlap caused the outage without proving it.",
+      "why_it_matters": "Risk high affects the review goal.",
+      "source_evidence": [
+        "agent_output/cause.md"
+      ],
+      "risk": "high",
+      "confidence": "low",
+      "recommended_action": "inspect",
+      "decision_hook": null,
+      "caveats": "",
+      "persona_note": null,
+      "text": "Suggests deploy overlap caused the outage without proving it.",
+      "evidence": [
+        "agent_output/cause.md"
+      ],
+      "token_estimate": 11,
+      "unsupported_claims": 0
+    },
+    {
+      "entry_id": "timeline-draft",
+      "title": "Incident timeline draft",
+      "what_changed": "Orders detection, mitigation, and recovery events.",
+      "why_it_matters": "Risk high affects the review goal.",
+      "source_evidence": [
+        "agent_output/timeline.md"
+      ],
+      "risk": "high",
+      "confidence": "medium",
+      "recommended_action": "inspect",
+      "decision_hook": null,
+      "caveats": "",
+      "persona_note": null,
+      "text": "Orders detection, mitigation, and recovery events.",
+      "evidence": [
+        "agent_output/timeline.md"
+      ],
+      "token_estimate": 7,
+      "unsupported_claims": 0
+    },
+    {
+      "entry_id": "runbook-patch",
+      "title": "Runbook mitigation steps",
+      "what_changed": "Adds rollback and cache-flush steps to the runbook.",
+      "why_it_matters": "Risk medium affects the review goal.",
+      "source_evidence": [
+        "runbooks/api-latency.md"
+      ],
+      "risk": "medium",
+      "confidence": "medium",
+      "recommended_action": "inspect",
+      "decision_hook": null,
+      "caveats": "",
+      "persona_note": null,
+      "text": "Adds rollback and cache-flush steps to the runbook.",
+      "evidence": [
+        "runbooks/api-latency.md"
+      ],
+      "token_estimate": 10,
+      "unsupported_claims": 0
+    }
+  ],
+  "tags": {
+    "causal-hypothesis": [
+      "risk:high",
+      "action_needed:inspect",
+      "confidence:low",
+      "docs",
+      "writing"
+    ],
+    "timeline-draft": [
+      "risk:high",
+      "action_needed:inspect",
+      "confidence:medium",
+      "docs",
+      "writing"
+    ],
+    "runbook-patch": [
+      "risk:medium",
+      "action_needed:inspect",
+      "confidence:medium",
+      "docs",
+      "writing"
+    ]
+  },
+  "chat_sample": [
+    {
+      "role": "curator",
+      "current_entry_id": "causal-hypothesis",
+      "uses_desk_state": false,
+      "captures_reversible_action": true,
+      "persona_adapted": true,
+      "continuity": "low",
+      "text": "Entry causal-hypothesis leads because of residual risk under the charter. Approval remains a reversible ruling bookmark, not publish."
+    }
+  ],
+  "sweep_insights": {
+    "topics": [
+      "timeline",
+      "causality"
+    ],
+    "patterns": [],
+    "insights": [],
+    "preserves_decision_state": true,
+    "decision_state_preserved": true,
+    "traceability": true,
+    "cross_entry_patterns": false,
+    "reusable_rules": false,
+    "fabricated_approvals": false,
+    "summary": "Sweep across 3 entries for Incident review and runbook update."
+  },
+  "efficiency_metrics": {
+    "total_tokens": 193,
+    "tokens_to_useful_charter": 39,
+    "tokens_per_approved_entry": 64,
+    "brief_tokens_per_entry_mean": 9,
+    "redundant_token_rate": 0.08,
+    "evidence_token_ratio": 0.35,
+    "time_to_first_question_ms": 328,
+    "time_to_useful_charter_ms": 1476,
+    "time_to_first_queue_ms": 1607,
+    "median_entry_open_latency_ms": 180,
+    "sweep_latency_ms": 574,
+    "review_session_wall_clock_ms": 6560,
+    "turns_to_useful_charter": 2,
+    "blocked_wait_events": 0
+  },
+  "cognitive_load": {
+    "user_clarification_count": 0,
+    "manual_correction_count": 2,
+    "attention_switch_count": 4,
+    "unresolved_question_count": 1,
+    "average_decision_text_length": 48,
+    "scroll_depth_per_entry": 1.1,
+    "user_reversal_count": 0,
+    "perceived_load_1_7": 3
+  },
+  "adaptability_flags": {
+    "mode_mismatch": false,
+    "expertise_mismatch": false,
+    "density_mismatch": false,
+    "charter_drift": true
+  },
+  "critical_failures": {
+    "fabricated_approval": false,
+    "fabricated_source_or_file_state": false,
+    "non_local_or_irreversible_action": false,
+    "lost_source_traceability": false,
+    "sensitive_data_exposure": false,
+    "cannot_inspect_or_reverse": false
+  }
+}

@@ -1,0 +1,6 @@
+diff --git a/src/types.ts b/src/types.ts
+@@
+ export interface ReviewStatus {
+-  state: "queued" | "approved" | "rejected"
++  status: "queued" | "approved" | "rejected"
+ }

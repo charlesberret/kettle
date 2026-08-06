@@ -34,6 +34,8 @@ command dump.
 | Dogfood the stranger path (manual QA) | [how-to/stranger-path-qa](./how-to/stranger-path-qa.md) |
 | Understand the curator memory direction | [explanation/curator-frameworks](./explanation/curator-frameworks.md) |
 | Score curator quality | [reference/curator-scoring](./reference/curator-scoring.md) |
+| See curator benchmark targets | [reference/curator-benchmark](./reference/curator-benchmark.md) |
+| Run the curator evaluation lab | [how-to/run-curator-eval](./how-to/run-curator-eval.md) |
 | Check whether we can ship a preview | [how-to/check-release-readiness](./how-to/check-release-readiness.md) |
 | Know commit message shape | [reference/commit-conventions](./reference/commit-conventions.md) |
 | See sequencing | [explanation/roadmap](./explanation/roadmap.md) |

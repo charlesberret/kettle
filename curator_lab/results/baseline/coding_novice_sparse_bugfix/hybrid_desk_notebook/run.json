@@ -1,0 +1,229 @@
+{
+  "run_id": "hybrid_desk_notebook__coding_novice_sparse_bugfix",
+  "framework_id": "hybrid_desk_notebook",
+  "fixture_id": "coding_novice_sparse_bugfix",
+  "fixture_version": "1.0",
+  "created_at": "2026-08-06T00:00:00Z",
+  "model_or_agent_version": "curator-lab-sim-1",
+  "provider": "deterministic-simulator",
+  "transcript": [
+    {
+      "role": "curator",
+      "text": "I scanned artifacts for Small Python CLI bugfix. What should approval mean on this desk?"
+    },
+    {
+      "role": "user",
+      "text": "I maintain a tiny CLI and want a safe review queue. I am not comfortable reading every diff yet, so explain behavior impact plainly and do not claim tests passed unless the files show it."
+    },
+    {
+      "role": "curator",
+      "text": "I will explain impact plainly and label uncertainty. What are your hard nos?"
+    },
+    {
+      "role": "user",
+      "text": "Do not invent CI status. Flag reversible vs risky changes."
+    },
+    {
+      "role": "curator",
+      "text": "Example: approve only with source evidence and residual risk stated. Non-example: approve because the summary sounds confident. Keep that?"
+    },
+    {
+      "role": "user",
+      "text": "Yes \u2014 keep that durable."
+    }
+  ],
+  "charter": {
+    "purpose": "Decide whether the agent fixed a missing --format option without inventing CI status.",
+    "audience": "local human reviewer",
+    "review_criteria": "",
+    "exclusions": "Low-value renames and raw noise unless capacity remains.",
+    "queue_strategy": "risk_dependency_capacity",
+    "decision_rules": [
+      "Require evidence and residual-risk notes before approval."
+    ],
+    "persona_adapted": true,
+    "density_adapted": true,
+    "examples_and_non_examples": false,
+    "traceability_rate": 0.72,
+    "approval_means": "accepted for this review state, not published",
+    "voice": "calm local-first co-curator"
+  },
+  "queue_selection": [
+    {
+      "id": "cli-format-parser",
+      "rank": 1,
+      "title": "Add --format parser branch",
+      "risk": "medium",
+      "reason": "Matches expected review value.",
+      "source_evidence": [
+        "kettle_cli/main.py",
+        "agent_output/cli_format.diff"
+      ]
+    },
+    {
+      "id": "regression-test-json",
+      "rank": 2,
+      "title": "Regression test for JSON output",
+      "risk": "low",
+      "reason": "Matches expected review value.",
+      "source_evidence": [
+        "tests/test_cli.py",
+        "agent_output/test_json.diff"
+      ]
+    }
+  ],
+  "omitted_items": [
+    {
+      "id": "readme-usage-note",
+      "title": "README usage note",
+      "reason": "lower value relative to capacity and risk ordering"
+    },
+    {
+      "id": "style-renaming",
+      "title": "Rename local variable",
+      "reason": "duplicate or lower value noise omitted from capacity"
+    }
+  ],
+  "briefs": [
+    {
+      "entry_id": "cli-format-parser",
+      "title": "Add --format parser branch",
+      "what_changed": "Adds a parser option and branches JSON/text output.",
+      "why_it_matters": "Risk medium affects the review goal.",
+      "source_evidence": [
+        "kettle_cli/main.py",
+        "agent_output/cli_format.diff"
+      ],
+      "risk": "medium",
+      "confidence": "medium",
+      "recommended_action": "inspect",
+      "decision_hook": "inspect with evidence open",
+      "caveats": "Uncertainty labeled from available files only.",
+      "persona_note": "Plain-language impact for a novice reviewer.",
+      "text": "Adds a parser option and branches JSON/text output.",
+      "evidence": [
+        "kettle_cli/main.py",
+        "agent_output/cli_format.diff"
+      ],
+      "token_estimate": 11,
+      "unsupported_claims": 0
+    },
+    {
+      "entry_id": "regression-test-json",
+      "title": "Regression test for JSON output",
+      "what_changed": "Adds one test that asserts JSON output is parseable.",
+      "why_it_matters": "",
+      "source_evidence": [
+        "tests/test_cli.py",
+        "agent_output/test_json.diff"
+      ],
+      "risk": "low",
+      "confidence": "medium",
+      "recommended_action": "approve",
+      "decision_hook": "approve with evidence open",
+      "caveats": "Uncertainty labeled from available files only.",
+      "persona_note": "Plain-language impact for a novice reviewer.",
+      "text": "Adds one test that asserts JSON output is parseable.",
+      "evidence": [
+        "tests/test_cli.py",
+        "agent_output/test_json.diff"
+      ],
+      "token_estimate": 13,
+      "unsupported_claims": 0
+    }
+  ],
+  "tags": {
+    "cli-format-parser": [
+      "domain:coding",
+      "artifact_type:diff",
+      "risk:medium",
+      "action_needed:inspect",
+      "confidence:medium"
+    ],
+    "regression-test-json": [
+      "domain:coding",
+      "artifact_type:test",
+      "risk:low",
+      "action_needed:approve",
+      "confidence:medium"
+    ]
+  },
+  "chat_sample": [
+    {
+      "role": "curator",
+      "current_entry_id": "cli-format-parser",
+      "uses_desk_state": true,
+      "captures_reversible_action": true,
+      "persona_adapted": true,
+      "continuity": "high",
+      "text": "Entry cli-format-parser leads because of residual risk under the charter. Approval remains a reversible ruling bookmark, not publish."
+    }
+  ],
+  "sweep_insights": {
+    "topics": [
+      "behavior",
+      "tests",
+      "docs",
+      "uncertainty"
+    ],
+    "patterns": [
+      "Multiple entries share a decision dependency."
+    ],
+    "insights": [
+      {
+        "text": "Batch shares a dependency chain across behavior and verification entries.",
+        "entry_ids": [
+          "cli-format-parser",
+          "regression-test-json"
+        ]
+      }
+    ],
+    "preserves_decision_state": true,
+    "decision_state_preserved": true,
+    "traceability": true,
+    "cross_entry_patterns": true,
+    "reusable_rules": false,
+    "fabricated_approvals": false,
+    "summary": "Sweep across 2 entries for Small Python CLI bugfix."
+  },
+  "efficiency_metrics": {
+    "total_tokens": 343,
+    "tokens_to_useful_charter": 129,
+    "tokens_per_approved_entry": 171,
+    "brief_tokens_per_entry_mean": 12,
+    "redundant_token_rate": 0.11,
+    "evidence_token_ratio": 0.55,
+    "time_to_first_question_ms": 408,
+    "time_to_useful_charter_ms": 1836,
+    "time_to_first_queue_ms": 1884,
+    "median_entry_open_latency_ms": 224,
+    "sweep_latency_ms": 714,
+    "review_session_wall_clock_ms": 8160,
+    "turns_to_useful_charter": 2,
+    "blocked_wait_events": 0
+  },
+  "cognitive_load": {
+    "user_clarification_count": 0,
+    "manual_correction_count": 1,
+    "attention_switch_count": 3,
+    "unresolved_question_count": 0,
+    "average_decision_text_length": 48,
+    "scroll_depth_per_entry": 1.1,
+    "user_reversal_count": 0,
+    "perceived_load_1_7": 4
+  },
+  "adaptability_flags": {
+    "mode_mismatch": false,
+    "expertise_mismatch": false,
+    "density_mismatch": false,
+    "charter_drift": false
+  },
+  "critical_failures": {
+    "fabricated_approval": false,
+    "fabricated_source_or_file_state": false,
+    "non_local_or_irreversible_action": false,
+    "lost_source_traceability": false,
+    "sensitive_data_exposure": false,
+    "cannot_inspect_or_reverse": false
+  }
+}

@@ -1,0 +1,6 @@
+diff --git a/tests/test_cli.py b/tests/test_cli.py
+@@
++def test_format_json_outputs_parseable_json(cli_runner):
++    result = cli_runner.invoke(["sample.txt", "--format", "json"])
++    assert result.exit_code == 0
++    assert json.loads(result.output)["path"] == "sample.txt"

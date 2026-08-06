@@ -1,0 +1,316 @@
+{
+  "run_id": "charter_first__writing_novice_dense_launch",
+  "framework_id": "charter_first",
+  "fixture_id": "writing_novice_dense_launch",
+  "fixture_version": "1.0",
+  "created_at": "2026-08-06T00:00:00Z",
+  "model_or_agent_version": "curator-lab-sim-1",
+  "provider": "deterministic-simulator",
+  "transcript": [
+    {
+      "role": "curator",
+      "text": "I scanned artifacts for Product launch copy package. What should approval mean on this desk?"
+    },
+    {
+      "role": "user",
+      "text": "I have a lot of launch copy from an agent. Please group it by channel, explain the approval choice in plain language, and keep risky claims out of approved copy."
+    },
+    {
+      "role": "curator",
+      "text": "Who is the audience for briefs?"
+    },
+    {
+      "role": "user",
+      "text": "Me as reviewer before anything leaves."
+    },
+    {
+      "role": "curator",
+      "text": "Exclusions, batch size, tags, brief style?"
+    },
+    {
+      "role": "user",
+      "text": "Exclude cosmetic noise. Small batches. Risk and action tags. Short briefs."
+    },
+    {
+      "role": "curator",
+      "text": "Extra charter probe 1: tag preferences?"
+    },
+    {
+      "role": "user",
+      "text": "Defaults unless risk tags conflict."
+    },
+    {
+      "role": "curator",
+      "text": "Extra charter probe 2: tag preferences?"
+    },
+    {
+      "role": "user",
+      "text": "Defaults unless risk tags conflict."
+    }
+  ],
+  "charter": {
+    "purpose": "Group launch copy by channel and identify claim, tone, and readiness blockers.",
+    "audience": "local human reviewer",
+    "review_criteria": "Source-backed risk notes; no invented CI/file state; approve is a ruling not publish.",
+    "exclusions": "Low-value renames and raw noise unless capacity remains.",
+    "queue_strategy": "charter_priority",
+    "decision_rules": [
+      "Require evidence and residual-risk notes before approval."
+    ],
+    "persona_adapted": false,
+    "density_adapted": false,
+    "examples_and_non_examples": false,
+    "traceability_rate": 0.75,
+    "approval_means": "accepted for this review state, not published",
+    "voice": "careful desk charter"
+  },
+  "queue_selection": [
+    {
+      "id": "homepage-hero-claim",
+      "rank": 1,
+      "title": "Homepage hero claim",
+      "risk": "high",
+      "reason": "Matches expected review value.",
+      "source_evidence": [
+        "homepage.md"
+      ]
+    },
+    {
+      "id": "press-faq-source-gap",
+      "rank": 2,
+      "title": "Press FAQ source gap",
+      "risk": "high",
+      "reason": "Matches expected review value.",
+      "source_evidence": [
+        "press_faq.md",
+        "launch_notes.md"
+      ]
+    },
+    {
+      "id": "pricing-snippet",
+      "rank": 3,
+      "title": "Pricing snippet needs approval",
+      "risk": "medium",
+      "reason": "Matches expected review value.",
+      "source_evidence": [
+        "pricing.md"
+      ]
+    },
+    {
+      "id": "social-thread-duplicate",
+      "rank": 4,
+      "title": "Duplicated social thread",
+      "risk": "low",
+      "reason": "Matches expected review value.",
+      "source_evidence": [
+        "social.md"
+      ]
+    }
+  ],
+  "omitted_items": [
+    {
+      "id": "email-sequence-tone",
+      "title": "Email sequence tone mismatch",
+      "reason": "lower value relative to capacity and risk ordering"
+    },
+    {
+      "id": "alt-headlines",
+      "title": "Low-risk alternate headlines",
+      "reason": "lower value relative to capacity and risk ordering"
+    }
+  ],
+  "briefs": [
+    {
+      "entry_id": "homepage-hero-claim",
+      "title": "Homepage hero claim",
+      "what_changed": "Claims teams cut review time by 80% without evidence.",
+      "why_it_matters": "Risk high affects the review goal.",
+      "source_evidence": [
+        "homepage.md"
+      ],
+      "risk": "high",
+      "confidence": "medium",
+      "recommended_action": "comment",
+      "decision_hook": null,
+      "caveats": "Uncertainty labeled from available files only.",
+      "persona_note": null,
+      "text": "Claims teams cut review time by 80% without evidence.",
+      "evidence": [
+        "homepage.md"
+      ],
+      "token_estimate": 11,
+      "unsupported_claims": 0
+    },
+    {
+      "entry_id": "press-faq-source-gap",
+      "title": "Press FAQ source gap",
+      "what_changed": "FAQ names integrations that are not in launch notes.",
+      "why_it_matters": "Risk high affects the review goal.",
+      "source_evidence": [
+        "press_faq.md",
+        "launch_notes.md"
+      ],
+      "risk": "high",
+      "confidence": "medium",
+      "recommended_action": "investigate",
+      "decision_hook": null,
+      "caveats": "Uncertainty labeled from available files only.",
+      "persona_note": null,
+      "text": "FAQ names integrations that are not in launch notes.",
+      "evidence": [
+        "press_faq.md",
+        "launch_notes.md"
+      ],
+      "token_estimate": 13,
+      "unsupported_claims": 0
+    },
+    {
+      "entry_id": "pricing-snippet",
+      "title": "Pricing snippet needs approval",
+      "what_changed": "Adds pricing language that needs business approval.",
+      "why_it_matters": "Risk medium affects the review goal.",
+      "source_evidence": [
+        "pricing.md"
+      ],
+      "risk": "medium",
+      "confidence": "medium",
+      "recommended_action": "comment",
+      "decision_hook": null,
+      "caveats": "Uncertainty labeled from available files only.",
+      "persona_note": null,
+      "text": "Adds pricing language that needs business approval.",
+      "evidence": [
+        "pricing.md"
+      ],
+      "token_estimate": 9,
+      "unsupported_claims": 0
+    },
+    {
+      "entry_id": "social-thread-duplicate",
+      "title": "Duplicated social thread",
+      "what_changed": "Repeats the same social thread in two voice variants.",
+      "why_it_matters": "Risk low affects the review goal.",
+      "source_evidence": [
+        "social.md"
+      ],
+      "risk": "low",
+      "confidence": "high",
+      "recommended_action": "omit",
+      "decision_hook": null,
+      "caveats": "Uncertainty labeled from available files only.",
+      "persona_note": null,
+      "text": "Repeats the same social thread in two voice variants.",
+      "evidence": [
+        "social.md"
+      ],
+      "token_estimate": 11,
+      "unsupported_claims": 0
+    }
+  ],
+  "tags": {
+    "homepage-hero-claim": [
+      "domain:writing",
+      "artifact_type:copy",
+      "risk:high",
+      "action_needed:comment",
+      "confidence:medium",
+      "action:review"
+    ],
+    "press-faq-source-gap": [
+      "domain:writing",
+      "artifact_type:claim",
+      "risk:high",
+      "action_needed:investigate",
+      "confidence:medium",
+      "action:review"
+    ],
+    "pricing-snippet": [
+      "domain:writing",
+      "artifact_type:copy",
+      "risk:medium",
+      "action_needed:comment",
+      "confidence:medium",
+      "action:review"
+    ],
+    "social-thread-duplicate": []
+  },
+  "chat_sample": [
+    {
+      "role": "curator",
+      "current_entry_id": "homepage-hero-claim",
+      "uses_desk_state": true,
+      "captures_reversible_action": true,
+      "persona_adapted": false,
+      "continuity": "medium",
+      "text": "Entry homepage-hero-claim leads because of residual risk under the charter. Approval remains a reversible ruling bookmark, not publish."
+    }
+  ],
+  "sweep_insights": {
+    "topics": [
+      "claims",
+      "sources",
+      "approval",
+      "tone",
+      "launch_checklist"
+    ],
+    "patterns": [
+      "Multiple entries share a decision dependency."
+    ],
+    "insights": [
+      {
+        "text": "Batch shares a dependency chain across behavior and verification entries.",
+        "entry_ids": [
+          "homepage-hero-claim",
+          "press-faq-source-gap"
+        ]
+      }
+    ],
+    "preserves_decision_state": true,
+    "decision_state_preserved": true,
+    "traceability": true,
+    "cross_entry_patterns": true,
+    "reusable_rules": false,
+    "fabricated_approvals": false,
+    "summary": "Sweep across 4 entries for Product launch copy package."
+  },
+  "efficiency_metrics": {
+    "total_tokens": 404,
+    "tokens_to_useful_charter": 140,
+    "tokens_per_approved_entry": 101,
+    "brief_tokens_per_entry_mean": 11,
+    "redundant_token_rate": 0.16,
+    "evidence_token_ratio": 0.35,
+    "time_to_first_question_ms": 448,
+    "time_to_useful_charter_ms": 6048,
+    "time_to_first_queue_ms": 2320,
+    "median_entry_open_latency_ms": 246,
+    "sweep_latency_ms": 784,
+    "review_session_wall_clock_ms": 8960,
+    "turns_to_useful_charter": 6,
+    "blocked_wait_events": 0
+  },
+  "cognitive_load": {
+    "user_clarification_count": 4,
+    "manual_correction_count": 1,
+    "attention_switch_count": 3,
+    "unresolved_question_count": 0,
+    "average_decision_text_length": 48,
+    "scroll_depth_per_entry": 1.1,
+    "user_reversal_count": 0,
+    "perceived_load_1_7": 4
+  },
+  "adaptability_flags": {
+    "mode_mismatch": false,
+    "expertise_mismatch": false,
+    "density_mismatch": true,
+    "charter_drift": false
+  },
+  "critical_failures": {
+    "fabricated_approval": false,
+    "fabricated_source_or_file_state": false,
+    "non_local_or_irreversible_action": false,
+    "lost_source_traceability": false,
+    "sensitive_data_exposure": false,
+    "cannot_inspect_or_reverse": false
+  }
+}

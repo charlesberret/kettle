@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "fixture_id": "operations_expert_noisy_incident",
+  "fixture_version": "1.0",
+  "title": "Expert SRE noisy incident review",
+  "persona": {
+    "role": "SRE",
+    "expertise": "expert",
+    "needs": ["timeline fidelity", "causal caution", "action ownership"]
+  },
+  "project": {
+    "type": "operations",
+    "title": "Incident review and runbook update",
+    "review_goal": "Extract actionable incident truth without inventing causality from noisy logs."
+  },
+  "density": "noisy",
+  "curator_capacity": 4,
+  "founding_context": "I want a tight queue: timeline claims, causal hypotheses marked speculative, runbook diffs, and ownered follow-ups. Omit raw log spam.",
+  "raw_agent_outputs": [
+    {
+      "id": "timeline-draft",
+      "title": "Incident timeline draft",
+      "kind": "ops",
+      "path": "agent_output/timeline.md",
+      "domain": "operations",
+      "risk": "high",
+      "confidence": "medium",
+      "signals": ["expected", "source_traceable"],
+      "summary": "Orders detection, mitigation, and recovery events.",
+      "recommended_action": "inspect",
+      "source_evidence": ["agent_output/timeline.md", "pager_export.json"]
+    },
+    {
+      "id": "causal-hypothesis",
+      "title": "Causal hypothesis memo",
+      "kind": "ops",
+      "path": "agent_output/cause.md",
+      "domain": "operations",
+      "risk": "high",
+      "confidence": "low",
+      "signals": ["expected", "needs_uncertainty"],
+      "summary": "Suggests deploy overlap caused the outage without proving it.",
+      "recommended_action": "inspect",
+      "source_evidence": ["agent_output/cause.md"]
+    },
+    {
+      "id": "runbook-patch",
+      "title": "Runbook mitigation steps",
+      "kind": "docs",
+      "path": "agent_output/runbook.diff",
+      "domain": "operations",
+      "risk": "medium",
+      "confidence": "medium",
+      "signals": ["expected", "source_traceable"],
+      "summary": "Adds rollback and cache-flush steps to the runbook.",
+      "recommended_action": "inspect",
+      "source_evidence": ["runbooks/api-latency.md", "agent_output/runbook.diff"]
+    },
+    {
+      "id": "action-owners",
+      "title": "Follow-up owners list",
+      "kind": "ops",
+      "path": "agent_output/owners.md",
+      "domain": "operations",
+      "risk": "medium",
+      "confidence": "high",
+      "signals": ["expected"],
+      "summary": "Assigns follow-ups to oncall and platform.",
+      "recommended_action": "approve",
+      "source_evidence": ["agent_output/owners.md"]
+    },
+    {
+      "id": "raw-log-spam",
+      "title": "Unfiltered log paste",
+      "kind": "ops",
+      "path": "agent_output/logs.txt",
+      "domain": "operations",
+      "risk": "low",
+      "confidence": "low",
+      "signals": ["expected_omit", "low_review_value"],
+      "summary": "Thousands of repeated timeout lines with no curation.",
+      "recommended_action": "omit",
+      "source_evidence": ["agent_output/logs.txt"]
+    }
+  ],
+  "expected_queue": ["timeline-draft", "causal-hypothesis", "runbook-patch", "action-owners"],
+  "expected_omissions": ["raw-log-spam"],
+  "answer_key": {
+    "priority_order": ["timeline-draft", "causal-hypothesis", "runbook-patch", "action-owners"],
+    "required_tags": {
+      "timeline-draft": ["domain:operations", "artifact_type:ops", "risk:high", "action_needed:inspect", "confidence:medium", "sweep_topic:timeline"],
+      "causal-hypothesis": ["domain:operations", "artifact_type:ops", "risk:high", "action_needed:inspect", "confidence:low", "sweep_topic:causality"],
+      "runbook-patch": ["domain:operations", "artifact_type:docs", "risk:medium", "action_needed:inspect", "confidence:medium", "sweep_topic:runbook"],
+      "action-owners": ["domain:operations", "artifact_type:ops", "risk:medium", "action_needed:approve", "confidence:high", "sweep_topic:owners"]
+    },
+    "sweep_topics": ["timeline", "causality", "runbook", "owners"],
+    "adaptability_expectations": ["expert_terse", "noisy_signal_extraction", "no_false_causality"],
+    "critical_failures": []
+  },
+  "efficiency_targets": {
+    "turns_to_useful_charter_max": 4,
+    "time_to_first_queue_ms_max": 4200,
+    "redundant_token_rate_max": 0.18,
+    "manual_correction_count_max": 2,
+    "perceived_load_1_7_max": 4
+  }
+}

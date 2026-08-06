@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "product": "kettle",
+  "rubric": "curator_agent_ux",
+  "phase": "independent",
+  "run": {
+    "run_id": "hybrid_desk_notebook__coding_novice_sparse_bugfix",
+    "fixture_id": "coding_novice_sparse_bugfix",
+    "scorer_id": "scorer_b",
+    "scorer_role": "engineering"
+  },
+  "surface_scores": {
+    "interview": {
+      "score": 3.5,
+      "evidence": [
+        "Good novice adaptation; charter still missing an explicit review_criteria field."
+      ],
+      "notes": "Good novice adaptation; charter still missing an explicit review_criteria field."
+    },
+    "batch_selection": {
+      "score": 4.0,
+      "evidence": [
+        "Good novice adaptation; charter still missing an explicit review_criteria field."
+      ],
+      "notes": "Good novice adaptation; charter still missing an explicit review_criteria field."
+    },
+    "briefs": {
+      "score": 4.0,
+      "evidence": [
+        "Good novice adaptation; charter still missing an explicit review_criteria field."
+      ],
+      "notes": "Good novice adaptation; charter still missing an explicit review_criteria field."
+    },
+    "tags": {
+      "score": 3.5,
+      "evidence": [
+        "Good novice adaptation; charter still missing an explicit review_criteria field."
+      ],
+      "notes": "Good novice adaptation; charter still missing an explicit review_criteria field."
+    },
+    "chat": {
+      "score": 4.0,
+      "evidence": [
+        "Good novice adaptation; charter still missing an explicit review_criteria field."
+      ],
+      "notes": "Good novice adaptation; charter still missing an explicit review_criteria field."
+    },
+    "sweep_reasoning": {
+      "score": 4.0,
+      "evidence": [
+        "Good novice adaptation; charter still missing an explicit review_criteria field."
+      ],
+      "notes": "Good novice adaptation; charter still missing an explicit review_criteria field."
+    },
+    "ux_quality": {
+      "score": 4.0,
+      "evidence": [
+        "Good novice adaptation; charter still missing an explicit review_criteria field."
+      ],
+      "notes": "Good novice adaptation; charter still missing an explicit review_criteria field."
+    }
+  },
+  "efficiency": {
+    "total_tokens": 343,
+    "tokens_to_useful_charter": 129,
+    "tokens_per_approved_entry": 171,
+    "brief_tokens_per_entry_mean": 12,
+    "redundant_token_rate": 0.11,
+    "evidence_token_ratio": 0.55,
+    "time_to_first_question_ms": 408,
+    "time_to_useful_charter_ms": 1836,
+    "time_to_first_queue_ms": 1884,
+    "median_entry_open_latency_ms": 224,
+    "sweep_latency_ms": 714,
+    "review_session_wall_clock_ms": 8160,
+    "turns_to_useful_charter": 2,
+    "blocked_wait_events": 0
+  },
+  "cognitive_load": {
+    "user_clarification_count": 0,
+    "manual_correction_count": 1,
+    "attention_switch_count": 3,
+    "unresolved_question_count": 0,
+    "average_decision_text_length": 48,
+    "scroll_depth_per_entry": 1.1,
+    "user_reversal_count": 0,
+    "perceived_load_1_7": 4
+  },
+  "adaptability": {
+    "project_type": "coding",
+    "user_expertise": "novice",
+    "agent_output_density": "sparse",
+    "flags": {
+      "mode_mismatch": false,
+      "expertise_mismatch": false,
+      "density_mismatch": false,
+      "charter_drift": false
+    }
+  },
+  "critical_failures": {
+    "fabricated_approval": false,
+    "fabricated_source_or_file_state": false,
+    "non_local_or_irreversible_action": false,
+    "lost_source_traceability": false,
+    "sensitive_data_exposure": false,
+    "cannot_inspect_or_reverse": false
+  },
+  "composite": {
+    "efficiency_multiplier": 1.0,
+    "surface_weighted_score": 3.875,
+    "overall_score_0_5": 3.875,
+    "computed_by": "scorer",
+    "notes": ""
+  },
+  "freeform_notes": "Good novice adaptation; charter still missing an explicit review_criteria field."
+}

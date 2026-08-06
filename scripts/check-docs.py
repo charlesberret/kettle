@@ -27,6 +27,7 @@ SKIP_DIRS = {
     "out",
     "planning",
     "resources",
+    "results",
     "venv",
 }
 

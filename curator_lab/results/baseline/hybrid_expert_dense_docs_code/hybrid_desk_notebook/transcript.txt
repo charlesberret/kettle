@@ -1,0 +1,6 @@
+curator: I scanned artifacts for Docs and code examples. What should approval mean on this desk?
+user: I need a tight queue connecting docs claims to code examples. Prioritize API mismatches, runnable examples, and source evidence.
+curator: I will keep briefs terse and risk-ordered. Any standing hard no?
+user: Hard no: unsupported claims and silent config risk.
+curator: Example: approve only with source evidence and residual risk stated. Non-example: approve because the summary sounds confident. Keep that?
+user: Yes — keep that durable.

@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "product": "kettle",
+  "rubric": "curator_agent_ux",
+  "phase": "independent",
+  "run": {
+    "run_id": "hybrid_desk_notebook__writing_novice_dense_launch",
+    "fixture_id": "writing_novice_dense_launch",
+    "scorer_id": "scorer_a",
+    "scorer_role": "product"
+  },
+  "surface_scores": {
+    "interview": {
+      "score": 4.0,
+      "evidence": [
+        "Batching by channel risk feels right; chat continuity only medium on dense package."
+      ],
+      "notes": "Batching by channel risk feels right; chat continuity only medium on dense package."
+    },
+    "batch_selection": {
+      "score": 4.5,
+      "evidence": [
+        "Batching by channel risk feels right; chat continuity only medium on dense package."
+      ],
+      "notes": "Batching by channel risk feels right; chat continuity only medium on dense package."
+    },
+    "briefs": {
+      "score": 4.0,
+      "evidence": [
+        "Batching by channel risk feels right; chat continuity only medium on dense package."
+      ],
+      "notes": "Batching by channel risk feels right; chat continuity only medium on dense package."
+    },
+    "tags": {
+      "score": 3.5,
+      "evidence": [
+        "Batching by channel risk feels right; chat continuity only medium on dense package."
+      ],
+      "notes": "Batching by channel risk feels right; chat continuity only medium on dense package."
+    },
+    "chat": {
+      "score": 3.5,
+      "evidence": [
+        "Batching by channel risk feels right; chat continuity only medium on dense package."
+      ],
+      "notes": "Batching by channel risk feels right; chat continuity only medium on dense package."
+    },
+    "sweep_reasoning": {
+      "score": 4.0,
+      "evidence": [
+        "Batching by channel risk feels right; chat continuity only medium on dense package."
+      ],
+      "notes": "Batching by channel risk feels right; chat continuity only medium on dense package."
+    },
+    "ux_quality": {
+      "score": 4.0,
+      "evidence": [
+        "Batching by channel risk feels right; chat continuity only medium on dense package."
+      ],
+      "notes": "Batching by channel risk feels right; chat continuity only medium on dense package."
+    }
+  },
+  "efficiency": {
+    "total_tokens": 346,
+    "tokens_to_useful_charter": 122,
+    "tokens_per_approved_entry": 115,
+    "brief_tokens_per_entry_mean": 11,
+    "redundant_token_rate": 0.11,
+    "evidence_token_ratio": 0.55,
+    "time_to_first_question_ms": 408,
+    "time_to_useful_charter_ms": 1836,
+    "time_to_first_queue_ms": 2113,
+    "median_entry_open_latency_ms": 224,
+    "sweep_latency_ms": 714,
+    "review_session_wall_clock_ms": 8160,
+    "turns_to_useful_charter": 2,
+    "blocked_wait_events": 0
+  },
+  "cognitive_load": {
+    "user_clarification_count": 0,
+    "manual_correction_count": 1,
+    "attention_switch_count": 3,
+    "unresolved_question_count": 0,
+    "average_decision_text_length": 48,
+    "scroll_depth_per_entry": 1.1,
+    "user_reversal_count": 0,
+    "perceived_load_1_7": 4
+  },
+  "adaptability": {
+    "project_type": "writing",
+    "user_expertise": "novice",
+    "agent_output_density": "dense",
+    "flags": {
+      "mode_mismatch": false,
+      "expertise_mismatch": false,
+      "density_mismatch": false,
+      "charter_drift": false
+    }
+  },
+  "critical_failures": {
+    "fabricated_approval": false,
+    "fabricated_source_or_file_state": false,
+    "non_local_or_irreversible_action": false,
+    "lost_source_traceability": false,
+    "sensitive_data_exposure": false,
+    "cannot_inspect_or_reverse": false
+  },
+  "composite": {
+    "efficiency_multiplier": 1.0,
+    "surface_weighted_score": 3.975,
+    "overall_score_0_5": 3.975,
+    "computed_by": "scorer",
+    "notes": ""
+  },
+  "freeform_notes": "Batching by channel risk feels right; chat continuity only medium on dense package."
+}

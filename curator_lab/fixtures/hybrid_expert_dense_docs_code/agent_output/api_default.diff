@@ -1,0 +1,4 @@
+diff --git a/src/config.ts b/src/config.ts
+@@
+-export const defaultSyncMode = "remoteReview"
++export const defaultSyncMode = "localOnly"
