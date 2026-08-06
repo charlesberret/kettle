@@ -18,7 +18,8 @@ outside its original workshop.
 - Finish Host and Origin validation for the localhost HTTP surface.
 - Add a per-boot local authentication design before widening integrations.
 - Run a stranger-path dogfood pass: install, found a Desk, review an entry,
-  comment, approve, and sweep without maintainer-only knowledge.
+  comment, approve, and sweep without maintainer-only knowledge
+  ([checklist](../how-to/stranger-path-qa.md)).
 - Finish repository descriptions, topics, issue routing, and private
   vulnerability reporting.
 - Make the source repositories public only when their cross-repository links

@@ -93,6 +93,7 @@ product craft, not a side effect.
 - [ ] A project is registered  
 - [ ] You completed at least one approve (or a clear founding step)  
 
-**Next:** [how-to: check release readiness](../how-to/check-release-readiness.md)  
+**Next:** [how-to: stranger-path QA](../how-to/stranger-path-qa.md) for a full
+dogfood checklist; [how-to: check release readiness](../how-to/check-release-readiness.md)
 if you are contributing; [explanation: architecture](../explanation/architecture.md)
 if you want the family map.

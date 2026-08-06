@@ -20,7 +20,7 @@ command dump.
 | Kind | Need | In this tree |
 |------|------|----------------|
 | **[Tutorials](./tutorials/)** | “Take me through a first success” | Learning path: first sitting |
-| **[How-to guides](./how-to/)** | “I need to achieve X” | Concrete tasks: release check, hooks, contribute |
+| **[How-to guides](./how-to/)** | “I need to achieve X” | Concrete tasks: release check, stranger-path QA, hooks, contribute |
 | **[Reference](./reference/)** | “What are the facts / gates / names?” | Release gates, commit conventions |
 | **[Explanation](./explanation/)** | “Why is it built this way?” | Architecture, product home, roadmap |
 
@@ -31,6 +31,7 @@ command dump.
 | Understand what this repo is for | [explanation/product-home](./explanation/product-home.md) |
 | See how the family fits together | [explanation/architecture](./explanation/architecture.md) |
 | Learn by doing a first pass | [tutorials/first-sitting](./tutorials/first-sitting.md) |
+| Dogfood the stranger path (manual QA) | [how-to/stranger-path-qa](./how-to/stranger-path-qa.md) |
 | Check whether we can ship a preview | [how-to/check-release-readiness](./how-to/check-release-readiness.md) |
 | Know commit message shape | [reference/commit-conventions](./reference/commit-conventions.md) |
 | See sequencing | [explanation/roadmap](./explanation/roadmap.md) |
