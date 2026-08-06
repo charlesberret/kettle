@@ -1,0 +1,135 @@
+{
+  "schema_version": 1,
+  "product": "kettle",
+  "rubric": "curator_agent_ux",
+  "phase": "independent",
+  "run": {
+    "run_id": "hybrid_desk_notebook__coding_novice_sparse_bugfix",
+    "fixture_id": "coding_novice_sparse_bugfix",
+    "fixture_version": "1.0",
+    "created_at": "2026-08-06T06:08:37Z",
+    "model_or_agent_version": "curator-lab-sim-1",
+    "provider": "deterministic-simulator",
+    "scorer_id": "scorer_a",
+    "scorer_role": "product"
+  },
+  "surface_scores": {
+    "interview": {
+      "score": 4.0,
+      "evidence": [
+        "Transcript asks what approval should mean, then captures novice need for plain behavior impact and no invented test/CI status.",
+        "Curator confirms hard nos and gives an approve/non-example rule that the user accepts as durable.",
+        "Charter records purpose, approval meaning, decision rule, persona/density adaptation, examples/non-examples, and 0.84 traceability rate."
+      ],
+      "notes": "Efficient, high-signal setup that maps directly to later queue and evidence behavior. Not a 5 because the charter's review_criteria field is empty and the interview does not surface many hidden tradeoffs beyond evidence and reversibility."
+    },
+    "batch_selection": {
+      "score": 4.0,
+      "evidence": [
+        "Queue contains the parser branch, JSON regression test, and README usage note, ordered with medium-risk behavior first and lower-risk verification/docs after.",
+        "Each queued item preserves source evidence paths such as kettle_cli/main.py, tests/test_cli.py, README.md, and agent_output diffs.",
+        "Low-value style-renaming item is explicitly omitted as lower-value noise."
+      ],
+      "notes": "Strong risk/dependency/capacity shaping for a sparse coding bugfix. It separates inspect from approve-now items and keeps a novice-sized queue."
+    },
+    "briefs": {
+      "score": 3.5,
+      "evidence": [
+        "All 3 briefs state what changed, risk, confidence, recommended action, decision hook, caveat, persona note, and source evidence.",
+        "The parser brief plainly says it adds a parser option and JSON/text branch; the test brief says it asserts JSON output is parseable.",
+        "Caveats say uncertainty is limited to available files and no unsupported claims are recorded."
+      ],
+      "notes": "Briefs are source-grounded and decision-oriented, but the visible prose is very terse and the why-it-matters language is generic. They do not explicitly call out test execution status despite that being a founding concern."
+    },
+    "tags": {
+      "score": 3.5,
+      "evidence": [
+        "Tags consistently encode domain/artifact_type/risk/action_needed/confidence across all entries.",
+        "Parser and test entries are correctly risked and actioned as inspect/approve.",
+        "README item uses domain:writing with artifact_type:docs, which may be accurate for docs but can fragment coding-fixture filtering."
+      ],
+      "notes": "Useful compact taxonomy with consistent dimensions. Slightly below 4 because cross-domain tagging for README could obscure a coding review batch and there are no sweep/dependency tags."
+    },
+    "chat": {
+      "score": 3.5,
+      "evidence": [
+        "Chat sample uses current_entry_id cli-format-parser and explains why it leads under the charter.",
+        "It reinforces that approval is a reversible ruling bookmark, not publish.",
+        "Run marks uses_desk_state, captures_reversible_action, persona_adapted, and high continuity."
+      ],
+      "notes": "Useful and aligned with visible desk state, but only one sample is present and it is more orienting than deeply co-curatorial."
+    },
+    "sweep_reasoning": {
+      "score": 3.5,
+      "evidence": [
+        "Sweep topics cover behavior, tests, docs, and uncertainty.",
+        "Sweep preserves decision state, traceability, cross-entry patterns, and records no fabricated approvals.",
+        "Insight links cli-format-parser and regression-test-json as a dependency chain across behavior and verification."
+      ],
+      "notes": "Faithful and traceable with a relevant cross-entry pattern. It remains somewhat generic and does not provide a richer handoff around test/CI uncertainty or approved versus inspect status."
+    },
+    "ux_quality": {
+      "score": 3.5,
+      "evidence": [
+        "Copy is calm, local-first, and consistently uses approval as a reversible desk ruling.",
+        "Novice-facing language emphasizes plain behavior impact and uncertainty.",
+        "The interaction is concise with no blocked waits."
+      ],
+      "notes": "Clear, steady product feel with some desk craft. The simulator language is still templated enough to fall short of polished/distinctive."
+    }
+  },
+  "efficiency": {
+    "total_tokens": 353,
+    "tokens_to_useful_charter": 129,
+    "tokens_per_approved_entry": 117,
+    "brief_tokens_per_entry_mean": 11,
+    "redundant_token_rate": 0.11,
+    "evidence_token_ratio": 0.55,
+    "time_to_first_question_ms": 408,
+    "time_to_useful_charter_ms": 1836,
+    "time_to_first_queue_ms": 1884,
+    "median_entry_open_latency_ms": 224,
+    "sweep_latency_ms": 714,
+    "review_session_wall_clock_ms": 8160,
+    "turns_to_useful_charter": 2,
+    "blocked_wait_events": 0
+  },
+  "cognitive_load": {
+    "user_clarification_count": 0,
+    "manual_correction_count": 1,
+    "attention_switch_count": 3,
+    "unresolved_question_count": 0,
+    "average_decision_text_length": 48,
+    "scroll_depth_per_entry": 1.1,
+    "user_reversal_count": 0,
+    "perceived_load_1_7": 3
+  },
+  "adaptability": {
+    "project_type": "coding",
+    "user_expertise": "novice",
+    "agent_output_density": "sparse",
+    "flags": {
+      "mode_mismatch": false,
+      "expertise_mismatch": false,
+      "density_mismatch": false,
+      "charter_drift": false
+    },
+    "notes": "Good novice/sparse adaptation: plain explanations, uncertainty labeling, small queue, and no invented test status."
+  },
+  "critical_failures": {
+    "fabricated_approval": false,
+    "fabricated_source_or_file_state": false,
+    "non_local_or_irreversible_action": false,
+    "lost_source_traceability": false,
+    "sensitive_data_exposure": false,
+    "cannot_inspect_or_reverse": false
+  },
+  "composite": {
+    "efficiency_multiplier": 1.0,
+    "surface_weighted_score": 3.675,
+    "overall_score_0_5": 3.675,
+    "computed_by": "scorer",
+    "notes": "No major efficiency misses or blocked waits observed, so multiplier is 1.00."
+  },
+  "freeform_notes": "Strongest of the three reviewed runs for alignment between founding preferences, queue shape, and sweep. Half-points reflect useful but terse briefs/chat/sweep that sit between usable baseline and strong."
+}
