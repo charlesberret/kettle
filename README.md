@@ -109,6 +109,7 @@ Documentation uses [Diátaxis](./docs/README.md):
 - [Roadmap](./docs/explanation/roadmap.md)
 - [Release gates](./docs/reference/release-gates.md)
 - [First sitting (tutorial)](./docs/tutorials/first-sitting.md)
+- [Stranger-path QA (how-to)](./docs/how-to/stranger-path-qa.md)
 - [Contributing](./CONTRIBUTING.md)
 - [Security policy](./SECURITY.md)
 

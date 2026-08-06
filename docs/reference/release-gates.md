@@ -28,7 +28,8 @@ The first public preview is ready when:
 | Release inputs are reproducible | all publishable Git worktrees clean |
 | Source is publicly reachable | family links and clone commands work without authentication |
 
-Manual release evidence:
+Manual release evidence (executable checklist:
+[stranger-path QA](../how-to/stranger-path-qa.md)):
 
 - install from the public instructions on a clean machine or user account;
 - found or open a real Desk;

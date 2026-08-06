@@ -34,9 +34,11 @@ python3 scripts/check-docs.py
 - Automated gates in [release gates](../reference/release-gates.md) report **PASS**
   (or an intentional **SKIP** you accept for a non-strict local run).  
 - Manual dogfood gates are **not** run by the script — record them separately
-  when cutting a preview.
+  when cutting a preview. Use
+  [stranger-path QA](./stranger-path-qa.md) for that checklist.
 
 ## Related
 
+- [How to run a stranger-path dogfood pass](./stranger-path-qa.md)  
 - [Reference: release gates](../reference/release-gates.md)  
 - [Explanation: roadmap](../explanation/roadmap.md)  
