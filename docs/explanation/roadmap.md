@@ -57,3 +57,9 @@ outside its original workshop.
 5. Core owns semantics and adapters remain thin.
 6. Breaking contracts advance versions and ship with migrations.
 7. New repositories need a real implementation and release path.
+
+## Soft release channels
+
+For package-name reservations, marketplace accounts, dogfood-vs-announce
+criteria, and where to post once installable, see
+[soft release](./soft-release.md).

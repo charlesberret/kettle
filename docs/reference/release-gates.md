@@ -49,6 +49,9 @@ Manual release evidence (executable checklist:
 | Editor marketplace | live activation, declared permissions, icon and listing, rollback plan |
 | macOS application | exact core provenance, packaged smoke, signing, notarization, update plan |
 
+Channel sequencing (reserve names now, announce only what installs today):
+[soft release](../explanation/soft-release.md).
+
 Viewport package versions do not need to match. Compatibility is governed by
 the API and Desk-schema contracts published by core and declared by adapters.
 
