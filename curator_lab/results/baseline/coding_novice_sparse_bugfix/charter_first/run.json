@@ -1,0 +1,274 @@
+{
+  "run_id": "charter_first__coding_novice_sparse_bugfix",
+  "framework_id": "charter_first",
+  "fixture_id": "coding_novice_sparse_bugfix",
+  "fixture_version": "1.0",
+  "created_at": "2026-08-06T00:00:00Z",
+  "model_or_agent_version": "curator-lab-sim-1",
+  "provider": "deterministic-simulator",
+  "transcript": [
+    {
+      "role": "curator",
+      "text": "I scanned artifacts for Small Python CLI bugfix. What should approval mean on this desk?"
+    },
+    {
+      "role": "user",
+      "text": "I maintain a tiny CLI and want a safe review queue. I am not comfortable reading every diff yet, so explain behavior impact plainly and do not claim tests passed unless the files show it."
+    },
+    {
+      "role": "curator",
+      "text": "Who is the audience for briefs?"
+    },
+    {
+      "role": "user",
+      "text": "Me as reviewer before anything leaves."
+    },
+    {
+      "role": "curator",
+      "text": "Exclusions, batch size, tags, brief style?"
+    },
+    {
+      "role": "user",
+      "text": "Exclude cosmetic noise. Small batches. Risk and action tags. Short briefs."
+    },
+    {
+      "role": "curator",
+      "text": "Extra charter probe 1: tag preferences?"
+    },
+    {
+      "role": "user",
+      "text": "Defaults unless risk tags conflict."
+    },
+    {
+      "role": "curator",
+      "text": "Extra charter probe 2: tag preferences?"
+    },
+    {
+      "role": "user",
+      "text": "Defaults unless risk tags conflict."
+    }
+  ],
+  "charter": {
+    "purpose": "Decide whether the agent fixed a missing --format option without inventing CI status.",
+    "audience": "local human reviewer",
+    "review_criteria": "Source-backed risk notes; no invented CI/file state; approve is a ruling not publish.",
+    "exclusions": "Low-value renames and raw noise unless capacity remains.",
+    "queue_strategy": "charter_priority",
+    "decision_rules": [
+      "Require evidence and residual-risk notes before approval."
+    ],
+    "persona_adapted": false,
+    "density_adapted": false,
+    "examples_and_non_examples": false,
+    "traceability_rate": 0.75,
+    "approval_means": "accepted for this review state, not published",
+    "voice": "careful desk charter"
+  },
+  "queue_selection": [
+    {
+      "id": "cli-format-parser",
+      "rank": 1,
+      "title": "Add --format parser branch",
+      "risk": "medium",
+      "reason": "Matches expected review value.",
+      "source_evidence": [
+        "kettle_cli/main.py",
+        "agent_output/cli_format.diff"
+      ]
+    },
+    {
+      "id": "regression-test-json",
+      "rank": 2,
+      "title": "Regression test for JSON output",
+      "risk": "low",
+      "reason": "Matches expected review value.",
+      "source_evidence": [
+        "tests/test_cli.py",
+        "agent_output/test_json.diff"
+      ]
+    },
+    {
+      "id": "style-renaming",
+      "rank": 3,
+      "title": "Rename local variable",
+      "risk": "low",
+      "reason": "Matches expected review value.",
+      "source_evidence": [
+        "kettle_cli/main.py"
+      ]
+    }
+  ],
+  "omitted_items": [
+    {
+      "id": "readme-usage-note",
+      "title": "README usage note",
+      "reason": "lower value relative to capacity and risk ordering"
+    }
+  ],
+  "briefs": [
+    {
+      "entry_id": "cli-format-parser",
+      "title": "Add --format parser branch",
+      "what_changed": "Adds a parser option and branches JSON/text output.",
+      "why_it_matters": "Risk medium affects the review goal.",
+      "source_evidence": [
+        "kettle_cli/main.py",
+        "agent_output/cli_format.diff"
+      ],
+      "risk": "medium",
+      "confidence": "medium",
+      "recommended_action": "inspect",
+      "decision_hook": null,
+      "caveats": "Uncertainty labeled from available files only.",
+      "persona_note": null,
+      "text": "Adds a parser option and branches JSON/text output.",
+      "evidence": [
+        "kettle_cli/main.py",
+        "agent_output/cli_format.diff"
+      ],
+      "token_estimate": 11,
+      "unsupported_claims": 0
+    },
+    {
+      "entry_id": "regression-test-json",
+      "title": "Regression test for JSON output",
+      "what_changed": "Adds one test that asserts JSON output is parseable.",
+      "why_it_matters": "Risk low affects the review goal.",
+      "source_evidence": [
+        "tests/test_cli.py",
+        "agent_output/test_json.diff"
+      ],
+      "risk": "low",
+      "confidence": "medium",
+      "recommended_action": "approve",
+      "decision_hook": null,
+      "caveats": "Uncertainty labeled from available files only.",
+      "persona_note": null,
+      "text": "Adds one test that asserts JSON output is parseable.",
+      "evidence": [
+        "tests/test_cli.py",
+        "agent_output/test_json.diff"
+      ],
+      "token_estimate": 13,
+      "unsupported_claims": 0
+    },
+    {
+      "entry_id": "style-renaming",
+      "title": "Rename local variable",
+      "what_changed": "Renames result to output in one branch.",
+      "why_it_matters": "Risk low affects the review goal.",
+      "source_evidence": [
+        "kettle_cli/main.py"
+      ],
+      "risk": "low",
+      "confidence": "low",
+      "recommended_action": "omit",
+      "decision_hook": null,
+      "caveats": "Uncertainty labeled from available files only.",
+      "persona_note": null,
+      "text": "Renames result to output in one branch.",
+      "evidence": [
+        "kettle_cli/main.py"
+      ],
+      "token_estimate": 9,
+      "unsupported_claims": 0
+    }
+  ],
+  "tags": {
+    "cli-format-parser": [
+      "domain:coding",
+      "artifact_type:diff",
+      "risk:medium",
+      "action_needed:inspect",
+      "confidence:medium",
+      "action:review"
+    ],
+    "regression-test-json": [
+      "domain:coding",
+      "artifact_type:test",
+      "risk:low",
+      "action_needed:approve",
+      "confidence:medium",
+      "action:review"
+    ],
+    "style-renaming": []
+  },
+  "chat_sample": [
+    {
+      "role": "curator",
+      "current_entry_id": "cli-format-parser",
+      "uses_desk_state": true,
+      "captures_reversible_action": true,
+      "persona_adapted": false,
+      "continuity": "medium",
+      "text": "Entry cli-format-parser leads because of residual risk under the charter. Approval remains a reversible ruling bookmark, not publish."
+    }
+  ],
+  "sweep_insights": {
+    "topics": [
+      "behavior",
+      "tests",
+      "docs",
+      "uncertainty"
+    ],
+    "patterns": [
+      "Multiple entries share a decision dependency."
+    ],
+    "insights": [
+      {
+        "text": "Batch shares a dependency chain across behavior and verification entries.",
+        "entry_ids": [
+          "cli-format-parser",
+          "regression-test-json"
+        ]
+      }
+    ],
+    "preserves_decision_state": true,
+    "decision_state_preserved": true,
+    "traceability": true,
+    "cross_entry_patterns": true,
+    "reusable_rules": false,
+    "fabricated_approvals": false,
+    "summary": "Sweep across 3 entries for Small Python CLI bugfix."
+  },
+  "efficiency_metrics": {
+    "total_tokens": 398,
+    "tokens_to_useful_charter": 147,
+    "tokens_per_approved_entry": 132,
+    "brief_tokens_per_entry_mean": 11,
+    "redundant_token_rate": 0.16,
+    "evidence_token_ratio": 0.35,
+    "time_to_first_question_ms": 448,
+    "time_to_useful_charter_ms": 6048,
+    "time_to_first_queue_ms": 2069,
+    "median_entry_open_latency_ms": 246,
+    "sweep_latency_ms": 784,
+    "review_session_wall_clock_ms": 8960,
+    "turns_to_useful_charter": 6,
+    "blocked_wait_events": 0
+  },
+  "cognitive_load": {
+    "user_clarification_count": 4,
+    "manual_correction_count": 1,
+    "attention_switch_count": 3,
+    "unresolved_question_count": 0,
+    "average_decision_text_length": 48,
+    "scroll_depth_per_entry": 1.1,
+    "user_reversal_count": 0,
+    "perceived_load_1_7": 4
+  },
+  "adaptability_flags": {
+    "mode_mismatch": false,
+    "expertise_mismatch": false,
+    "density_mismatch": false,
+    "charter_drift": false
+  },
+  "critical_failures": {
+    "fabricated_approval": false,
+    "fabricated_source_or_file_state": false,
+    "non_local_or_irreversible_action": false,
+    "lost_source_traceability": false,
+    "sensitive_data_exposure": false,
+    "cannot_inspect_or_reverse": false
+  }
+}

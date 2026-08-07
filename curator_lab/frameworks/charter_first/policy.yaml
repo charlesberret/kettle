@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "framework_id": "charter_first",
+  "display_name": "Charter First",
+  "strategy": "charter_first",
+  "strengths": {
+    "interview": 4.1,
+    "batch_selection": 3.3,
+    "briefs": 3.4,
+    "tags": 3.0,
+    "chat": 3.2,
+    "sweep_reasoning": 3.4,
+    "ux_quality": 3.3
+  },
+  "queue": {
+    "max_items_offset": 1,
+    "expected_recall": 0.80,
+    "allow_extra_low_risk": true,
+    "explain_omissions": true,
+    "order_by": "charter_priority"
+  },
+  "interview": {
+    "turn_style": "thorough",
+    "adapts_to_expertise": false,
+    "adapts_to_density": false,
+    "decision_rule_examples": true,
+    "turn_overhead": 2
+  },
+  "brief": {
+    "evidence_depth": "medium",
+    "risk_depth": "medium",
+    "action_framing": "standard",
+    "persona_tuning": "low"
+  },
+  "tags": {
+    "taxonomy": ["domain", "artifact_type", "risk", "action_needed", "confidence"],
+    "duplicate_synonym_rate": 0.08,
+    "manual_correction_bias": 1
+  },
+  "chat": {
+    "continuity": "medium",
+    "asks_before_update": true,
+    "persona_tuning": "low"
+  },
+  "sweep": {
+    "synthesis_depth": "medium",
+    "preserves_decision_state": true,
+    "cross_entry_patterns": true
+  },
+  "efficiency": {
+    "latency_factor": 1.12,
+    "token_factor": 1.18,
+    "redundant_token_rate": 0.16,
+    "blocked_wait_events": 0
+  },
+  "ux": {
+    "voice": "careful desk charter",
+    "terminology_consistency": 0.80,
+    "local_first_control": true
+  }
+}

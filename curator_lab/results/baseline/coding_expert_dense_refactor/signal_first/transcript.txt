@@ -1,0 +1,3 @@
+curator: I scanned artifacts for TypeScript refactor with tests and config. What should approval mean on this desk?
+user: Keep the queue dense and evidence-linked. I care about behavior drift, public API changes, tsconfig, and failed tests more than style churn.
+curator: Understood. I will learn from rulings.

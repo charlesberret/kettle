@@ -1,0 +1,6 @@
+curator: I scanned artifacts for TypeScript refactor with tests and config. What should approval mean on this desk?
+user: Keep the queue dense and evidence-linked. I care about behavior drift, public API changes, tsconfig, and failed tests more than style churn.
+curator: I will keep briefs terse and risk-ordered. Any standing hard no?
+user: Hard no: unsupported claims and silent config risk.
+curator: Example: approve only with source evidence and residual risk stated. Non-example: approve because the summary sounds confident. Keep that?
+user: Yes — keep that durable.

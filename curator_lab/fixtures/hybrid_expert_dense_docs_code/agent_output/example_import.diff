@@ -1,0 +1,4 @@
+diff --git a/examples/basic.ts b/examples/basic.ts
+@@
+-import { createDesk } from "kettle"
++import { createDesk } from "kettle/client"

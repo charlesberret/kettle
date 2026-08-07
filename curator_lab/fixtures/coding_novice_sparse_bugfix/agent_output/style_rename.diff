@@ -1,0 +1,6 @@
+diff --git a/kettle_cli/main.py b/kettle_cli/main.py
+@@
+-result = run(path)
+-print(result)
++output = run(path)
++print(output)

@@ -1,0 +1,6 @@
+curator: I scanned artifacts for Small Python CLI bugfix. What should approval mean on this desk?
+user: I maintain a tiny CLI and want a safe review queue. I am not comfortable reading every diff yet, so explain behavior impact plainly and do not claim tests passed unless the files show it.
+curator: I will explain impact plainly and label uncertainty. What are your hard nos?
+user: Do not invent CI status. Flag reversible vs risky changes.
+curator: Example: approve only with source evidence and residual risk stated. Non-example: approve because the summary sounds confident. Keep that?
+user: Yes — keep that durable.

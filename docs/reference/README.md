@@ -5,6 +5,8 @@ and not a lesson.
 
 | Document | Contents |
 |----------|----------|
+| [Curator scoring rubric](./curator-scoring.md) | Multi-dimensional UX scoring for curator-agent runs |
+| [Curator benchmark snapshot](./curator-benchmark.md) | Ambitious goals and baseline matrix scores |
 | [Release gates](./release-gates.md) | Named bars, automated and manual evidence |
 | [Commit conventions](./commit-conventions.md) | Kettle-local hook notes; shape follows system default |
 

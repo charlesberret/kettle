@@ -1,0 +1,13 @@
+diff --git a/src/routes/review.ts b/src/routes/review.ts
+@@
+-export async function postReview(req: Request) {
+-  const result = await runReview(req.body)
+-  return json(result)
+-}
++const service = new ReviewService()
++export async function postReview(req: Request) {
++  return json(await service.run(req.body))
++}
+
+diff --git a/src/services/review-service.ts b/src/services/review-service.ts
+new file mode 100644

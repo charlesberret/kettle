@@ -37,3 +37,6 @@ htmlcov/
 *.log
 .cache/
 .turbo/
+
+# Curator lab generated runs (baseline samples are committed)
+curator_lab/results/latest/

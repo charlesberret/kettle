@@ -1,0 +1,10 @@
+curator: I scanned artifacts for TypeScript refactor with tests and config. What should approval mean on this desk?
+user: Keep the queue dense and evidence-linked. I care about behavior drift, public API changes, tsconfig, and failed tests more than style churn.
+curator: Who is the audience for briefs?
+user: Me as reviewer before anything leaves.
+curator: Exclusions, batch size, tags, brief style?
+user: Exclude cosmetic noise. Small batches. Risk and action tags. Short briefs.
+curator: Extra charter probe 1: tag preferences?
+user: Defaults unless risk tags conflict.
+curator: Extra charter probe 2: tag preferences?
+user: Defaults unless risk tags conflict.

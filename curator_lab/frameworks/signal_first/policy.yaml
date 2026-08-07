@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "framework_id": "signal_first",
+  "display_name": "Signal First",
+  "strategy": "signal_first",
+  "strengths": {
+    "interview": 2.4,
+    "batch_selection": 3.5,
+    "briefs": 3.0,
+    "tags": 2.6,
+    "chat": 2.8,
+    "sweep_reasoning": 3.0,
+    "ux_quality": 2.8
+  },
+  "queue": {
+    "max_items_offset": 2,
+    "expected_recall": 0.70,
+    "allow_extra_low_risk": false,
+    "explain_omissions": false,
+    "order_by": "artifact_signal"
+  },
+  "interview": {
+    "turn_style": "minimal",
+    "adapts_to_expertise": true,
+    "adapts_to_density": true,
+    "decision_rule_examples": false,
+    "turn_overhead": -1
+  },
+  "brief": {
+    "evidence_depth": "low",
+    "risk_depth": "medium",
+    "action_framing": "terse",
+    "persona_tuning": "medium"
+  },
+  "tags": {
+    "taxonomy": ["risk", "action_needed", "confidence"],
+    "duplicate_synonym_rate": 0.18,
+    "manual_correction_bias": 2
+  },
+  "chat": {
+    "continuity": "low",
+    "asks_before_update": true,
+    "persona_tuning": "medium"
+  },
+  "sweep": {
+    "synthesis_depth": "low",
+    "preserves_decision_state": true,
+    "cross_entry_patterns": false
+  },
+  "efficiency": {
+    "latency_factor": 0.82,
+    "token_factor": 0.74,
+    "redundant_token_rate": 0.08,
+    "blocked_wait_events": 0
+  },
+  "ux": {
+    "voice": "fast triage",
+    "terminology_consistency": 0.68,
+    "local_first_control": true
+  }
+}

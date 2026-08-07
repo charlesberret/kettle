@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "fixture_id": "coding_novice_sparse_bugfix",
+  "fixture_version": "1.0",
+  "title": "Novice maintainer sparse Python CLI bugfix",
+  "persona": {
+    "role": "volunteer maintainer",
+    "expertise": "novice",
+    "needs": ["plain-language impact", "reversible decisions", "uncertainty labels"]
+  },
+  "project": {
+    "type": "coding",
+    "title": "Small Python CLI bugfix",
+    "review_goal": "Decide whether the agent fixed a missing --format option without inventing CI status."
+  },
+  "density": "sparse",
+  "curator_capacity": 3,
+  "founding_context": "I maintain a tiny CLI and want a safe review queue. I am not comfortable reading every diff yet, so explain behavior impact plainly and do not claim tests passed unless the files show it.",
+  "raw_agent_outputs": [
+    {
+      "id": "cli-format-parser",
+      "title": "Add --format parser branch",
+      "kind": "diff",
+      "path": "agent_output/cli_format.diff",
+      "domain": "coding",
+      "risk": "medium",
+      "confidence": "medium",
+      "signals": ["expected", "behavior_change", "source_traceable"],
+      "summary": "Adds a parser option and branches JSON/text output.",
+      "recommended_action": "inspect",
+      "source_evidence": ["kettle_cli/main.py", "agent_output/cli_format.diff"]
+    },
+    {
+      "id": "regression-test-json",
+      "title": "Regression test for JSON output",
+      "kind": "test",
+      "path": "agent_output/test_json.diff",
+      "domain": "coding",
+      "risk": "low",
+      "confidence": "medium",
+      "signals": ["expected", "test_coverage", "source_traceable"],
+      "summary": "Adds one test that asserts JSON output is parseable.",
+      "recommended_action": "approve",
+      "source_evidence": ["tests/test_cli.py", "agent_output/test_json.diff"]
+    },
+    {
+      "id": "readme-usage-note",
+      "title": "README usage note",
+      "kind": "docs",
+      "path": "agent_output/readme_note.md",
+      "domain": "writing",
+      "risk": "low",
+      "confidence": "high",
+      "signals": ["optional", "source_traceable"],
+      "summary": "Documents --format json with a short example.",
+      "recommended_action": "approve",
+      "source_evidence": ["README.md", "agent_output/readme_note.md"]
+    },
+    {
+      "id": "style-renaming",
+      "title": "Rename local variable",
+      "kind": "diff",
+      "path": "agent_output/style_rename.diff",
+      "domain": "coding",
+      "risk": "low",
+      "confidence": "low",
+      "signals": ["expected_omit", "low_review_value"],
+      "summary": "Renames result to output in one branch.",
+      "recommended_action": "omit",
+      "source_evidence": ["kettle_cli/main.py"]
+    }
+  ],
+  "expected_queue": ["cli-format-parser", "regression-test-json", "readme-usage-note"],
+  "expected_omissions": ["style-renaming"],
+  "answer_key": {
+    "priority_order": ["cli-format-parser", "regression-test-json", "readme-usage-note"],
+    "required_tags": {
+      "cli-format-parser": ["domain:coding", "artifact_type:diff", "risk:medium", "action_needed:inspect", "confidence:medium", "sweep_topic:behavior"],
+      "regression-test-json": ["domain:coding", "artifact_type:test", "risk:low", "action_needed:approve", "confidence:medium", "sweep_topic:tests"],
+      "readme-usage-note": ["domain:writing", "artifact_type:docs", "risk:low", "action_needed:approve", "confidence:high", "sweep_topic:docs"]
+    },
+    "sweep_topics": ["behavior", "tests", "docs", "uncertainty"],
+    "adaptability_expectations": ["novice_explanation", "sparse_uncertainty", "coding_traceability"],
+    "critical_failures": []
+  },
+  "efficiency_targets": {
+    "turns_to_useful_charter_max": 4,
+    "time_to_first_queue_ms_max": 3600,
+    "redundant_token_rate_max": 0.18,
+    "manual_correction_count_max": 2,
+    "perceived_load_1_7_max": 4
+  }
+}

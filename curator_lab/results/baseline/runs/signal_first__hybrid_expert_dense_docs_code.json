@@ -1,0 +1,237 @@
+{
+  "adaptability_flags": {
+    "charter_drift": true,
+    "density_mismatch": false,
+    "expertise_mismatch": false,
+    "mode_mismatch": false
+  },
+  "briefs": [
+    {
+      "caveats": "",
+      "confidence": "high",
+      "decision_hook": null,
+      "entry_id": "api-default-change",
+      "evidence": [
+        "src/config.ts"
+      ],
+      "persona_note": null,
+      "recommended_action": "inspect",
+      "risk": "high",
+      "source_evidence": [
+        "src/config.ts"
+      ],
+      "text": "Changes default sync mode to localOnly.",
+      "title": "API default changed to localOnly",
+      "token_estimate": 7,
+      "unsupported_claims": 0,
+      "what_changed": "Changes default sync mode to localOnly.",
+      "why_it_matters": "Risk high affects the review goal."
+    },
+    {
+      "caveats": "",
+      "confidence": "high",
+      "decision_hook": null,
+      "entry_id": "docs-still-remote-default",
+      "evidence": [
+        "docs/guide.md"
+      ],
+      "persona_note": null,
+      "recommended_action": "edit",
+      "risk": "high",
+      "source_evidence": [
+        "docs/guide.md"
+      ],
+      "text": "Guide says the default sync mode sends work outward.",
+      "title": "Docs still claim remote default",
+      "token_estimate": 11,
+      "unsupported_claims": 0,
+      "what_changed": "Guide says the default sync mode sends work outward.",
+      "why_it_matters": "Risk high affects the review goal."
+    },
+    {
+      "caveats": "",
+      "confidence": "medium",
+      "decision_hook": null,
+      "entry_id": "example-import-broken",
+      "evidence": [
+        "examples/basic.ts"
+      ],
+      "persona_note": null,
+      "recommended_action": "investigate",
+      "risk": "medium",
+      "source_evidence": [
+        "examples/basic.ts"
+      ],
+      "text": "Example imports from package root but export moved to /client.",
+      "title": "Example import path is broken",
+      "token_estimate": 13,
+      "unsupported_claims": 0,
+      "what_changed": "Example imports from package root but export moved to /client.",
+      "why_it_matters": "Risk medium affects the review goal."
+    }
+  ],
+  "charter": {
+    "approval_means": "accepted for this review state, not published",
+    "audience": "local human reviewer",
+    "decision_rules": [],
+    "density_adapted": true,
+    "examples_and_non_examples": false,
+    "exclusions": "",
+    "persona_adapted": true,
+    "purpose": "Catch mismatches between API implementation and prose examples.",
+    "queue_strategy": "artifact_signal",
+    "review_criteria": "",
+    "traceability_rate": 0.55,
+    "voice": "fast triage"
+  },
+  "chat_sample": [
+    {
+      "captures_reversible_action": true,
+      "continuity": "low",
+      "current_entry_id": "api-default-change",
+      "persona_adapted": true,
+      "role": "curator",
+      "text": "Entry api-default-change leads because of residual risk under the charter. Approval remains a reversible ruling bookmark, not publish.",
+      "uses_desk_state": false
+    }
+  ],
+  "cognitive_load": {
+    "attention_switch_count": 4,
+    "average_decision_text_length": 48,
+    "manual_correction_count": 2,
+    "perceived_load_1_7": 3,
+    "scroll_depth_per_entry": 1.1,
+    "unresolved_question_count": 1,
+    "user_clarification_count": 0,
+    "user_reversal_count": 0
+  },
+  "created_at": "2026-08-06T00:00:00Z",
+  "critical_failures": {
+    "cannot_inspect_or_reverse": false,
+    "fabricated_approval": false,
+    "fabricated_source_or_file_state": false,
+    "lost_source_traceability": false,
+    "non_local_or_irreversible_action": false,
+    "sensitive_data_exposure": false
+  },
+  "efficiency_metrics": {
+    "blocked_wait_events": 0,
+    "brief_tokens_per_entry_mean": 10,
+    "evidence_token_ratio": 0.35,
+    "median_entry_open_latency_ms": 180,
+    "redundant_token_rate": 0.08,
+    "review_session_wall_clock_ms": 6560,
+    "sweep_latency_ms": 574,
+    "time_to_first_question_ms": 328,
+    "time_to_first_queue_ms": 1607,
+    "time_to_useful_charter_ms": 1476,
+    "tokens_per_approved_entry": 64,
+    "tokens_to_useful_charter": 37,
+    "total_tokens": 193,
+    "turns_to_useful_charter": 2
+  },
+  "fixture_id": "hybrid_expert_dense_docs_code",
+  "fixture_version": "1.0",
+  "framework_id": "signal_first",
+  "model_or_agent_version": "curator-lab-sim-1",
+  "omitted_items": [
+    {
+      "id": "readme-badge",
+      "reason": "omitted",
+      "title": "README badge update"
+    },
+    {
+      "id": "migration-note",
+      "reason": "omitted",
+      "title": "Migration note for sync mode"
+    }
+  ],
+  "provider": "deterministic-simulator",
+  "queue_selection": [
+    {
+      "id": "api-default-change",
+      "rank": 1,
+      "reason": "Matches expected review value.",
+      "risk": "high",
+      "source_evidence": [
+        "src/config.ts"
+      ],
+      "title": "API default changed to localOnly"
+    },
+    {
+      "id": "docs-still-remote-default",
+      "rank": 2,
+      "reason": "Matches expected review value.",
+      "risk": "high",
+      "source_evidence": [
+        "docs/guide.md",
+        "src/config.ts"
+      ],
+      "title": "Docs still claim remote default"
+    },
+    {
+      "id": "example-import-broken",
+      "rank": 3,
+      "reason": "Matches expected review value.",
+      "risk": "medium",
+      "source_evidence": [
+        "examples/basic.ts",
+        "src/index.ts"
+      ],
+      "title": "Example import path is broken"
+    }
+  ],
+  "run_id": "signal_first__hybrid_expert_dense_docs_code",
+  "sweep_insights": {
+    "cross_entry_patterns": false,
+    "decision_state_preserved": true,
+    "fabricated_approvals": false,
+    "insights": [],
+    "patterns": [],
+    "preserves_decision_state": true,
+    "reusable_rules": false,
+    "summary": "Sweep across 3 entries for Docs and code examples.",
+    "topics": [
+      "docs_code_mismatch",
+      "api"
+    ],
+    "traceability": true
+  },
+  "tags": {
+    "api-default-change": [
+      "risk:high",
+      "action_needed:inspect",
+      "confidence:high",
+      "docs",
+      "writing"
+    ],
+    "docs-still-remote-default": [
+      "risk:high",
+      "action_needed:edit",
+      "confidence:high",
+      "docs",
+      "writing"
+    ],
+    "example-import-broken": [
+      "risk:medium",
+      "action_needed:investigate",
+      "confidence:medium",
+      "docs",
+      "writing"
+    ]
+  },
+  "transcript": [
+    {
+      "role": "curator",
+      "text": "I scanned artifacts for Docs and code examples. What should approval mean on this desk?"
+    },
+    {
+      "role": "user",
+      "text": "I need a tight queue connecting docs claims to code examples. Prioritize API mismatches, runnable examples, and source evidence."
+    },
+    {
+      "role": "curator",
+      "text": "Understood. I will learn from rulings."
+    }
+  ]
+}

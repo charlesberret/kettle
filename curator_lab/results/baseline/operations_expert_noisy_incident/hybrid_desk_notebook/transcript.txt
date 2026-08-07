@@ -1,0 +1,6 @@
+curator: I scanned artifacts for Incident review and runbook update. What should approval mean on this desk?
+user: I want a tight queue: timeline claims, causal hypotheses marked speculative, runbook diffs, and ownered follow-ups. Omit raw log spam.
+curator: I will keep briefs terse and risk-ordered. Any standing hard no?
+user: Hard no: unsupported claims and silent config risk.
+curator: Example: approve only with source evidence and residual risk stated. Non-example: approve because the summary sounds confident. Keep that?
+user: Yes — keep that durable.

@@ -1,0 +1,5 @@
+FAIL tests/review-service.test.ts > preserves createdAt
+Expected: 2026-01-01T00:00:02.000Z
+Received: 2026-01-01T00:00:00.000Z
+
+The extracted service receives a frozen mock clock.

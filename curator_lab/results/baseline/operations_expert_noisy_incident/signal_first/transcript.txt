@@ -1,0 +1,3 @@
+curator: I scanned artifacts for Incident review and runbook update. What should approval mean on this desk?
+user: I want a tight queue: timeline claims, causal hypotheses marked speculative, runbook diffs, and ownered follow-ups. Omit raw log spam.
+curator: Understood. I will learn from rulings.
