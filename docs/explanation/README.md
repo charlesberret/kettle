@@ -13,4 +13,6 @@ system is shaped this way. Not step-by-step instructions.
 | [Soft release](./soft-release.md) | Names, registries, dogfood bar, when to post |
 
 Deep core invariants: `kettle-core/ARCHITECTURE.md`. Platform matrix and
-viewport parity: `kettle-core/docs/PLATFORMS.md` (when present).
+viewport parity: `kettle-core/docs/PLATFORMS.md` (when present). CLI × plugin
+chat pairing: [architecture](./architecture.md#cli-and-plugin-chat); remaining
+gaps: [`docs/reference/chat-signature-inventory.md`](../reference/chat-signature-inventory.md).
