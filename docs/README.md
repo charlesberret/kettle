@@ -39,6 +39,7 @@ command dump.
 | Check whether we can ship a preview | [how-to/check-release-readiness](./how-to/check-release-readiness.md) |
 | Know commit message shape | [reference/commit-conventions](./reference/commit-conventions.md) |
 | See sequencing | [explanation/roadmap](./explanation/roadmap.md) |
+| Understand a later MCP bridge (not a sitting) | [explanation/mcp-bridge](./explanation/mcp-bridge.md) |
 | Plan a soft release (names, channels, buzz) | [explanation/soft-release](./explanation/soft-release.md) |
 
 ## Writing rules (short)

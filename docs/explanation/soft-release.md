@@ -103,7 +103,8 @@ Do not block the soft release on these.
 
 - Signed and notarized **kettle-desktop** distribution and auto-update.
 - Homebrew (or similar) once desktop or a stable CLI bottle is worth supporting.
-- Obsidian / MCP adapters — only with a real dogfood workflow ([roadmap](./roadmap.md)).
+- Obsidian / MCP adapters — only with a real dogfood workflow
+  ([roadmap](./roadmap.md); MCP threat and scope: [MCP bridge](./mcp-bridge.md)).
 - Broad press or multi-channel launch week.
 - Remote / multi-user stories (separate threat model).
 
