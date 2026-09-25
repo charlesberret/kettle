@@ -38,6 +38,7 @@ command dump.
 | Run the curator evaluation lab | [how-to/run-curator-eval](./how-to/run-curator-eval.md) |
 | Check whether we can ship a preview | [how-to/check-release-readiness](./how-to/check-release-readiness.md) |
 | Know commit message shape | [reference/commit-conventions](./reference/commit-conventions.md) |
+| See CLI × plugin chat gaps | [reference/chat-signature-inventory](./reference/chat-signature-inventory.md) |
 | See sequencing | [explanation/roadmap](./explanation/roadmap.md) |
 | Plan a soft release (names, channels, buzz) | [explanation/soft-release](./explanation/soft-release.md) |
 

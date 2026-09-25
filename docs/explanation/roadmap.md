@@ -37,6 +37,8 @@ outside its original workshop.
 - Add an explicit, dry-run-first migration command for Setsweep registries and
   `.setsweep/` Desks.
 - Stabilize API and Desk contracts at version `1` after real adapter use.
+- Keep CLI and plugin agent chat on one core spine (protocol, copy, errors);
+  see the [chat signature inventory](../reference/chat-signature-inventory.md).
 
 ## Later: evidence-led adapters
 
