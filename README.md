@@ -29,15 +29,19 @@ are comfortable with a local Python installation.
 ## Try the core
 
 Kettle requires Python 3.11 or newer and a supported agent CLI with its own
-authentication already configured.
+authentication already configured. The durable install lives in
+[`kettle-core` INSTALL.md](https://github.com/charlesberret/kettle-core/blob/main/INSTALL.md)
+(`~/.kettle-venv` + one PATH shim). `kettle doctor` expects that layout.
 
 ```sh
 git clone https://github.com/charlesberret/kettle-core.git
 cd kettle-core
-python3 -m venv .venv
-.venv/bin/pip install -e .
-.venv/bin/kettle doctor
-.venv/bin/kettle --web
+python3 -m venv ~/.kettle-venv
+~/.kettle-venv/bin/pip install -e .
+ln -sf ~/.kettle-venv/bin/kettle ~/.local/bin/kettle   # dir must be on PATH
+hash -r
+kettle doctor
+kettle --web
 ```
 
 Open [http://127.0.0.1:4242](http://127.0.0.1:4242), add a project folder, and
@@ -48,6 +52,21 @@ kettle add ~/path/to/project
 kettle queue <project>
 kettle chat <project>
 ```
+
+There is no CLI for comment, approve, or the sitting sweep itself. Those
+happen in the web sitting at
+[http://127.0.0.1:4242](http://127.0.0.1:4242). After rulings there,
+`kettle sweep-status` and `kettle sweep-close` are mechanical CLOSE helpers
+only — not the human sweep.
+
+**Contributors / one-shot:** a repo-local `.venv` (`python3 -m venv .venv` then
+`.venv/bin/pip install -e .`) is fine for throwaway checks via
+`.venv/bin/kettle …`. Bare `kettle` on PATH will still FAIL doctor’s
+`kettle-on-path` check until the canonical `~/.kettle-venv` install and shim
+above are in place.
+
+For a full stranger dogfood pass (install → found → review → sweep), see
+[Stranger-path QA](./docs/how-to/stranger-path-qa.md).
 
 For editor installation, build
 [`kettle-vscode`](https://github.com/charlesberret/kettle-vscode) and install
