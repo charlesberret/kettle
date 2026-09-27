@@ -31,7 +31,8 @@ flowchart LR
 
 The CLI is a first-class viewport distributed by `kettle-core`. Future adapters
 should get repositories only when they have a concrete host workflow, an owner,
-and a release path.
+and a release path. A later MCP bridge, if any, is a handoff kit — not a
+sitting and not a CLI replacement. See [MCP bridge](./mcp-bridge.md).
 
 ## CLI and plugin chat
 
@@ -78,4 +79,6 @@ adapter manifest updates, and a migration story.
 Core is designed for one local user and binds to `127.0.0.1`. Registered
 project roots fence file operations. Provider credentials remain with provider
 CLIs. Remote and multi-user serving are out of scope until authentication,
-tenant isolation, and session ownership are designed together.
+tenant isolation, and session ownership are designed together. That is a
+separate threat model from a later local MCP handoff
+([MCP bridge](./mcp-bridge.md)).

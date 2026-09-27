@@ -40,6 +40,7 @@ command dump.
 | Know commit message shape | [reference/commit-conventions](./reference/commit-conventions.md) |
 | See CLI × plugin chat gaps | [reference/chat-signature-inventory](./reference/chat-signature-inventory.md) |
 | See sequencing | [explanation/roadmap](./explanation/roadmap.md) |
+| Understand a later MCP bridge (not a sitting) | [explanation/mcp-bridge](./explanation/mcp-bridge.md) |
 | Plan a soft release (names, channels, buzz) | [explanation/soft-release](./explanation/soft-release.md) |
 
 ## Writing rules (short)

@@ -47,7 +47,8 @@ outside its original workshop.
 - Build an Obsidian adapter when a concrete writing workflow is ready to
   dogfood.
 - Add a narrow MCP bridge only for model-host tools that benefit from the same
-  Desk. It should not replace the CLI or a full sitting.
+  Desk. It should not replace the CLI or a full sitting. Threat, use, and
+  scope: [MCP bridge](./mcp-bridge.md).
 - Consider remote or multi-user use only after a separate threat model.
 
 ## Permanent constraints

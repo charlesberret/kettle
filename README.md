@@ -85,6 +85,9 @@ Each repository is an independent release unit with a narrow owner:
 
 The CLI ships with `kettle-core`; there is no separate CLI package. Obsidian
 and MCP adapters are ideas for later, not empty products presented as shipped.
+A later MCP bridge, if any, is a narrow handoff to the same Desk — not a
+sitting or a CLI replacement
+([explanation](./docs/explanation/mcp-bridge.md)).
 
 Core is the single authority for product semantics. Adapters consume its
 versioned localhost contract and do not fork the Desk or its migrations. See
