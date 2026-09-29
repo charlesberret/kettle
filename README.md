@@ -29,9 +29,10 @@ are comfortable with a local Python installation.
 ## Try the core
 
 Kettle requires Python 3.11 or newer and a supported agent CLI with its own
-authentication already configured. The durable install lives in
-[`kettle-core` INSTALL.md](https://github.com/charlesberret/kettle-core/blob/main/INSTALL.md)
-(`~/.kettle-venv` + one PATH shim). `kettle doctor` expects that layout.
+authentication already configured. A durable install is one `kettle` on PATH
+(see [`kettle-core` INSTALL.md](https://github.com/charlesberret/kettle-core/blob/main/INSTALL.md)).
+`kettle doctor` accepts that, and it also accepts a checkout binary invoked by
+path when `kettle` is not on PATH.
 
 ```sh
 git clone https://github.com/charlesberret/kettle-core.git
@@ -60,10 +61,10 @@ happen in the web sitting at
 only — not the human sweep.
 
 **Contributors / one-shot:** a repo-local `.venv` (`python3 -m venv .venv` then
-`.venv/bin/pip install -e .`) is fine for throwaway checks via
-`.venv/bin/kettle …`. Bare `kettle` on PATH will still FAIL doctor’s
-`kettle-on-path` check until the canonical `~/.kettle-venv` install and shim
-above are in place.
+`.venv/bin/pip install -e .`) is a real install. `.venv/bin/kettle doctor`
+passes `kettle-on-path` for that binary even when `kettle` is not on PATH.
+Activate it (`source .venv/bin/activate`) before bare `kettle` commands. A
+second `kettle` on PATH that resolves somewhere else is what doctor fails.
 
 For a full stranger dogfood pass (install → found → review → sweep), see
 [Stranger-path QA](./docs/how-to/stranger-path-qa.md).
