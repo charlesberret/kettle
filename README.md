@@ -46,19 +46,24 @@ kettle --web
 ```
 
 Open [http://127.0.0.1:4242](http://127.0.0.1:4242), add a project folder, and
-complete the founding interview. Terminal users can start with:
+complete the founding interview. In that sitting, comment on an entry, approve
+it, and sweep. The sweep files the next entry.
+
+The terminal uses the id `kettle add` prints. `kettle add` asks for a founding
+sentence. `kettle found` writes the charter and the first queue entry from the
+files in the folder. A desk is founded when `PROJECT.md` exists and the queue
+has a content entry.
 
 ```sh
 kettle add ~/path/to/project
-kettle queue <project>
-kettle chat <project>
+kettle found <id>
+kettle queue <id>
 ```
 
-There is no CLI for comment, approve, or the sitting sweep itself. Those
-happen in the web sitting at
-[http://127.0.0.1:4242](http://127.0.0.1:4242). After rulings there,
-`kettle sweep-status` and `kettle sweep-close` are mechanical CLOSE helpers
-only — not the human sweep.
+`kettle chat <id>` is a conversation with the curator. Comment, approve, and
+sweep stay in the web sitting. After a ruling there, `kettle sweep-status <id>`
+reports whether a quiet close is allowed, and `kettle sweep-close <id>`
+performs that close when it is.
 
 **Contributors / one-shot:** a repo-local `.venv` (`python3 -m venv .venv` then
 `.venv/bin/pip install -e .`) is a real install. `.venv/bin/kettle doctor`
