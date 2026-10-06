@@ -37,7 +37,7 @@ cd kettle-core
 python3 -m venv .venv
 .venv/bin/pip install -e .
 .venv/bin/kettle doctor
-.venv/bin/kettle --web
+.venv/bin/kettle-web
 ```
 
 Open [http://127.0.0.1:4242](http://127.0.0.1:4242), add a project folder, and
