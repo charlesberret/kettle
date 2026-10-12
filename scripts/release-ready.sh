@@ -172,11 +172,18 @@ else
   skip G-core-ping "live core not required for source validation"
 fi
 
-if rg -q -n 'def test_approve_writes_only_queue' "$CORE_REPO/kettle/tests" 2>/dev/null \
-  || grep -R -q -n 'def test_approve_writes_only_queue' "$CORE_REPO/kettle/tests" 2>/dev/null; then
-  pass G-approve-scope "core has test_approve_writes_only_queue"
+APPROVE_OUT="$REPORT_DIR/approve-scope.txt"
+if bash -c 'cd "$1" && PYTHONDONTWRITEBYTECODE=1 python3 -m pytest kettle/tests/test_server.py::test_approve_writes_only_queue -rs -p no:cacheprovider' \
+  bash "$CORE_REPO" >"$APPROVE_OUT" 2>&1; then
+  if grep -E -q 'SKIPPED|XFAIL' "$APPROVE_OUT"; then
+    fail G-approve-scope "test_approve_writes_only_queue was skipped or xfailed"
+  elif grep -E -q '^1 passed' "$APPROVE_OUT"; then
+    pass G-approve-scope "test_approve_writes_only_queue passed once"
+  else
+    fail G-approve-scope "test_approve_writes_only_queue did not pass exactly once"
+  fi
 else
-  fail G-approve-scope "core is missing test_approve_writes_only_queue"
+  fail G-approve-scope "test_approve_writes_only_queue did not pass"
 fi
 
 echo
