@@ -12,7 +12,7 @@ Run the local automated gates from this repository with sibling checkouts:
 ./scripts/release-ready.sh --strict --require-live
 ```
 
-The public-preview bar is the last of those, on avicenna. A run without
+The public-preview bar is the last of those, on the maintainer's machine. A run without
 `--strict` can exit 0 while gates fail. A run without `--require-live`
 skips the live ping. `"app"` must be `kettle`.
 
