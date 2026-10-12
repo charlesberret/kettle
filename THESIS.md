@@ -96,5 +96,4 @@ Points: green 3 · yellow 0 · red 0
 Positions: green 12 · yellow 0 · red 0
 Count: procedural, not cryptographic (one uid on this house)
 Ballot: sha256 dc7f2049c17019de5537e4857ab7d70555f206c09070237578999cd49c923d61
-Cycle 1, kept in `votes/cycle-1/`, was Major revisions required (ballot sha256 4ceb0d43bf34a70b1da9c5bf34613b95243799557b56afd4d04e05881c7d2c73). This pass is the recast of Claim, Design, and Risks against `e5a73a9`. The hostname in that text was removed after the pass so `git-public-surface --enforce` would pass. The name remains in the round-2 answers.
-Open questions: filed by courier from the transcript.
+Open questions: 26 (ids added when courier files them)
