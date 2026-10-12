@@ -1,6 +1,6 @@
 # Kettle
 
-Status: proposed
+Status: accepted
 
 ## Claim
 
@@ -83,3 +83,18 @@ The stranger pass is two steps. (1) Pre-flip: Charles, on avicenna, in a fresh u
 There is no cap that stops the project. The appetite stops the public flip only. One maintainer pass is step 1. It is not a price for every item under Now, and it is not the fifteen minutes of the first-sitting lesson. If that pass is spent without the preview record, the repositories stay private and other work may continue. The desk is already a private instrument.
 
 The plan assumes next year is still a local single-user desk with thin viewports. The record in this repository for that assumption is none. [docs/explanation/roadmap.md](docs/explanation/roadmap.md) puts a hosted multi-user product on Later, and it does not name a second person who has ruled on one desk. Tripwire: a second person records a ruling on one desk during dogfood, or a stranger's issue asks to share a desk. Either event reopens the assumption before Later. Design sorts the bets. Localhost, one `.kettle/` directory, and one ruling per item are single-user bets. Ordinary files, approve-as-record, and sweep-to-`outbound/` still hold for a second reviewer on the same machine. A shared remote desk does not. This repository does not contain a threat model for that other assumption.
+
+## Evaluation record
+
+Date: 2026-10-12
+Chair: director
+Advisor: scholar (Futurist)
+Committee: security (Skeptic), operator (Operator), designer (Designer), builder (Economist)
+Candidate: live owner
+Result: Pass
+Points: green 3 · yellow 0 · red 0
+Positions: green 12 · yellow 0 · red 0
+Count: procedural, not cryptographic (one uid on this house)
+Ballot: sha256 dc7f2049c17019de5537e4857ab7d70555f206c09070237578999cd49c923d61
+Cycle 1, kept in `votes/cycle-1/`, was Major revisions required (ballot sha256 4ceb0d43bf34a70b1da9c5bf34613b95243799557b56afd4d04e05881c7d2c73). This pass is the recast of Claim, Design, and Risks against `e5a73a9`.
+Open questions: filed by courier from the transcript.
