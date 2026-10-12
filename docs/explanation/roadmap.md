@@ -15,7 +15,7 @@ outside its original workshop.
 ## Now: trustworthy public preview
 
 - Verify editable and wheel installs on supported Python releases.
-- Finish Host and Origin validation for the localhost HTTP surface.
+- Host and Origin checks exist in core (`check_request_guards`). They fence other origins, not a same-user process. The product-home gate row is in the release definition.
 - Add a per-boot local authentication design before widening integrations.
 - Run a stranger-path dogfood pass: install, found a Desk, review an entry,
   comment, approve, and sweep without maintainer-only knowledge
@@ -55,7 +55,7 @@ outside its original workshop.
 
 1. The Desk is ordinary, inspectable files.
 2. Approve records a ruling; it is not outward execution.
-3. Sweep applies rulings under explicit policy.
+3. Sweep applies rulings under explicit policy. Not implemented. Today sweep stages every approved inbox entry to `.kettle/outbound/`. A refusing policy is Later.
 4. Egress stages; Kettle does not silently transmit.
 5. Core owns semantics and adapters remain thin.
 6. Breaking contracts advance versions and ship with migrations.

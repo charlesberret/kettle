@@ -160,7 +160,7 @@ if curl -sf --max-time 2 \
   "http://127.0.0.1:4242/api/ping" \
   -o "$PING_JSON" 2>/dev/null; then
   if python3 -c \
-    'import json,sys; data=json.load(open(sys.argv[1])); assert data.get("app") in ("kettle", "setsweep")' \
+    'import json,sys; data=json.load(open(sys.argv[1])); assert data.get("app") == "kettle"' \
     "$PING_JSON" 2>/dev/null; then
     pass G-core-ping "compatible live core found on port 4242"
   else
@@ -170,6 +170,13 @@ elif [[ "$REQUIRE_LIVE" -eq 1 ]]; then
   fail G-core-ping "no compatible live core on port 4242"
 else
   skip G-core-ping "live core not required for source validation"
+fi
+
+if rg -q -n 'def test_approve_writes_only_queue' "$CORE_REPO/kettle/tests" 2>/dev/null \
+  || grep -R -q -n 'def test_approve_writes_only_queue' "$CORE_REPO/kettle/tests" 2>/dev/null; then
+  pass G-approve-scope "core has test_approve_writes_only_queue"
+else
+  fail G-approve-scope "core is missing test_approve_writes_only_queue"
 fi
 
 echo
