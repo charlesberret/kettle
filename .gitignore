@@ -1,46 +1,74 @@
-# Local ops notes / agent handoffs (not shipped)
+# House local surface — never publish.
+# Repo-root scratch, mail, and agent harness dirs. Language build output is below.
 .local/
+.inbox/
+.coordination/
+.claude/
+.cursor/
+.grok/
+.aider*
+.worktrees/
 
-# Dependencies & build
-node_modules/
-dist/
-out/
-build/
-*.egg-info/
-.venv/
-venv/
-__pycache__/
-*.py[cod]
-.pytest_cache/
-.mypy_cache/
-.ruff_cache/
-.coverage
-coverage.xml
-htmlcov/
-*.tsbuildinfo
-
-# Packages / editors
-*.vsix
-.DS_Store
-.idea/
-.vscode/*
-!.vscode/extensions.json
-!.vscode/settings.json.example
-
-# Env & secrets
+# Secrets
 .env
 .env.*
 !.env.example
 *.pem
+*.key
 
-# Logs & caches
-*.log
-.cache/
+# Python
+__pycache__/
+*.py[cod]
+*.egg
+*.egg-info/
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+.nox/
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+
+# Node
+node_modules/
+dist/
+out/
+build/
+*.tsbuildinfo
 .turbo/
+.cache/
+coverage/
+*.vsix
 
-# Curator lab generated runs (baseline samples are committed)
+# OS
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+*~
+*.swp
+*.swo
+*.bak
+
+# Editors
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json.example
+*.code-workspace
+*.sublime-project
+*.sublime-workspace
+
+# Logs
+*.log
+
+# Curator lab generated runs. The committed sample lives under results/baseline/.
 curator_lab/results/latest/
 
-# Agent working files (kept on disk, never published)
-.coordination/
-.inbox/
+# House-local launcher. The workspace catalog lives outside this repo.
+scripts/open-workspace.sh

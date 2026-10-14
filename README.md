@@ -1,47 +1,57 @@
 # Kettle
 
-**A local-first review desk for work made with coding and writing agents.**
+**A local-first review desk that promotes careful attention to projects coded and written with agents.**
 
-Agents can prepare a great deal of work very quickly. Kettle gives that work a
-place to wait, a brief worth reading, and a clear human ruling before anything
-moves outward.
+Agents can work very quickly, but the more they accomplish, the harder it is
+to keep track of new material that calls for direct editing and verification
+before it becomes entrenched as project dogma.
+
+Kettle gathers your coding agent's work and curates it in batches with
+contextual briefs worth reading. When you review, edit, and approve a batch,
+the Kettle agent records your rulings, learning more about you and your
+projects through the changes you make each round.
+
+Kettle is free software available as a command line utility, a standalone
+desktop app for Mac, and a plugin for Cursor, Herdr, and VS Code.
 
 ```text
-agent work  →  curated queue  →  read, edit, comment, approve  →  sweep
+agent work  →  queue  →  edit, comment, approve  →  sweep
                                       human judgment
 ```
 
 Kettle keeps its Desk in ordinary files inside your project. A local Python
-core serves the same queue to the terminal, browser, VS Code, Cursor, and a
-small macOS shell.
+core serves the same queue to the terminal, desktop app, browser, and plugins.
 
 ## Status
 
-Kettle is a **pre-release project in public open-source preview**. The core, VS Code/Cursor extension, and desktop shell are
-implemented and tested from source; package registries, the Visual Studio
-Marketplace, code signing, and notarization are still ahead.
+Kettle is a **pre-release project in public open-source preview**. The core,
+VS Code/Cursor extension, and desktop shell are implemented and tested from
+source. Package registries, the Visual Studio Marketplace, code signing, and
+notarization are still ahead.
 
-The current preview is best suited to contributors and curious early users who
-are comfortable with a local Python installation.
+The current preview is best suited to contributors and curious folks who are
+comfortable with a local Python installation.
 
 ## Try the core
 
 Kettle requires Python 3.11 or newer and a supported agent CLI with its own
-authentication already configured. A durable install is one `kettle` on PATH
-(see [`kettle-core` INSTALL.md](https://github.com/charlesberret/kettle-core/blob/main/INSTALL.md)).
-`kettle doctor` accepts that, and it also accepts a checkout binary invoked by
-path when `kettle` is not on PATH.
+authentication already configured.
 
 ```sh
-git clone https://github.com/charlesberret/kettle-core.git
-cd kettle-core
-python3 -m venv ~/.kettle-venv
-~/.kettle-venv/bin/pip install -e .
-ln -sf ~/.kettle-venv/bin/kettle ~/.local/bin/kettle   # dir must be on PATH
-hash -r
+uv tool install --upgrade git+https://github.com/charlesberret/kettle-core.git
 kettle doctor
 kettle --web
 ```
+
+That is the install. It puts `kettle` on your PATH. The same URL with pipx is
+`pipx install --upgrade git+https://github.com/charlesberret/kettle-core.git`.
+[`tools/install.sh`](https://github.com/charlesberret/kettle-core/blob/main/tools/install.sh)
+in kettle-core runs one of those. The name `kettle` on PyPI, Homebrew, and npm
+already belongs to other projects, so this install uses the git URL. The
+checkout, the wheel, and a binary you build yourself are in
+[`kettle-core` INSTALL.md](https://github.com/charlesberret/kettle-core/blob/main/INSTALL.md).
+`kettle doctor` accepts this install, and it also accepts a checkout binary
+invoked by path when `kettle` is not on PATH.
 
 Open [http://127.0.0.1:4242](http://127.0.0.1:4242), add a project folder, and
 complete the founding interview. In that sitting, comment on an entry, approve
@@ -84,6 +94,7 @@ Each repository is an independent release unit with a narrow owner:
 |---|---|---|
 | **[`kettle`](https://github.com/charlesberret/kettle)** | Product home, public roadmap, family navigation | This repository |
 | **[`kettle-core`](https://github.com/charlesberret/kettle-core)** | Desk format, API, runtime, CLI, kits, reference web UI | Source preview |
+| **[`kettle-tui`](https://github.com/charlesberret/kettle-tui)** | Terminal viewport and Herdr plugin | Source preview |
 | **[`kettle-vscode`](https://github.com/charlesberret/kettle-vscode)** | VS Code and Cursor viewport | VSIX builds from source |
 | **[`kettle-desktop`](https://github.com/charlesberret/kettle-desktop)** | Thin macOS Electron shell and packaging | Development build, unsigned |
 
@@ -101,32 +112,18 @@ boundary. Documentation is organized with
 
 ## What Kettle protects
 
-- **Human judgment stays explicit.** Approve records a ruling; it does not
-  silently apply or publish work.
+- **Human judgment stays explicit.** Approving a file records a ruling, but
+  does not silently apply or publish changes to your work.
 - **The Desk stays inspectable.** Queue, memory, policy, and staged egress are
   files under the project.
 - **Outbound actions are staged.** Email, Slack, webhooks, and launches are
   prepared for review rather than transmitted by surprise.
 - **Provider credentials stay with provider tools.** Kettle does not collect or
-  store model API keys.
+  store API keys.
 - **Adapters stay thin.** The terminal, browser, editor, and desktop shell see
   the same core state.
 
-## From Setsweep to Kettle
-
-Kettle is the continuation of Setsweep. The rename does not strand existing
-work:
-
-- new projects use `.kettle/`;
-- an existing `.setsweep/` Desk is used in place until an explicit migration;
-- `kettle` is canonical, while legacy `setsweep` command aliases remain
-  temporarily available;
-- branding alone does not change the API or Desk-schema contract versions.
-
-New public copy and new state use Kettle. Legacy names remain only where they
-provide deliberate compatibility or preserve historical attribution.
-
-## Project documents
+## Documentation
 
 Documentation uses [Diátaxis](./docs/README.md):
 

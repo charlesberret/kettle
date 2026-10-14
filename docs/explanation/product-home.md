@@ -9,6 +9,8 @@ Implementation belongs in the repository that releases it:
 
 - [`kettle-core`](https://github.com/charlesberret/kettle-core) for the Desk,
   contracts, runtime, CLI, kits, and reference web UI;
+- [`kettle-tui`](https://github.com/charlesberret/kettle-tui) for the terminal
+  viewport and the Herdr plugin;
 - [`kettle-vscode`](https://github.com/charlesberret/kettle-vscode) for VS Code
   and Cursor host behavior;
 - [`kettle-desktop`](https://github.com/charlesberret/kettle-desktop) for the
