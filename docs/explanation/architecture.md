@@ -27,7 +27,7 @@ flowchart LR
 | `kettle` | Public story, family map, roadmap, release definition | Runtime or adapter code |
 | `kettle-core` | Product semantics, Desk format and migrations, localhost API, curator runtime, CLI, kits, reference web UI | Editor or Electron lifecycle |
 | `kettle-vscode` | VS Code/Cursor activation, commands, views, packaging | Desk migrations or product semantics |
-| `kettle-desktop` | Electron lifecycle, bundled-core provenance, native packaging | A separate frontend or product rules |
+| `kettle-desktop` | Electron lifecycle, bundled-core provenance, native packaging | A separate frontend or product rules (sits on core `static/index.html`) |
 
 The CLI is a first-class viewport distributed by `kettle-core`. Future adapters
 should get repositories only when they have a concrete host workflow, an owner,
@@ -47,6 +47,9 @@ and a release path.
 Core never imports an adapter. A cross-repository feature lands in core first,
 with a backward-compatible contract and tests, then in affected adapters.
 Package versions advance independently.
+
+Sitting polish is the same rule: change the reference sitting (or its tokens /
+copy) once, then project. See [viewports.md](./viewports.md).
 
 ## Durable state
 

@@ -11,7 +11,9 @@ Implementation belongs in the repository that releases it:
 - [`kettle-vscode`](https://github.com/charlesberret/kettle-vscode) for VS Code
   and Cursor host behavior;
 - [`kettle-desktop`](https://github.com/charlesberret/kettle-desktop) for the
-  Electron lifecycle and macOS packaging.
+  Electron lifecycle and macOS packaging (the sitting is core’s).
+
+How those stay in lockstep: [viewports](./viewports.md).
 
 The canonical family boundary is
 [architecture](./architecture.md). Docs in this repo follow
