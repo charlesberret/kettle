@@ -44,3 +44,14 @@ curator_lab/results/latest/
 # Agent working files (kept on disk, never published)
 .coordination/
 .inbox/
+.claude/
+.cursor/
+.grok/
+.aider*
+*.swp
+*~
+Thumbs.db
+*.code-workspace
+
+# House-local launcher. The workspace catalog lives outside this repo.
+scripts/open-workspace.sh

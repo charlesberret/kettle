@@ -38,33 +38,26 @@ you are exercising legacy fallback).
 
 ---
 
-## 1. Clean install (editable + canonical venv)
+## 1. Clean install
 
-Follow the durable install in
-[kettle-core `INSTALL.md`](https://github.com/charlesberret/kettle-core/blob/main/INSTALL.md)
-(preferred over a one-off repo `.venv` when dogfooding “installable”).
-
-```sh
-git clone https://github.com/charlesberret/kettle-core.git
-cd kettle-core
-python3 -m venv ~/.kettle-venv
-~/.kettle-venv/bin/pip install -e .
-```
-
-Optional PATH shim (exactly one winner — see INSTALL for hygiene):
+Follow the install in
+[kettle-core `INSTALL.md`](https://github.com/charlesberret/kettle-core/blob/main/INSTALL.md).
 
 ```sh
-ln -sf ~/.kettle-venv/bin/kettle ~/.local/bin/kettle   # dir must be on PATH
+uv tool install --upgrade git+https://github.com/charlesberret/kettle-core.git
 hash -r
-which -a kettle   # expect a single path pointing at the venv binary
+which -a kettle
+kettle --version
 ```
 
-If you skip the shim, use `~/.kettle-venv/bin/kettle` for every command below.
+The name `kettle` on PyPI, Homebrew, and npm already belongs to other projects.
+The line above installs this one from git. A checkout is the contributor path
+in INSTALL.md, for when you are changing the core rather than trying the product.
 
 Checklist:
 
-- [ ] Clone and editable install succeeded with no private credentials
-- [ ] `kettle` (or the venv binary) starts and prints help (`kettle --help`)
+- [ ] The git URL install succeeded with no private credentials
+- [ ] `which -a kettle` shows one install, and `kettle --help` prints help
 - [ ] You did not need unpublished packages or workshop-only steps
 
 ---
@@ -187,13 +180,13 @@ cd kettle-vscode
 npm ci
 npm test
 npm run package
-code --install-extension kettle-0.1.0.vsix --force   # or cursor --install-extension …
+code --install-extension kettle-0.1.1.vsix --force   # or cursor --install-extension …
 ```
 
 - [ ] Extension installs from the built VSIX
 - [ ] **Kettle: Ping Core** succeeds (auto-start or attach to a healthy local core)
 - [ ] If auto-start cannot find the CLI, setting `kettle.command` to
-      `~/.kettle-venv/bin/kettle` (absolute path) is documented and works
+      `~/.local/bin/kettle` (the git install's usual path) is documented and works
 - [ ] Queue, comment, approve, and sweep are usable against the same Desk
 
 ### Desktop (macOS)

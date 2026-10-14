@@ -27,21 +27,23 @@ are comfortable with a local Python installation.
 ## Try the core
 
 Kettle requires Python 3.11 or newer and a supported agent CLI with its own
-authentication already configured. A durable install is one `kettle` on PATH
-(see [`kettle-core` INSTALL.md](https://github.com/charlesberret/kettle-core/blob/main/INSTALL.md)).
-`kettle doctor` accepts that, and it also accepts a checkout binary invoked by
-path when `kettle` is not on PATH.
+authentication already configured.
 
 ```sh
-git clone https://github.com/charlesberret/kettle-core.git
-cd kettle-core
-python3 -m venv ~/.kettle-venv
-~/.kettle-venv/bin/pip install -e .
-ln -sf ~/.kettle-venv/bin/kettle ~/.local/bin/kettle   # dir must be on PATH
-hash -r
+uv tool install --upgrade git+https://github.com/charlesberret/kettle-core.git
 kettle doctor
 kettle --web
 ```
+
+That is the install. It puts `kettle` on your PATH. The same URL with pipx is
+`pipx install --upgrade git+https://github.com/charlesberret/kettle-core.git`.
+[`tools/install.sh`](https://github.com/charlesberret/kettle-core/blob/main/tools/install.sh)
+in kettle-core runs one of those. The name `kettle` on PyPI, Homebrew, and npm
+already belongs to other projects, so this install uses the git URL. The
+checkout, the wheel, and a binary you build yourself are in
+[`kettle-core` INSTALL.md](https://github.com/charlesberret/kettle-core/blob/main/INSTALL.md).
+`kettle doctor` accepts this install, and it also accepts a checkout binary
+invoked by path when `kettle` is not on PATH.
 
 Open [http://127.0.0.1:4242](http://127.0.0.1:4242), add a project folder, and
 complete the founding interview. In that sitting, comment on an entry, approve

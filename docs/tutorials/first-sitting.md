@@ -14,6 +14,9 @@ This is a **lesson**, not a complete feature map. For packaging bars see
 
 ## 1. Get the core
 
+To use Kettle without a checkout, the one line in the [product README](../../README.md)
+is enough. This lesson uses a checkout so the files you read are the files that run.
+
 ```sh
 git clone https://github.com/charlesberret/kettle-core.git
 cd kettle-core
