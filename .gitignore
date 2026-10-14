@@ -37,3 +37,13 @@ htmlcov/
 *.log
 .cache/
 .turbo/
+
+
+# Local surface — not for a public tree
+.inbox/
+.claude/
+.cursor/
+.grok/
+.aider*
+*.swp
+Thumbs.db
