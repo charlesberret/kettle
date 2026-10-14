@@ -1,9 +1,6 @@
 # Independent scoring notes - scorer B
 
-Scorer: `scorer_b`
-Role: engineering
-Phase: independent
-Artifacts used: each run's `run.json` and `transcript.txt`; automated score files were not used as ground truth.
+Scorer: `scorer_b` Role: engineering Phase: independent Artifacts used: each run's `run.json` and `transcript.txt`; automated score files were not used as ground truth.
 
 ## Overall scores
 

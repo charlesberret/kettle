@@ -1,7 +1,6 @@
 # Commit conventions (Kettle family)
 
-These conventions keep the independent Kettle repositories easy to read. An
-implementation repository may document a stricter local rule.
+These conventions keep the independent Kettle repositories easy to read. An implementation repository may document a stricter local rule.
 
 ## Message shape
 
@@ -32,8 +31,7 @@ git config core.hooksPath /path/to/kettle/scripts/git-hooks
 
 See `scripts/git-hooks/README.md`. Escape hatch: `git commit --no-verify`.
 
-The hook is optional. Pull requests are judged on clear intent and a readable
-history, not on whether a contributor installed local tooling.
+The hook is optional. Pull requests are judged on clear intent and a readable history, not on whether a contributor installed local tooling.
 
 ## Trailers useful here
 
@@ -41,5 +39,4 @@ history, not on whether a contributor installed local tooling.
 Gate: G-core-test
 ```
 
-Link issues and [release gate](./release-gates.md) IDs when a commit is meant
-to move them.
+Link issues and [release gate](./release-gates.md) IDs when a commit is meant to move them.

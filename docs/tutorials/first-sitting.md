@@ -1,14 +1,10 @@
 # Tutorial: your first Kettle sitting
 
-**You will:** install the core from source, open the web sitting, register a
-project folder, and run a minimal review path (or founding if the desk is new).
+**You will:** install the core from source, open the web sitting, register a project folder, and run a minimal review path (or founding if the desk is new).
 
-**You need:** Python 3.11+, a supported agent CLI already authenticated on your
-machine, about fifteen minutes.
+**You need:** Python 3.11+, a supported agent CLI already authenticated on your machine, about fifteen minutes.
 
-This is a **lesson**, not a complete feature map. For packaging bars see
-[release readiness](../how-to/check-release-readiness.md). For architecture see
-[explanation](../explanation/architecture.md).
+This is a **lesson**, not a complete feature map. For packaging bars see [release readiness](../how-to/check-release-readiness.md). For architecture see [explanation](../explanation/architecture.md).
 
 ---
 
@@ -22,8 +18,7 @@ python3 -m venv .venv
 .venv/bin/kettle doctor
 ```
 
-If `doctor` reports PATH issues, use the venv binary for the rest of this tutorial
-(`.venv/bin/kettle …`).
+If `doctor` reports PATH issues, use the venv binary for the rest of this tutorial (`.venv/bin/kettle …`).
 
 ---
 
@@ -39,8 +34,7 @@ Open [http://127.0.0.1:4242](http://127.0.0.1:4242). Leave this process running.
 
 ## 3. Register a project
 
-Pick a **folder under your home directory** that you do not mind Kettle writing
-desk files into (`.kettle/` — or legacy `.setsweep/` if dual-read applies).
+Pick a **folder under your home directory** that you do not mind Kettle writing desk files into (`.kettle/` — or legacy `.setsweep/` if dual-read applies).
 
 In the web UI: add / register the project (name + folder).  
 Or in another terminal:
@@ -53,9 +47,7 @@ Or in another terminal:
 
 ## 4. Found or open the desk
 
-- **New / unfounded project:** complete the founding interview in the agent pane
-  until you have a proposal you accept, then found the desk so a content queue
-  appears.
+- **New / unfounded project:** complete the founding interview in the agent pane until you have a proposal you accept, then found the desk so a content queue appears.
 - **Already founded:** select the project and open a queue entry.
 
 You are not graded on a perfect charter — the goal is to **see the loop**.
@@ -82,9 +74,7 @@ You are not graded on a perfect charter — the goal is to **see the loop**.
 .venv/bin/kettle doctor
 ```
 
-Shell and web should describe the **same** desk. That pairing is intentional
-product craft, not a side effect. Plugin chat (VS Code / Cursor) is the same
-stream rendered in the editor, not a second product.
+Shell and web should describe the **same** desk. That pairing is intentional product craft, not a side effect. Plugin chat (VS Code / Cursor) is the same stream rendered in the editor, not a second product.
 
 ---
 
@@ -95,7 +85,4 @@ stream rendered in the editor, not a second product.
 - [ ] A project is registered  
 - [ ] You completed at least one approve (or a clear founding step)  
 
-**Next:** [how-to: stranger-path QA](../how-to/stranger-path-qa.md) for a full
-dogfood checklist; [how-to: check release readiness](../how-to/check-release-readiness.md)
-if you are contributing; [explanation: architecture](../explanation/architecture.md)
-if you want the family map.
+**Next:** [how-to: stranger-path QA](../how-to/stranger-path-qa.md) for a full dogfood checklist; [how-to: check release readiness](../how-to/check-release-readiness.md) if you are contributing; [explanation: architecture](../explanation/architecture.md) if you want the family map.

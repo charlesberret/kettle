@@ -15,5 +15,4 @@ python3 scripts/check-docs.py ../kettle-core
 ./scripts/release-ready.sh --require-live
 ```
 
-Sibling paths can be overridden with `KETTLE_CORE`, `KETTLE_VSCODE`, and
-`KETTLE_DESKTOP`.
+Sibling paths can be overridden with `KETTLE_CORE`, `KETTLE_VSCODE`, and `KETTLE_DESKTOP`.

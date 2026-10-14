@@ -1,7 +1,6 @@
 # Hybrid Desk Notebook memory schema
 
-Reference layout for local `.kettle` memory files used by the hybrid prototype.
-These are product artifacts for evaluation, not kettle-core schema migrations.
+Reference layout for local `.kettle` memory files used by the hybrid prototype. These are product artifacts for evaluation, not kettle-core schema migrations.
 
 ```text
 .kettle/
@@ -35,23 +34,18 @@ Stores examples and non-examples:
 
 ## `queue-memory.yaml`
 
-Tracks selected and omitted entries with local source pointers, risk, action,
-confidence, and reason.
+Tracks selected and omitted entries with local source pointers, risk, action, confidence, and reason.
 
 ## `sweep-memory.yaml`
 
-Captures approved decisions, deferred items, reusable rules, unresolved
-questions, and next-agent handoff notes.
+Captures approved decisions, deferred items, reusable rules, unresolved questions, and next-agent handoff notes.
 
 ## `source-index.yaml`
 
-Maps queue entries to raw local files, diffs, notes, logs, or docs. Source
-traceability is mandatory; losing it is a rubric critical failure.
+Maps queue entries to raw local files, diffs, notes, logs, or docs. Source traceability is mandatory; losing it is a rubric critical failure.
 # Hybrid Desk Notebook — memory schema
 
-Reference layout for the recommended curator framework. These are ordinary
-files under the project Desk. kettle-core should treat them as inspectable
-state, not opaque profile blobs.
+Reference layout for the recommended curator framework. These are ordinary files under the project Desk. kettle-core should treat them as inspectable state, not opaque profile blobs.
 
 ```text
 .kettle/
@@ -87,5 +81,4 @@ Every durable claim should carry:
 ## Dual-layer rule
 
 - **Durable**: charter, preferences, tags, confirmed voice, promoted proposals.
-- **Ephemeral**: current queue, open chat turns, temporary comparisons. Summarize
-  or discard at sitting end unless promoted through `proposals/`.
+- **Ephemeral**: current queue, open chat turns, temporary comparisons. Summarize or discard at sitting end unless promoted through `proposals/`.

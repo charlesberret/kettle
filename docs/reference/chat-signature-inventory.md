@@ -1,16 +1,12 @@
 # Chat signature inventory
 
-**Information-oriented.** Point-in-time gap list for [LAB-38](https://linear.app/isruna/issue/LAB-38/cli-plugin-chat-signature-gap-inventory-protocolcopyerrors). Not a CLI
-manual and not a contract. Implementation facts live in `kettle-core`
-(`API.md`, `cli.py` or equivalent) and `kettle-vscode` (Desk stream).
+**Information-oriented.** Point-in-time gap list for [LAB-38](https://linear.app/isruna/issue/LAB-38/cli-plugin-chat-signature-gap-inventory-protocolcopyerrors). Not a CLI manual and not a contract. Implementation facts live in `kettle-core` (`API.md`, `cli.py` or equivalent) and `kettle-vscode` (Desk stream).
 
-**Dated:** 2026-08-24. **Scope:** protocol, copy, errors — not a full CLI
-rewrite, MCP, or a TUI clone of the three-pane web sitting.
+**Dated:** 2026-08-24. **Scope:** protocol, copy, errors — not a full CLI rewrite, MCP, or a TUI clone of the three-pane web sitting.
 
 ## North star
 
-CLI and plugin agent chat are paired craft. Improve the core spine so both
-get better. Adapters stay thin.
+CLI and plugin agent chat are paired craft. Improve the core spine so both get better. Adapters stay thin.
 
 | Principle | Meaning |
 |-----------|---------|
@@ -20,8 +16,7 @@ get better. Adapters stay thin.
 | No private rituals | Do not invent CLI-only recovery or chat commands the Desk cannot express. |
 | Porcelain where it matters | Stable exits; `--json` for machine-readable status/chat where a second viewport needs the same facts. |
 
-Sources (public, reconstructed — workshop `.local/agent-surfaces.md` is
-gitignored and was not available in this pass):
+Sources (public, reconstructed — workshop `.local/agent-surfaces.md` is gitignored and was not available in this pass):
 
 - [Architecture: CLI and plugin chat](../explanation/architecture.md#cli-and-plugin-chat)
 - First sitting: shell and web describe the same Desk
@@ -30,10 +25,7 @@ gitignored and was not available in this pass):
 
 ## Method and limits
 
-This inventory is **docs-and-history scoped**. This environment can read
-`charlesberret/kettle` only. `kettle-core` and `kettle-vscode` were not
-cloneable, so rows are **not** source-verified against `cli.py`, `API.md`, or
-the vscode Desk stream client.
+This inventory is **docs-and-history scoped**. This environment can read `charlesberret/kettle` only. `kettle-core` and `kettle-vscode` were not cloneable, so rows are **not** source-verified against `cli.py`, `API.md`, or the vscode Desk stream client.
 
 | Can claim | Cannot claim |
 |-----------|--------------|
@@ -45,8 +37,7 @@ Re-verify each follow-up in `kettle-core` / `kettle-vscode` before implementing.
 
 ## Documented command surface
 
-Status is vs the north star **as published in this repo**, not vs unreadable
-source.
+Status is vs the north star **as published in this repo**, not vs unreadable source.
 
 | Command / control | Where documented | Chat-spine role | Status |
 |-------------------|------------------|-----------------|--------|
@@ -80,18 +71,14 @@ source.
 
 ## Top follow-ups
 
-Do not boil the ocean in one PR. File these in Linear (Kettle project,
-milestone **Dependable distribution / Next** unless noted). Implementation
-lands in core first.
+Do not boil the ocean in one PR. File these in Linear (Kettle project, milestone **Dependable distribution / Next** unless noted). Implementation lands in core first.
 
 ### 1. Chat stream contract (protocol)
 
 - **Title:** Chat stream: one activity/phase/error schema for CLI and plugin
 - **Repo:** `kettle-core`
 - **Why:** Paired craft fails if vscode and `kettle chat` speak different events.
-- **Do:** Document the Desk/agent stream in `API.md` (activity, phase, error,
-  terminal). Add contract tests. CLI and plugin consume that schema; no
-  plugin-only status protocol.
+- **Do:** Document the Desk/agent stream in `API.md` (activity, phase, error, terminal). Add contract tests. CLI and plugin consume that schema; no plugin-only status protocol.
 - **Mode:** agent · **Diff:** M
 - **Acceptance:**
   - [ ] Event types and payload fields named in `API.md`
@@ -103,8 +90,7 @@ lands in core first.
 - **Title:** Shared chat/CLI status copy owned by core
 - **Repo:** `kettle-core`
 - **Why:** Phase names and activity verbs that differ by viewport feel like two products.
-- **Do:** One catalog for phase names, activity verbs, empty states, and
-  attach/idle copy. Plugin and CLI render those strings.
+- **Do:** One catalog for phase names, activity verbs, empty states, and attach/idle copy. Plugin and CLI render those strings.
 - **Mode:** agent · **Diff:** S–M
 - **Acceptance:**
   - [ ] Catalog lives in core (module or documented table), not duplicated in vscode
@@ -115,9 +101,7 @@ lands in core first.
 - **Title:** Chat errors match CLI and doctor honesty
 - **Repo:** `kettle-core` (strings + mapping); thin `kettle-vscode` render
 - **Why:** Plugin must not swallow failures the CLI prints, or invent a recovery ritual the Desk cannot express.
-- **Do:** Map failure classes — core unreachable, curator CLI missing/unauthenticated,
-  Host/Origin reject, stream drop — to the same user-visible error class in
-  `doctor`, `kettle chat`, and plugin chat.
+- **Do:** Map failure classes — core unreachable, curator CLI missing/unauthenticated, Host/Origin reject, stream drop — to the same user-visible error class in `doctor`, `kettle chat`, and plugin chat.
 - **Mode:** agent · **Diff:** M
 - **Acceptance:**
   - [ ] Failure-class table in core docs
@@ -129,8 +113,7 @@ lands in core first.
 - **Title:** Stable exits and `--json` for chat/status
 - **Repo:** `kettle-core`
 - **Why:** A second viewport (plugin, scripts, tests) should read the same facts the human sees.
-- **Do:** Stable exit codes for chat/status/doctor; `--json` (or existing equivalent)
-  for the states the stream contract already names. Do not add a parallel JSON dialect in vscode.
+- **Do:** Stable exit codes for chat/status/doctor; `--json` (or existing equivalent) for the states the stream contract already names. Do not add a parallel JSON dialect in vscode.
 - **Mode:** agent · **Diff:** M
 - **Depends on:** follow-up 1
 - **Acceptance:**
@@ -143,8 +126,7 @@ lands in core first.
 - **Title:** Publish `PLATFORMS.md` viewport parity (CLI / web / vscode chat)
 - **Repo:** `kettle-core` (`docs/PLATFORMS.md`); product-home already points here
 - **Why:** Product-home cites a parity matrix that is “when present.” Strangers cannot see pairing without it.
-- **Do:** Table of sitting actions and chat states across CLI, web, and vscode.
-  Mark ok / gap / n/a. Keep it factual; do not duplicate `API.md`.
+- **Do:** Table of sitting actions and chat states across CLI, web, and vscode. Mark ok / gap / n/a. Keep it factual; do not duplicate `API.md`.
 - **Mode:** hybrid · **Diff:** S
 - **Milestone:** can sit on **Now** (stranger-path honesty) once follow-up 1 exists, or ship a stub that says “unverified”
 - **Acceptance:**
@@ -168,5 +150,4 @@ lands in core first.
 - [ ] Follow-ups filed as Linear issues (bodies above; Linear MCP was unauthenticated in this agent run)
 - [ ] No CLI-only ritual introduced (none added; plugin called out as the same stream)
 
-Linear remains the plan. This file is the public mirror so the pairing is not
-only in `.local/` or a chat transcript.
+Linear remains the plan. This file is the public mirror so the pairing is not only in `.local/` or a chat transcript.

@@ -11,8 +11,7 @@
 | VS Code / Cursor behavior | `kettle-vscode` |
 | Electron / macOS packaging | `kettle-desktop` |
 
-Read [architecture](../explanation/architecture.md) before a cross-repo change.
-**Core contracts land first;** adapters follow.
+Read [architecture](../explanation/architecture.md) before a cross-repo change. **Core contracts land first;** adapters follow.
 
 ## 2. Branch and implement
 

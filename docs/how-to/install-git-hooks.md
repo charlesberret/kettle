@@ -1,7 +1,6 @@
 # How to install Kettle git hooks
 
-**Goal:** Enable the family `commit-msg` hook so commit messages match
-[commit conventions](../reference/commit-conventions.md).
+**Goal:** Enable the family `commit-msg` hook so commit messages match [commit conventions](../reference/commit-conventions.md).
 
 ## From product home
 

@@ -1,12 +1,8 @@
 # Curator agent UX scoring rubric
 
-This rubric scores Kettle's curator agent UX for a local-first review desk:
-agent work -> curated queue -> read/edit/comment/approve -> sweep.
+This rubric scores Kettle's curator agent UX for a local-first review desk: agent work -> curated queue -> read/edit/comment/approve -> sweep.
 
-Use it for automated demo runs, comparative model/provider runs, and manual
-review sessions. Score observable behavior only: prompts shown, entries queued,
-briefs, tags, chat transcript, approvals/comments, sweep output, timings, and
-token logs. Do not give credit for intent that is not visible in artifacts.
+Use it for automated demo runs, comparative model/provider runs, and manual review sessions. Score observable behavior only: prompts shown, entries queued, briefs, tags, chat transcript, approvals/comments, sweep output, timings, and token logs. Do not give credit for intent that is not visible in artifacts.
 
 ## Score scale conventions
 
@@ -21,13 +17,11 @@ All surface areas are scored independently from 0 to 5.
 | 4 | Strong; accurate, economical, and reliable across common cases. |
 | 5 | Excellent; anticipatory, calibrated, and consistently improves curator judgment. |
 
-Half-points are allowed when evidence sits between adjacent descriptors. Record
-the reason in scoring notes.
+Half-points are allowed when evidence sits between adjacent descriptors. Record the reason in scoring notes.
 
 ## 1. Interview: founding interview quality
 
-Measures how well the initial curator interview establishes a project charter,
-review norms, priorities, and desk behavior.
+Measures how well the initial curator interview establishes a project charter, review norms, priorities, and desk behavior.
 
 | Score | Descriptor |
 |---:|---|
@@ -43,15 +37,12 @@ Scoring notes:
 - Reward concise questions that change later behavior.
 - Penalize interview length when answers are not used downstream.
 - Penalize leading questions that bias the user toward a specific workflow.
-- Check charter traceability: at least 80% of queue/tag/brief decisions should
-  be explainable from charter fields or explicit user follow-up at scores 4-5.
-- A score above 3 requires both elicitation quality and a usable resulting
-  charter, not just pleasant conversation.
+- Check charter traceability: at least 80% of queue/tag/brief decisions should be explainable from charter fields or explicit user follow-up at scores 4-5.
+- A score above 3 requires both elicitation quality and a usable resulting charter, not just pleasant conversation.
 
 ## 2. Batch selection: what enters and how the queue is shaped
 
-Measures the curator's ability to select, order, group, and size queue entries
-from available agent output.
+Measures the curator's ability to select, order, group, and size queue entries from available agent output.
 
 | Score | Descriptor |
 |---:|---|
@@ -64,21 +55,15 @@ from available agent output.
 
 Scoring notes:
 
-- Evaluate precision, recall, ordering, and granularity separately before
-  assigning the single score.
-- Penalize hidden filtering: omitted high-risk or user-requested work must be
-  named or discoverable.
-- Good batches are not always small. They are sized to the fixture's curator
-  capacity and item complexity.
-- For coding fixtures, include risky diffs, tests, migrations, config, generated
-  artifacts, and unresolved CI failures when relevant.
-- For writing fixtures, include thesis changes, factual claims, tone decisions,
-  structure, source gaps, and publication blockers when relevant.
+- Evaluate precision, recall, ordering, and granularity separately before assigning the single score.
+- Penalize hidden filtering: omitted high-risk or user-requested work must be named or discoverable.
+- Good batches are not always small. They are sized to the fixture's curator capacity and item complexity.
+- For coding fixtures, include risky diffs, tests, migrations, config, generated artifacts, and unresolved CI failures when relevant.
+- For writing fixtures, include thesis changes, factual claims, tone decisions, structure, source gaps, and publication blockers when relevant.
 
 ## 3. Briefs: entry brief quality
 
-Measures whether each queue entry gives the curator enough context to decide,
-edit, comment, or approve without re-reading all raw agent output.
+Measures whether each queue entry gives the curator enough context to decide, edit, comment, or approve without re-reading all raw agent output.
 
 | Score | Descriptor |
 |---:|---|
@@ -92,17 +77,13 @@ edit, comment, or approve without re-reading all raw agent output.
 Scoring notes:
 
 - Sample at least 10 briefs or all briefs if fewer than 10.
-- Penalize unsupported certainty, especially for code behavior, factual claims,
-  external references, and inferred user intent.
-- A score above 3 requires source pointers or evidence labels sufficient for a
-  reviewer to verify the brief quickly.
-- Strong briefs should answer: "What am I approving?", "What could be wrong?",
-  and "What is the lowest-friction next action?"
+- Penalize unsupported certainty, especially for code behavior, factual claims, external references, and inferred user intent.
+- A score above 3 requires source pointers or evidence labels sufficient for a reviewer to verify the brief quickly.
+- Strong briefs should answer: "What am I approving?", "What could be wrong?", and "What is the lowest-friction next action?"
 
 ## 4. Tags
 
-Measures tag taxonomy, accuracy, consistency, and usefulness for filtering,
-batch shaping, and sweep synthesis.
+Measures tag taxonomy, accuracy, consistency, and usefulness for filtering, batch shaping, and sweep synthesis.
 
 | Score | Descriptor |
 |---:|---|
@@ -116,18 +97,14 @@ batch shaping, and sweep synthesis.
 Scoring notes:
 
 - Prefer few high-value tags over many vague tags.
-- Measure tag correction rate: score 4-5 usually requires less than 10% manual
-  corrections on fixture runs.
-- Penalize synonyms that fragment filters, such as `docs`, `documentation`, and
-  `writing` when they mean the same thing.
-- Useful tag dimensions commonly include `domain`, `artifact_type`, `risk`,
-  `action_needed`, `confidence`, `source`, and `sweep_topic`.
+- Measure tag correction rate: score 4-5 usually requires less than 10% manual corrections on fixture runs.
+- Penalize synonyms that fragment filters, such as `docs`, `documentation`, and `writing` when they mean the same thing.
+- Useful tag dimensions commonly include `domain`, `artifact_type`, `risk`, `action_needed`, `confidence`, `source`, and `sweep_topic`.
 - Tags should not leak provider internals unless those internals affect review.
 
 ## 5. Chat: ongoing curator conversation
 
-Measures how the curator agent behaves after founding while the user reads,
-edits, comments, approves, asks questions, and changes priorities.
+Measures how the curator agent behaves after founding while the user reads, edits, comments, approves, asks questions, and changes priorities.
 
 | Score | Descriptor |
 |---:|---|
@@ -140,18 +117,14 @@ edits, comments, approves, asks questions, and changes priorities.
 
 Scoring notes:
 
-- Reward continuity with current entry, charter, prior comments, approvals, and
-  sweep readiness.
-- Penalize unsolicited broad rewrites, excessive reassurance, and modal chatter
-  that blocks the review loop.
+- Reward continuity with current entry, charter, prior comments, approvals, and sweep readiness.
+- Penalize unsolicited broad rewrites, excessive reassurance, and modal chatter that blocks the review loop.
 - The chat should state uncertainty and propose local, reversible actions.
-- A score above 3 requires correct use of visible desk state, not just a good
-  standalone answer.
+- A score above 3 requires correct use of visible desk state, not just a good standalone answer.
 
 ## 6. Sweep reasoning and insights
 
-Measures how well the final sweep uses approvals, edits, comments, rejected
-items, and desk context to produce faithful reasoning and useful synthesis.
+Measures how well the final sweep uses approvals, edits, comments, rejected items, and desk context to produce faithful reasoning and useful synthesis.
 
 | Score | Descriptor |
 |---:|---|
@@ -164,18 +137,14 @@ items, and desk context to produce faithful reasoning and useful synthesis.
 
 Scoring notes:
 
-- Faithfulness is a gate: hallucinated approvals or changed user intent cap the
-  score at 2.
+- Faithfulness is a gate: hallucinated approvals or changed user intent cap the score at 2.
 - Reward insight density, not length.
 - Good sweep reasoning distinguishes evidence, inference, and recommendation.
-- For code, sweep should mention tests/CI, risks, file areas, and follow-up
-  changes. For writing, it should mention thesis, factual risk, tone, structure,
-  publication state, and source gaps.
+- For code, sweep should mention tests/CI, risks, file areas, and follow-up changes. For writing, it should mention thesis, factual risk, tone, structure, publication state, and source gaps.
 
 ## Efficiency metrics
 
-Efficiency scores do not replace the six surface scores. Record them alongside
-surface scores and use them to explain deltas between runs.
+Efficiency scores do not replace the six surface scores. Record them alongside surface scores and use them to explain deltas between runs.
 
 ### Token metrics
 
@@ -191,10 +160,8 @@ surface scores and use them to explain deltas between runs.
 Notes:
 
 - Do not reward token minimization that lowers surface scores.
-- Briefs below useful context should be penalized through the Briefs score, not
-  celebrated as efficient.
-- Track p50/p90 tokens per fixture family; regressions above 20% require an
-  explanation or quality gain.
+- Briefs below useful context should be penalized through the Briefs score, not celebrated as efficient.
+- Track p50/p90 tokens per fixture family; regressions above 20% require an explanation or quality gain.
 
 ### Wall-clock metrics
 
@@ -207,21 +174,17 @@ Notes:
 | `sweep_latency_ms` | Sweep request to usable sweep result. | Lower |
 | `review_session_wall_clock_ms` | Full demo run duration, excluding scorer deliberation. | Lower for same quality |
 
-Report p50 and p90. A run that blocks the curator without visible progress for
-more than 10 seconds should record a `blocked_wait_event`.
+Report p50 and p90. A run that blocks the curator without visible progress for more than 10 seconds should record a `blocked_wait_event`.
 
 ### Turns-to-useful-charter
 
-`turns_to_useful_charter` is the count of user-agent exchanges from first
-founding prompt to the first charter that independently scores at least 3 on the
-Interview rubric.
+`turns_to_useful_charter` is the count of user-agent exchanges from first founding prompt to the first charter that independently scores at least 3 on the Interview rubric.
 
 Targets:
 
 - 1-2 turns: excellent when user input is already dense.
 - 3-5 turns: acceptable for ambiguous projects.
-- More than 5 turns: inspect whether questions were redundant, low-signal, or
-  better handled as defaults with confirmation.
+- More than 5 turns: inspect whether questions were redundant, low-signal, or better handled as defaults with confirmation.
 
 ### Cognitive load proxies
 
@@ -240,8 +203,7 @@ Record these because cognitive load is hard to measure directly:
 
 ## Adaptability evaluation
 
-Score adaptability as an annotation for each run, then inspect whether any
-surface score systematically drops for specific fixture axes.
+Score adaptability as an annotation for each run, then inspect whether any surface score systematically drops for specific fixture axes.
 
 ### Project type: coding vs writing
 
@@ -250,31 +212,26 @@ Coding projects should show:
 - diff-aware batch selection by risk, dependency, tests, and config impact;
 - briefs with file paths, behavior claims, test status, and unresolved failures;
 - tags for area, change type, risk, confidence, and action needed;
-- sweep that preserves what was approved versus what still requires CI/manual
-  verification.
+- sweep that preserves what was approved versus what still requires CI/manual verification.
 
 Writing projects should show:
 
-- selection by thesis impact, section structure, factual risk, tone, audience,
-  and publication blockers;
+- selection by thesis impact, section structure, factual risk, tone, audience, and publication blockers;
 - briefs with claim/evidence status, intended reader effect, and edit hooks;
 - tags for section, topic, claim risk, tone, source status, and action needed;
-- sweep that synthesizes argument shape, style decisions, source gaps, and next
-  editorial moves.
+- sweep that synthesizes argument shape, style decisions, source gaps, and next editorial moves.
 
 ### User expertise: novice vs expert
 
 Novice users need:
 
-- fewer assumptions, more explanations of Kettle concepts, and reversible
-  recommendations;
+- fewer assumptions, more explanations of Kettle concepts, and reversible recommendations;
 - visible "why this matters" in briefs;
 - lower jargon density and clearer next actions.
 
 Expert users need:
 
-- shorter prompts, denser briefs, precise controls, fewer confirmations, and
-  access to raw evidence;
+- shorter prompts, denser briefs, precise controls, fewer confirmations, and access to raw evidence;
 - respect for project-specific terminology;
 - chat that answers direct questions without tutorializing.
 
@@ -298,14 +255,12 @@ Adaptability flags:
 
 - `mode_mismatch`: UX treats coding as writing or writing as coding.
 - `expertise_mismatch`: UX over-explains to experts or under-explains to novices.
-- `density_mismatch`: UX either invents detail for sparse output or overwhelms
-  the user with dense output.
+- `density_mismatch`: UX either invents detail for sparse output or overwhelms the user with dense output.
 - `charter_drift`: later behavior ignores founding preferences.
 
 ## Charm, consistency, and UX quality
 
-This subjective dimension is recorded separately as `ux_quality_0_5`. It should
-not hide functional defects in the six surface scores.
+This subjective dimension is recorded separately as `ux_quality_0_5`. It should not hide functional defects in the six surface scores.
 
 | Score | Descriptor |
 |---:|---|
@@ -320,30 +275,23 @@ Scoring notes:
 
 - Evaluate charm as disciplined product feel, not entertainment.
 - Penalize personality that obscures decisions or makes errors harder to see.
-- Consistency includes terminology: queue entry, brief, tag, comment, approve,
-  sweep, charter, and desk should not drift across surfaces.
+- Consistency includes terminology: queue entry, brief, tag, comment, approve, sweep, charter, and desk should not drift across surfaces.
 
 ### Intercoder reliability protocol
 
 Use at least two independent scorers per benchmark run.
 
-1. Both scorers receive the same artifacts, fixture definition, scoring sheet,
-   and rubric. They score independently before discussion.
+1. Both scorers receive the same artifacts, fixture definition, scoring sheet, and rubric. They score independently before discussion.
 2. For each 0-5 surface score, record both raw scores and notes.
 3. Agreement is counted when scores differ by no more than 1 point.
 4. Target simple percent agreement: at least 85% of scored fields within 1 point.
-5. For categorical flags such as `mode_mismatch`, `density_mismatch`, and
-   `critical_failure`, target Cohen's kappa >= 0.70.
-6. Resolve disagreements by reviewing evidence, not preference. The final score
-   is the average of independent scores unless a documented artifact error or
-   rubric misread is found.
-7. If any surface differs by 2 or more points after discussion, keep both notes
-   and mark `needs_rubric_calibration: true`.
+5. For categorical flags such as `mode_mismatch`, `density_mismatch`, and `critical_failure`, target Cohen's kappa >= 0.70.
+6. Resolve disagreements by reviewing evidence, not preference. The final score is the average of independent scores unless a documented artifact error or rubric misread is found.
+7. If any surface differs by 2 or more points after discussion, keep both notes and mark `needs_rubric_calibration: true`.
 
 ## Overall composite score
 
-Compute the composite from independently scored dimensions. Do not compute a
-composite when any critical failure is present.
+Compute the composite from independently scored dimensions. Do not compute a composite when any critical failure is present.
 
 Critical failures:
 
@@ -388,23 +336,16 @@ overall_score_0_5 = surface_weighted_score * efficiency_multiplier
 
 Justification:
 
-- Batch selection and briefs carry the most weight because they define the
-  curator's day-to-day review leverage.
-- Interview is important because it governs setup and later behavior, but it is
-  episodic.
-- Chat and sweep reasoning are each high-impact but should not compensate for a
-  poor queue or poor briefs.
-- Tags receive less weight because they are enabling structure; severe tag
-  failures should still appear through batch, brief, chat, and sweep scores.
-- Charm/consistency is included to protect product quality, but it cannot mask
-  functional failure.
-- Efficiency is a multiplier so slow or wasteful behavior can lower an otherwise
-  competent experience without rewarding terse low-quality output.
+- Batch selection and briefs carry the most weight because they define the curator's day-to-day review leverage.
+- Interview is important because it governs setup and later behavior, but it is episodic.
+- Chat and sweep reasoning are each high-impact but should not compensate for a poor queue or poor briefs.
+- Tags receive less weight because they are enabling structure; severe tag failures should still appear through batch, brief, chat, and sweep scores.
+- Charm/consistency is included to protect product quality, but it cannot mask functional failure.
+- Efficiency is a multiplier so slow or wasteful behavior can lower an otherwise competent experience without rewarding terse low-quality output.
 
 ## Benchmark goals
 
-Run the benchmark matrix on every continuous improvement round. Compare against
-the same fixture set, scorer pool, and instrumentation.
+Run the benchmark matrix on every continuous improvement round. Compare against the same fixture set, scorer pool, and instrumentation.
 
 ### Baseline assumption: mediocre first prototype
 
@@ -426,28 +367,22 @@ Ambitious but achievable continuous-improvement goal:
 - Every critical fixture scores at least 3.5 overall.
 - Matrix mean overall score >= 4.2.
 - No surface-area mean below 4.0.
-- No individual surface score below 3.0 unless a fixture intentionally withholds
-  required evidence.
+- No individual surface score below 3.0 unless a fixture intentionally withholds required evidence.
 - `turns_to_useful_charter` p50 <= 3 and p90 <= 5.
 - `time_to_first_queue_ms` p90 within the fixture target band.
 - Tag manual correction rate <= 10%.
 - Brief hallucination rate <= 2% of sampled briefs.
-- Simple scorer agreement >= 85% within 1 point; categorical Cohen's kappa >=
-  0.70.
+- Simple scorer agreement >= 85% within 1 point; categorical Cohen's kappa >=0.70.
 
 Stretch goal for "excellent curator":
 
 - Matrix mean overall score >= 4.5.
 - p90 `perceived_load_1_7` <= 3.
-- At least 80% of sweep outputs contain one or more scorer-validated insights
-  that were not explicitly listed in a single source item but are traceable to
-  multiple approved/commented entries.
+- At least 80% of sweep outputs contain one or more scorer-validated insights that were not explicitly listed in a single source item but are traceable to multiple approved/commented entries.
 
 ## Demo scenario matrix
 
-Use at least these six persona x project fixtures for automated demo runs. Each
-fixture should include founding inputs, raw agent output, expected high-value
-queue inclusions, expected omissions, and scorer answer keys.
+Use at least these six persona x project fixtures for automated demo runs. Each fixture should include founding inputs, raw agent output, expected high-value queue inclusions, expected omissions, and scorer answer keys.
 
 | Fixture ID | Persona | Project | Agent output density | Primary stress | Expected curator behavior |
 |---|---|---|---|---|---|
@@ -471,8 +406,7 @@ Minimum matrix coverage:
 
 ## Machine-readable scoring worksheet template
 
-Use this YAML template for each scorer's independent pass. Store final resolved
-scores in a separate file or mark `phase: resolved`.
+Use this YAML template for each scorer's independent pass. Store final resolved scores in a separate file or mark `phase: resolved`.
 
 ```yaml
 schema_version: 1

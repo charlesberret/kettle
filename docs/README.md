@@ -1,13 +1,8 @@
 # Kettle documentation
 
-Kettle is a local-first review desk for work made with coding and writing
-agents. The product story is [explanation/product-home](./explanation/product-home.md).
-A first pass is [tutorials/first-sitting](./tutorials/first-sitting.md).
+Kettle is a local-first review desk for work made with coding and writing agents. The product story is [explanation/product-home](./explanation/product-home.md). A first pass is [tutorials/first-sitting](./tutorials/first-sitting.md).
 
-The rest of this tree follows **[Diátaxis](https://diataxis.fr/)**: four
-kinds of documentation for four needs. Keep them distinct — do not mix a
-tutorial’s hand-holding with reference tables, or turn an explanation into a
-command dump.
+The rest of this tree follows **[Diátaxis](https://diataxis.fr/)**: four kinds of documentation for four needs. Keep them distinct — do not mix a tutorial’s hand-holding with reference tables, or turn an explanation into a command dump.
 
 ```text
                  tutorials          how-to guides
@@ -57,14 +52,11 @@ command dump.
 | Reference | Be complete and neutral; name facts | Narrate a story |
 | Explanation | Discuss why, trade-offs, context | Become an install recipe |
 
-Implementation detail (API, CLI flags, Desk layout) lives with **code** —
-especially [`kettle-core`](https://github.com/charlesberret/kettle-core). This
-home repo owns the **public story, family map, and release definition**.
+Implementation detail (API, CLI flags, Desk layout) lives with **code** — especially [`kettle-core`](https://github.com/charlesberret/kettle-core). This home repo owns the **public story, family map, and release definition**.
 
 ## Local ops notes
 
-Machine-local handoffs and design scratch: **`.local/`** (gitignored), not under
-`docs/`.
+Machine-local handoffs and design scratch: **`.local/`** (gitignored), not under `docs/`.
 
 ## Checks
 

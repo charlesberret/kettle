@@ -1,7 +1,6 @@
 # Reference
 
-**Information-oriented.** Neutral, complete enough to look up. Not a narrative
-and not a lesson.
+**Information-oriented.** Neutral, complete enough to look up. Not a narrative and not a lesson.
 
 | Document | Contents |
 |----------|----------|
@@ -11,5 +10,4 @@ and not a lesson.
 | [Commit conventions](./commit-conventions.md) | Kettle-local hook notes; shape follows system default |
 | [Chat signature inventory](./chat-signature-inventory.md) | CLI × plugin gaps vs paired-craft north star (protocol, copy, errors) |
 
-API endpoints, CLI flags, and Desk file layouts are **reference material for
-kettle-core** (`API.md`, `INSTALL.md`, etc.) — not duplicated here.
+API endpoints, CLI flags, and Desk file layouts are **reference material for kettle-core** (`API.md`, `INSTALL.md`, etc.) — not duplicated here.

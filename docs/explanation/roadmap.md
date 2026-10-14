@@ -1,8 +1,6 @@
 # Kettle roadmap
 
-Kettle is already a working review instrument. The immediate work is to make
-the current system safe, installable, understandable, and pleasant for people
-outside its original workshop.
+Kettle is already a working review instrument. The immediate work is to make the current system safe, installable, understandable, and pleasant for people outside its original workshop.
 
 ## Current baseline
 
@@ -17,38 +15,26 @@ outside its original workshop.
 - Verify editable and wheel installs on supported Python releases.
 - Finish Host and Origin validation for the localhost HTTP surface.
 - Add a per-boot local authentication design before widening integrations.
-- Run a stranger-path dogfood pass: install, found a Desk, review an entry,
-  comment, approve, and sweep without maintainer-only knowledge
-  ([checklist](../how-to/stranger-path-qa.md)).
-- Define curator excellence around the recommended
-  [Hybrid Desk Notebook](./curator-frameworks.md) and run improvement work
-  against the [curator scoring benchmark](../reference/curator-scoring.md).
-- Finish repository descriptions, topics, issue routing, and private
-  vulnerability reporting.
-- Make the source repositories public only when their cross-repository links
-  and clone instructions work without authentication.
+- Run a stranger-path dogfood pass: install, found a Desk, review an entry, comment, approve, and sweep without maintainer-only knowledge ([checklist](../how-to/stranger-path-qa.md)).
+- Define curator excellence around the recommended [Hybrid Desk Notebook](./curator-frameworks.md) and run improvement work against the [curator scoring benchmark](../reference/curator-scoring.md).
+- Finish repository descriptions, topics, issue routing, and private vulnerability reporting.
+- Make the source repositories public only when their cross-repository links and clone instructions work without authentication.
 
 ## Next: dependable distribution
 
 - Publish the core through a repeatable Python package channel.
 - Publish the VS Code/Cursor extension after live-host smoke testing.
-- Add signed and notarized macOS builds only when desktop updates are
-  operationally supportable.
-- Add an explicit, dry-run-first migration command for Setsweep registries and
-  `.setsweep/` Desks.
+- Add signed and notarized macOS builds only when desktop updates are operationally supportable.
+- Add an explicit, dry-run-first migration command for Setsweep registries and `.setsweep/` Desks.
 - Stabilize API and Desk contracts at version `1` after real adapter use.
-- Keep CLI and plugin agent chat on one core spine (protocol, copy, errors);
-  see the [chat signature inventory](../reference/chat-signature-inventory.md).
+- Keep CLI and plugin agent chat on one core spine (protocol, copy, errors); see the [chat signature inventory](../reference/chat-signature-inventory.md).
 
 ## Later: evidence-led adapters
 
 - Improve file watching with native notifications.
 - Extract a shared client only when a second TypeScript adapter needs it.
-- Build an Obsidian adapter when a concrete writing workflow is ready to
-  dogfood.
-- Add a narrow MCP bridge only for model-host tools that benefit from the same
-  Desk. It should not replace the CLI or a full sitting. Threat, use, and
-  scope: [MCP bridge](./mcp-bridge.md).
+- Build an Obsidian adapter when a concrete writing workflow is ready to dogfood.
+- Add a narrow MCP bridge only for model-host tools that benefit from the same Desk. It should not replace the CLI or a full sitting. Threat, use, and scope: [MCP bridge](./mcp-bridge.md).
 - Consider remote or multi-user use only after a separate threat model.
 
 ## Permanent constraints
@@ -63,6 +49,4 @@ outside its original workshop.
 
 ## Soft release channels
 
-For package-name reservations, marketplace accounts, dogfood-vs-announce
-criteria, and where to post once installable, see
-[soft release](./soft-release.md).
+For package-name reservations, marketplace accounts, dogfood-vs-announce criteria, and where to post once installable, see [soft release](./soft-release.md).

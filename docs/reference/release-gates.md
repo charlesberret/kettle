@@ -1,8 +1,6 @@
 # Kettle release definition
 
-A Kettle release is a named bar with automated evidence and a short manual
-dogfood record. Source-ready does not mean a package or marketplace listing
-already exists.
+A Kettle release is a named bar with automated evidence and a short manual dogfood record. Source-ready does not mean a package or marketplace listing already exists.
 
 Run the local automated gates from this repository with sibling checkouts:
 
@@ -28,8 +26,7 @@ The first public preview is ready when:
 | Release inputs are reproducible | all publishable Git worktrees clean |
 | Source is publicly reachable | family links and clone commands work without authentication |
 
-Manual release evidence (executable checklist:
-[stranger-path QA](../how-to/stranger-path-qa.md)):
+Manual release evidence (executable checklist: [stranger-path QA](../how-to/stranger-path-qa.md)):
 
 - install from the public instructions on a clean machine or user account;
 - found or open a real Desk;
@@ -37,8 +34,7 @@ Manual release evidence (executable checklist:
 - verify approval does not itself apply or transmit work;
 - sweep and confirm the resulting Desk and Git state;
 - inspect the packaged VSIX in VS Code or Cursor;
-- verify repository descriptions, topics, issue forms, licenses, and private
-  vulnerability reporting on GitHub;
+- verify repository descriptions, topics, issue forms, licenses, and private vulnerability reporting on GitHub;
 - confirm public copy does not claim unsigned or unpublished artifacts exist.
 
 ## Distribution bars
@@ -49,16 +45,13 @@ Manual release evidence (executable checklist:
 | Editor marketplace | live activation, declared permissions, icon and listing, rollback plan |
 | macOS application | exact core provenance, packaged smoke, signing, notarization, update plan |
 
-Channel sequencing (reserve names now, announce only what installs today):
-[soft release](../explanation/soft-release.md).
+Channel sequencing (reserve names now, announce only what installs today): [soft release](../explanation/soft-release.md).
 
-Viewport package versions do not need to match. Compatibility is governed by
-the API and Desk-schema contracts published by core and declared by adapters.
+Viewport package versions do not need to match. Compatibility is governed by the API and Desk-schema contracts published by core and declared by adapters.
 
 ## Compatibility removal
 
-Setsweep command aliases, process identity, registry lookup, and `.setsweep/`
-fallback must remain until:
+Setsweep command aliases, process identity, registry lookup, and `.setsweep/` fallback must remain until:
 
 1. an explicit migration command exists;
 2. its dry-run and rollback behavior are tested;

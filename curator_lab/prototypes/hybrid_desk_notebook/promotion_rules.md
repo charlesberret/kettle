@@ -1,7 +1,6 @@
 # Hybrid promotion rules
 
-Promotion means turning a local observation into durable desk memory for the
-next sitting. It never applies non-local or irreversible actions.
+Promotion means turning a local observation into durable desk memory for the next sitting. It never applies non-local or irreversible actions.
 
 Promote when:
 
@@ -31,12 +30,10 @@ expires_when: ""
 ```
 # Hybrid Desk Notebook — promotion rules
 
-Promote a memory item from sitting residue to durable Desk memory only when one
-of these gates passes:
+Promote a memory item from sitting residue to durable Desk memory only when one of these gates passes:
 
 1. User explicitly says “remember this.”
-2. The same pattern appears in **≥2** sittings or **≥3** entries with consistent
-   rulings.
+2. The same pattern appears in **≥2** sittings or **≥3** entries with consistent rulings.
 3. The change would alter future batch, brief, tag, chat, or sweep behavior.
 4. The item corrects a contradicted durable claim.
 
@@ -61,5 +58,4 @@ tests, or source artifacts.
 Exceptions: Brainstorming drafts may speculate if labeled.
 ```
 
-Human accepts, edits, or rejects. Accepted proposals update `preferences.yaml`
-or `charter.md` with `last_confirmed`.
+Human accepts, edits, or rejects. Accepted proposals update `preferences.yaml` or `charter.md` with `last_confirmed`.
