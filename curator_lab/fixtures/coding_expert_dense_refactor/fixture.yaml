@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "fixture_id": "coding_expert_dense_refactor",
+  "fixture_version": "1.0",
+  "title": "Expert dense TypeScript refactor",
+  "persona": {
+    "role": "staff engineer",
+    "expertise": "expert",
+    "needs": ["terse briefs", "raw evidence links", "dependency and config risk"]
+  },
+  "project": {
+    "type": "coding",
+    "title": "TypeScript refactor with tests and config",
+    "review_goal": "Separate API-safe refactors from config/test failures."
+  },
+  "density": "dense",
+  "curator_capacity": 4,
+  "founding_context": "Keep the queue dense and evidence-linked. I care about behavior drift, public API changes, tsconfig, and failed tests more than style churn.",
+  "raw_agent_outputs": [
+    {
+      "id": "extract-review-service",
+      "title": "Extract ReviewService from route handler",
+      "kind": "diff",
+      "path": "agent_output/review_service.diff",
+      "domain": "coding",
+      "risk": "medium",
+      "confidence": "high",
+      "signals": ["expected", "behavior_change", "dependency"],
+      "summary": "Moves review orchestration into a service while preserving handler shape.",
+      "recommended_action": "inspect",
+      "source_evidence": ["src/routes/review.ts", "src/services/review-service.ts"]
+    },
+    {
+      "id": "public-api-rename",
+      "title": "Rename public ReviewStatus field",
+      "kind": "diff",
+      "path": "agent_output/status_rename.diff",
+      "domain": "coding",
+      "risk": "high",
+      "confidence": "medium",
+      "signals": ["expected", "api_risk", "dependency"],
+      "summary": "Renames state to status in exported ReviewStatus.",
+      "recommended_action": "comment",
+      "source_evidence": ["src/types.ts", "docs/api.md"]
+    },
+    {
+      "id": "vitest-failure",
+      "title": "Vitest failure from mocked clock",
+      "kind": "test",
+      "path": "agent_output/vitest_failure.txt",
+      "domain": "coding",
+      "risk": "high",
+      "confidence": "high",
+      "signals": ["expected", "unresolved_failure", "test_coverage"],
+      "summary": "One refactor test fails because the mocked clock no longer advances.",
+      "recommended_action": "investigate",
+      "source_evidence": ["test output", "tests/review-service.test.ts"]
+    },
+    {
+      "id": "tsconfig-paths",
+      "title": "tsconfig path alias update",
+      "kind": "config",
+      "path": "agent_output/tsconfig.diff",
+      "domain": "coding",
+      "risk": "medium",
+      "confidence": "medium",
+      "signals": ["expected", "config_risk"],
+      "summary": "Adds @services/* path alias used by the extracted service.",
+      "recommended_action": "inspect",
+      "source_evidence": ["tsconfig.json"]
+    },
+    {
+      "id": "eslint-formatting",
+      "title": "ESLint formatting noise",
+      "kind": "diff",
+      "path": "agent_output/eslint_noise.diff",
+      "domain": "coding",
+      "risk": "low",
+      "confidence": "high",
+      "signals": ["expected_omit", "duplicate", "low_review_value"],
+      "summary": "Whitespace and import sorting caused by formatter.",
+      "recommended_action": "omit",
+      "source_evidence": ["src/**/*.ts"]
+    },
+    {
+      "id": "duplicate-service-note",
+      "title": "Duplicate note about ReviewService",
+      "kind": "note",
+      "path": "agent_output/duplicate_service_note.md",
+      "domain": "coding",
+      "risk": "low",
+      "confidence": "high",
+      "signals": ["expected_omit", "duplicate"],
+      "summary": "Restates extraction already represented by the diff.",
+      "recommended_action": "omit",
+      "source_evidence": ["agent note"]
+    }
+  ],
+  "expected_queue": ["public-api-rename", "vitest-failure", "tsconfig-paths", "extract-review-service"],
+  "expected_omissions": ["eslint-formatting", "duplicate-service-note"],
+  "answer_key": {
+    "priority_order": ["public-api-rename", "vitest-failure", "tsconfig-paths", "extract-review-service"],
+    "required_tags": {
+      "public-api-rename": ["domain:coding", "artifact_type:diff", "risk:high", "action_needed:comment", "confidence:medium", "sweep_topic:api"],
+      "vitest-failure": ["domain:coding", "artifact_type:test", "risk:high", "action_needed:investigate", "confidence:high", "sweep_topic:tests"],
+      "tsconfig-paths": ["domain:coding", "artifact_type:config", "risk:medium", "action_needed:inspect", "confidence:medium", "sweep_topic:config"],
+      "extract-review-service": ["domain:coding", "artifact_type:diff", "risk:medium", "action_needed:inspect", "confidence:high", "sweep_topic:architecture"]
+    },
+    "sweep_topics": ["api", "tests", "config", "architecture"],
+    "adaptability_expectations": ["expert_terse", "dense_deduplication", "coding_traceability"],
+    "critical_failures": []
+  },
+  "efficiency_targets": {
+    "turns_to_useful_charter_max": 3,
+    "time_to_first_queue_ms_max": 4200,
+    "redundant_token_rate_max": 0.15,
+    "manual_correction_count_max": 2,
+    "perceived_load_1_7_max": 4
+  }
+}

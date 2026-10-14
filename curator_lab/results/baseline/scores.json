@@ -1,0 +1,2210 @@
+{
+  "benchmark_goal": "matrix mean overall score >= 4.2",
+  "intercoder": {
+    "cohens_kappa_adaptability_flags": 0.934,
+    "mean_agreement_within_one_point": 1.0
+  },
+  "product": "kettle",
+  "rubric": "curator_agent_ux",
+  "schema_version": 1,
+  "scores": [
+    {
+      "adaptability": {
+        "agent_output_density": "dense",
+        "flags": {
+          "charter_drift": false,
+          "density_mismatch": true,
+          "expertise_mismatch": true,
+          "mode_mismatch": false
+        },
+        "notes": "Flags are derived from visible adaptation markers in the simulated artifacts.",
+        "project_type": "coding",
+        "user_expertise": "expert"
+      },
+      "cognitive_load": {
+        "attention_switch_count": 3,
+        "average_decision_text_length": 48,
+        "manual_correction_count": 1,
+        "perceived_load_1_7": 4,
+        "scroll_depth_per_entry": 1.1,
+        "unresolved_question_count": 0,
+        "user_clarification_count": 4,
+        "user_reversal_count": 0
+      },
+      "composite": {
+        "computed_by": "script",
+        "efficiency_multiplier": 0.9,
+        "notes": "Rubric formula from docs/reference/curator-scoring.md.",
+        "overall_score_0_5": 3.353,
+        "surface_weighted_score": 3.725
+      },
+      "critical_failures": {
+        "cannot_inspect_or_reverse": false,
+        "fabricated_approval": false,
+        "fabricated_source_or_file_state": false,
+        "lost_source_traceability": false,
+        "non_local_or_irreversible_action": false,
+        "sensitive_data_exposure": false
+      },
+      "efficiency": {
+        "blocked_wait_events": 0,
+        "brief_tokens_per_entry_mean": 11,
+        "evidence_token_ratio": 0.35,
+        "median_entry_open_latency_ms": 246,
+        "redundant_token_rate": 0.16,
+        "review_session_wall_clock_ms": 8960,
+        "sweep_latency_ms": 784,
+        "time_to_first_question_ms": 448,
+        "time_to_first_queue_ms": 2320,
+        "time_to_useful_charter_ms": 6048,
+        "tokens_per_approved_entry": 81,
+        "tokens_to_useful_charter": 130,
+        "total_tokens": 409,
+        "turns_to_useful_charter": 6
+      },
+      "fixture_id": "coding_expert_dense_refactor",
+      "fixture_version": "1.0",
+      "framework_id": "charter_first",
+      "freeform_notes": "Automated heuristic score; use worksheets for independent secondary scoring.",
+      "phase": "resolved",
+      "run_id": "charter_first__coding_expert_dense_refactor",
+      "surface_scores": {
+        "batch_selection": {
+          "evidence": [
+            "precision=0.60",
+            "recall=0.75",
+            "order=1.00",
+            "omissions_explained=0.00"
+          ],
+          "notes": "Precision, recall, ordering, capacity fit, and omission explanation are measured separately then combined.",
+          "score": 3.0
+        },
+        "briefs": {
+          "evidence": [
+            "sampled_count=5",
+            "unsupported_claims=0"
+          ],
+          "notes": "Briefs are scored for change, importance, evidence, risk, action framing, caveats, and answer-key relevance.",
+          "score": 4.5
+        },
+        "chat": {
+          "evidence": [
+            "current_entry_id=public-api-rename",
+            "continuity=medium"
+          ],
+          "notes": "Chat is scored for visible desk state, reversible action, persona adaptation, and continuity.",
+          "score": 3.5
+        },
+        "interview": {
+          "evidence": [
+            "charter fields=100%",
+            "transcript_turns=10"
+          ],
+          "notes": "Scored from charter field coverage, persona/density adaptation, examples, and traceability.",
+          "score": 3.0
+        },
+        "sweep_reasoning": {
+          "evidence": [
+            "topic_recall=1.00",
+            "insight_count=1"
+          ],
+          "notes": "Sweep is scored for topic coverage, decision-state faithfulness, traceability, patterns, and reusable rules.",
+          "score": 4.5
+        },
+        "tags": {
+          "evidence": [
+            "coverage=0.83",
+            "manual_correction_rate=0.20"
+          ],
+          "notes": "Tag score compares required taxonomy dimensions and penalizes synonym fragmentation/corrections.",
+          "score": 4.0
+        },
+        "ux_quality": {
+          "evidence": [
+            "perceived_load=4",
+            "manual_corrections=1"
+          ],
+          "notes": "UX quality is scored separately from function using consistency, adaptation, perceived load, and drift.",
+          "score": 3.5
+        }
+      }
+    },
+    {
+      "adaptability": {
+        "agent_output_density": "sparse",
+        "flags": {
+          "charter_drift": false,
+          "density_mismatch": false,
+          "expertise_mismatch": false,
+          "mode_mismatch": false
+        },
+        "notes": "Flags are derived from visible adaptation markers in the simulated artifacts.",
+        "project_type": "coding",
+        "user_expertise": "novice"
+      },
+      "cognitive_load": {
+        "attention_switch_count": 3,
+        "average_decision_text_length": 48,
+        "manual_correction_count": 1,
+        "perceived_load_1_7": 4,
+        "scroll_depth_per_entry": 1.1,
+        "unresolved_question_count": 0,
+        "user_clarification_count": 4,
+        "user_reversal_count": 0
+      },
+      "composite": {
+        "computed_by": "script",
+        "efficiency_multiplier": 0.95,
+        "notes": "Rubric formula from docs/reference/curator-scoring.md.",
+        "overall_score_0_5": 3.681,
+        "surface_weighted_score": 3.875
+      },
+      "critical_failures": {
+        "cannot_inspect_or_reverse": false,
+        "fabricated_approval": false,
+        "fabricated_source_or_file_state": false,
+        "lost_source_traceability": false,
+        "non_local_or_irreversible_action": false,
+        "sensitive_data_exposure": false
+      },
+      "efficiency": {
+        "blocked_wait_events": 0,
+        "brief_tokens_per_entry_mean": 11,
+        "evidence_token_ratio": 0.35,
+        "median_entry_open_latency_ms": 246,
+        "redundant_token_rate": 0.16,
+        "review_session_wall_clock_ms": 8960,
+        "sweep_latency_ms": 784,
+        "time_to_first_question_ms": 448,
+        "time_to_first_queue_ms": 2069,
+        "time_to_useful_charter_ms": 6048,
+        "tokens_per_approved_entry": 132,
+        "tokens_to_useful_charter": 147,
+        "total_tokens": 398,
+        "turns_to_useful_charter": 6
+      },
+      "fixture_id": "coding_novice_sparse_bugfix",
+      "fixture_version": "1.0",
+      "framework_id": "charter_first",
+      "freeform_notes": "Automated heuristic score; use worksheets for independent secondary scoring.",
+      "phase": "resolved",
+      "run_id": "charter_first__coding_novice_sparse_bugfix",
+      "surface_scores": {
+        "batch_selection": {
+          "evidence": [
+            "precision=0.67",
+            "recall=0.67",
+            "order=1.00",
+            "omissions_explained=0.00"
+          ],
+          "notes": "Precision, recall, ordering, capacity fit, and omission explanation are measured separately then combined.",
+          "score": 3.5
+        },
+        "briefs": {
+          "evidence": [
+            "sampled_count=3",
+            "unsupported_claims=0"
+          ],
+          "notes": "Briefs are scored for change, importance, evidence, risk, action framing, caveats, and answer-key relevance.",
+          "score": 4.5
+        },
+        "chat": {
+          "evidence": [
+            "current_entry_id=cli-format-parser",
+            "continuity=medium"
+          ],
+          "notes": "Chat is scored for visible desk state, reversible action, persona adaptation, and continuity.",
+          "score": 3.5
+        },
+        "interview": {
+          "evidence": [
+            "charter fields=100%",
+            "transcript_turns=10"
+          ],
+          "notes": "Scored from charter field coverage, persona/density adaptation, examples, and traceability.",
+          "score": 3.0
+        },
+        "sweep_reasoning": {
+          "evidence": [
+            "topic_recall=1.00",
+            "insight_count=1"
+          ],
+          "notes": "Sweep is scored for topic coverage, decision-state faithfulness, traceability, patterns, and reusable rules.",
+          "score": 4.5
+        },
+        "tags": {
+          "evidence": [
+            "coverage=0.83",
+            "manual_correction_rate=0.33"
+          ],
+          "notes": "Tag score compares required taxonomy dimensions and penalizes synonym fragmentation/corrections.",
+          "score": 4.0
+        },
+        "ux_quality": {
+          "evidence": [
+            "perceived_load=4",
+            "manual_corrections=1"
+          ],
+          "notes": "UX quality is scored separately from function using consistency, adaptation, perceived load, and drift.",
+          "score": 4.5
+        }
+      }
+    },
+    {
+      "adaptability": {
+        "agent_output_density": "dense",
+        "flags": {
+          "charter_drift": false,
+          "density_mismatch": true,
+          "expertise_mismatch": true,
+          "mode_mismatch": false
+        },
+        "notes": "Flags are derived from visible adaptation markers in the simulated artifacts.",
+        "project_type": "hybrid",
+        "user_expertise": "expert"
+      },
+      "cognitive_load": {
+        "attention_switch_count": 3,
+        "average_decision_text_length": 48,
+        "manual_correction_count": 1,
+        "perceived_load_1_7": 4,
+        "scroll_depth_per_entry": 1.1,
+        "unresolved_question_count": 0,
+        "user_clarification_count": 4,
+        "user_reversal_count": 0
+      },
+      "composite": {
+        "computed_by": "script",
+        "efficiency_multiplier": 0.9,
+        "notes": "Rubric formula from docs/reference/curator-scoring.md.",
+        "overall_score_0_5": 3.443,
+        "surface_weighted_score": 3.825
+      },
+      "critical_failures": {
+        "cannot_inspect_or_reverse": false,
+        "fabricated_approval": false,
+        "fabricated_source_or_file_state": false,
+        "lost_source_traceability": false,
+        "non_local_or_irreversible_action": false,
+        "sensitive_data_exposure": false
+      },
+      "efficiency": {
+        "blocked_wait_events": 0,
+        "brief_tokens_per_entry_mean": 10,
+        "evidence_token_ratio": 0.35,
+        "median_entry_open_latency_ms": 246,
+        "redundant_token_rate": 0.16,
+        "review_session_wall_clock_ms": 8960,
+        "sweep_latency_ms": 784,
+        "time_to_first_question_ms": 448,
+        "time_to_first_queue_ms": 2195,
+        "time_to_useful_charter_ms": 6048,
+        "tokens_per_approved_entry": 95,
+        "tokens_to_useful_charter": 122,
+        "total_tokens": 382,
+        "turns_to_useful_charter": 6
+      },
+      "fixture_id": "hybrid_expert_dense_docs_code",
+      "fixture_version": "1.0",
+      "framework_id": "charter_first",
+      "freeform_notes": "Automated heuristic score; use worksheets for independent secondary scoring.",
+      "phase": "resolved",
+      "run_id": "charter_first__hybrid_expert_dense_docs_code",
+      "surface_scores": {
+        "batch_selection": {
+          "evidence": [
+            "precision=0.75",
+            "recall=0.75",
+            "order=1.00",
+            "omissions_explained=0.00"
+          ],
+          "notes": "Precision, recall, ordering, capacity fit, and omission explanation are measured separately then combined.",
+          "score": 3.5
+        },
+        "briefs": {
+          "evidence": [
+            "sampled_count=4",
+            "unsupported_claims=0"
+          ],
+          "notes": "Briefs are scored for change, importance, evidence, risk, action framing, caveats, and answer-key relevance.",
+          "score": 4.5
+        },
+        "chat": {
+          "evidence": [
+            "current_entry_id=docs-still-remote-default",
+            "continuity=medium"
+          ],
+          "notes": "Chat is scored for visible desk state, reversible action, persona adaptation, and continuity.",
+          "score": 3.5
+        },
+        "interview": {
+          "evidence": [
+            "charter fields=100%",
+            "transcript_turns=10"
+          ],
+          "notes": "Scored from charter field coverage, persona/density adaptation, examples, and traceability.",
+          "score": 3.0
+        },
+        "sweep_reasoning": {
+          "evidence": [
+            "topic_recall=1.00",
+            "insight_count=1"
+          ],
+          "notes": "Sweep is scored for topic coverage, decision-state faithfulness, traceability, patterns, and reusable rules.",
+          "score": 4.5
+        },
+        "tags": {
+          "evidence": [
+            "coverage=0.83",
+            "manual_correction_rate=0.25"
+          ],
+          "notes": "Tag score compares required taxonomy dimensions and penalizes synonym fragmentation/corrections.",
+          "score": 4.0
+        },
+        "ux_quality": {
+          "evidence": [
+            "perceived_load=4",
+            "manual_corrections=1"
+          ],
+          "notes": "UX quality is scored separately from function using consistency, adaptation, perceived load, and drift.",
+          "score": 3.5
+        }
+      }
+    },
+    {
+      "adaptability": {
+        "agent_output_density": "noisy",
+        "flags": {
+          "charter_drift": false,
+          "density_mismatch": true,
+          "expertise_mismatch": true,
+          "mode_mismatch": false
+        },
+        "notes": "Flags are derived from visible adaptation markers in the simulated artifacts.",
+        "project_type": "operations",
+        "user_expertise": "expert"
+      },
+      "cognitive_load": {
+        "attention_switch_count": 3,
+        "average_decision_text_length": 48,
+        "manual_correction_count": 1,
+        "perceived_load_1_7": 4,
+        "scroll_depth_per_entry": 1.1,
+        "unresolved_question_count": 0,
+        "user_clarification_count": 4,
+        "user_reversal_count": 0
+      },
+      "composite": {
+        "computed_by": "script",
+        "efficiency_multiplier": 0.95,
+        "notes": "Rubric formula from docs/reference/curator-scoring.md.",
+        "overall_score_0_5": 3.634,
+        "surface_weighted_score": 3.825
+      },
+      "critical_failures": {
+        "cannot_inspect_or_reverse": false,
+        "fabricated_approval": false,
+        "fabricated_source_or_file_state": false,
+        "lost_source_traceability": false,
+        "non_local_or_irreversible_action": false,
+        "sensitive_data_exposure": false
+      },
+      "efficiency": {
+        "blocked_wait_events": 0,
+        "brief_tokens_per_entry_mean": 10,
+        "evidence_token_ratio": 0.35,
+        "median_entry_open_latency_ms": 246,
+        "redundant_token_rate": 0.16,
+        "review_session_wall_clock_ms": 8960,
+        "sweep_latency_ms": 784,
+        "time_to_first_question_ms": 448,
+        "time_to_first_queue_ms": 2195,
+        "time_to_useful_charter_ms": 6048,
+        "tokens_per_approved_entry": 96,
+        "tokens_to_useful_charter": 126,
+        "total_tokens": 387,
+        "turns_to_useful_charter": 6
+      },
+      "fixture_id": "operations_expert_noisy_incident",
+      "fixture_version": "1.0",
+      "framework_id": "charter_first",
+      "freeform_notes": "Automated heuristic score; use worksheets for independent secondary scoring.",
+      "phase": "resolved",
+      "run_id": "charter_first__operations_expert_noisy_incident",
+      "surface_scores": {
+        "batch_selection": {
+          "evidence": [
+            "precision=0.75",
+            "recall=0.75",
+            "order=1.00",
+            "omissions_explained=0.00"
+          ],
+          "notes": "Precision, recall, ordering, capacity fit, and omission explanation are measured separately then combined.",
+          "score": 3.5
+        },
+        "briefs": {
+          "evidence": [
+            "sampled_count=4",
+            "unsupported_claims=0"
+          ],
+          "notes": "Briefs are scored for change, importance, evidence, risk, action framing, caveats, and answer-key relevance.",
+          "score": 4.5
+        },
+        "chat": {
+          "evidence": [
+            "current_entry_id=timeline-draft",
+            "continuity=medium"
+          ],
+          "notes": "Chat is scored for visible desk state, reversible action, persona adaptation, and continuity.",
+          "score": 3.5
+        },
+        "interview": {
+          "evidence": [
+            "charter fields=100%",
+            "transcript_turns=10"
+          ],
+          "notes": "Scored from charter field coverage, persona/density adaptation, examples, and traceability.",
+          "score": 3.0
+        },
+        "sweep_reasoning": {
+          "evidence": [
+            "topic_recall=1.00",
+            "insight_count=1"
+          ],
+          "notes": "Sweep is scored for topic coverage, decision-state faithfulness, traceability, patterns, and reusable rules.",
+          "score": 4.5
+        },
+        "tags": {
+          "evidence": [
+            "coverage=0.83",
+            "manual_correction_rate=0.25"
+          ],
+          "notes": "Tag score compares required taxonomy dimensions and penalizes synonym fragmentation/corrections.",
+          "score": 4.0
+        },
+        "ux_quality": {
+          "evidence": [
+            "perceived_load=4",
+            "manual_corrections=1"
+          ],
+          "notes": "UX quality is scored separately from function using consistency, adaptation, perceived load, and drift.",
+          "score": 3.5
+        }
+      }
+    },
+    {
+      "adaptability": {
+        "agent_output_density": "sparse",
+        "flags": {
+          "charter_drift": false,
+          "density_mismatch": false,
+          "expertise_mismatch": true,
+          "mode_mismatch": false
+        },
+        "notes": "Flags are derived from visible adaptation markers in the simulated artifacts.",
+        "project_type": "writing",
+        "user_expertise": "expert"
+      },
+      "cognitive_load": {
+        "attention_switch_count": 3,
+        "average_decision_text_length": 48,
+        "manual_correction_count": 1,
+        "perceived_load_1_7": 4,
+        "scroll_depth_per_entry": 1.1,
+        "unresolved_question_count": 0,
+        "user_clarification_count": 4,
+        "user_reversal_count": 0
+      },
+      "composite": {
+        "computed_by": "script",
+        "efficiency_multiplier": 0.9,
+        "notes": "Rubric formula from docs/reference/curator-scoring.md.",
+        "overall_score_0_5": 3.465,
+        "surface_weighted_score": 3.85
+      },
+      "critical_failures": {
+        "cannot_inspect_or_reverse": false,
+        "fabricated_approval": false,
+        "fabricated_source_or_file_state": false,
+        "lost_source_traceability": false,
+        "non_local_or_irreversible_action": false,
+        "sensitive_data_exposure": false
+      },
+      "efficiency": {
+        "blocked_wait_events": 0,
+        "brief_tokens_per_entry_mean": 15,
+        "evidence_token_ratio": 0.35,
+        "median_entry_open_latency_ms": 246,
+        "redundant_token_rate": 0.16,
+        "review_session_wall_clock_ms": 8960,
+        "sweep_latency_ms": 784,
+        "time_to_first_question_ms": 448,
+        "time_to_first_queue_ms": 2069,
+        "time_to_useful_charter_ms": 6048,
+        "tokens_per_approved_entry": 130,
+        "tokens_to_useful_charter": 126,
+        "total_tokens": 391,
+        "turns_to_useful_charter": 6
+      },
+      "fixture_id": "writing_expert_sparse_strategy",
+      "fixture_version": "1.0",
+      "framework_id": "charter_first",
+      "freeform_notes": "Automated heuristic score; use worksheets for independent secondary scoring.",
+      "phase": "resolved",
+      "run_id": "charter_first__writing_expert_sparse_strategy",
+      "surface_scores": {
+        "batch_selection": {
+          "evidence": [
+            "precision=0.67",
+            "recall=0.67",
+            "order=1.00",
+            "omissions_explained=0.00"
+          ],
+          "notes": "Precision, recall, ordering, capacity fit, and omission explanation are measured separately then combined.",
+          "score": 3.5
+        },
+        "briefs": {
+          "evidence": [
+            "sampled_count=3",
+            "unsupported_claims=0"
+          ],
+          "notes": "Briefs are scored for change, importance, evidence, risk, action framing, caveats, and answer-key relevance.",
+          "score": 4.5
+        },
+        "chat": {
+          "evidence": [
+            "current_entry_id=unsupported-market-claim",
+            "continuity=medium"
+          ],
+          "notes": "Chat is scored for visible desk state, reversible action, persona adaptation, and continuity.",
+          "score": 3.5
+        },
+        "interview": {
+          "evidence": [
+            "charter fields=100%",
+            "transcript_turns=10"
+          ],
+          "notes": "Scored from charter field coverage, persona/density adaptation, examples, and traceability.",
+          "score": 3.0
+        },
+        "sweep_reasoning": {
+          "evidence": [
+            "topic_recall=1.00",
+            "insight_count=1"
+          ],
+          "notes": "Sweep is scored for topic coverage, decision-state faithfulness, traceability, patterns, and reusable rules.",
+          "score": 4.5
+        },
+        "tags": {
+          "evidence": [
+            "coverage=0.83",
+            "manual_correction_rate=0.33"
+          ],
+          "notes": "Tag score compares required taxonomy dimensions and penalizes synonym fragmentation/corrections.",
+          "score": 4.0
+        },
+        "ux_quality": {
+          "evidence": [
+            "perceived_load=4",
+            "manual_corrections=1"
+          ],
+          "notes": "UX quality is scored separately from function using consistency, adaptation, perceived load, and drift.",
+          "score": 4.0
+        }
+      }
+    },
+    {
+      "adaptability": {
+        "agent_output_density": "dense",
+        "flags": {
+          "charter_drift": false,
+          "density_mismatch": true,
+          "expertise_mismatch": false,
+          "mode_mismatch": false
+        },
+        "notes": "Flags are derived from visible adaptation markers in the simulated artifacts.",
+        "project_type": "writing",
+        "user_expertise": "novice"
+      },
+      "cognitive_load": {
+        "attention_switch_count": 3,
+        "average_decision_text_length": 48,
+        "manual_correction_count": 1,
+        "perceived_load_1_7": 4,
+        "scroll_depth_per_entry": 1.1,
+        "unresolved_question_count": 0,
+        "user_clarification_count": 4,
+        "user_reversal_count": 0
+      },
+      "composite": {
+        "computed_by": "script",
+        "efficiency_multiplier": 0.95,
+        "notes": "Rubric formula from docs/reference/curator-scoring.md.",
+        "overall_score_0_5": 3.657,
+        "surface_weighted_score": 3.85
+      },
+      "critical_failures": {
+        "cannot_inspect_or_reverse": false,
+        "fabricated_approval": false,
+        "fabricated_source_or_file_state": false,
+        "lost_source_traceability": false,
+        "non_local_or_irreversible_action": false,
+        "sensitive_data_exposure": false
+      },
+      "efficiency": {
+        "blocked_wait_events": 0,
+        "brief_tokens_per_entry_mean": 11,
+        "evidence_token_ratio": 0.35,
+        "median_entry_open_latency_ms": 246,
+        "redundant_token_rate": 0.16,
+        "review_session_wall_clock_ms": 8960,
+        "sweep_latency_ms": 784,
+        "time_to_first_question_ms": 448,
+        "time_to_first_queue_ms": 2320,
+        "time_to_useful_charter_ms": 6048,
+        "tokens_per_approved_entry": 101,
+        "tokens_to_useful_charter": 140,
+        "total_tokens": 404,
+        "turns_to_useful_charter": 6
+      },
+      "fixture_id": "writing_novice_dense_launch",
+      "fixture_version": "1.0",
+      "framework_id": "charter_first",
+      "freeform_notes": "Automated heuristic score; use worksheets for independent secondary scoring.",
+      "phase": "resolved",
+      "run_id": "charter_first__writing_novice_dense_launch",
+      "surface_scores": {
+        "batch_selection": {
+          "evidence": [
+            "precision=0.75",
+            "recall=0.75",
+            "order=1.00",
+            "omissions_explained=0.00"
+          ],
+          "notes": "Precision, recall, ordering, capacity fit, and omission explanation are measured separately then combined.",
+          "score": 3.5
+        },
+        "briefs": {
+          "evidence": [
+            "sampled_count=4",
+            "unsupported_claims=0"
+          ],
+          "notes": "Briefs are scored for change, importance, evidence, risk, action framing, caveats, and answer-key relevance.",
+          "score": 4.5
+        },
+        "chat": {
+          "evidence": [
+            "current_entry_id=homepage-hero-claim",
+            "continuity=medium"
+          ],
+          "notes": "Chat is scored for visible desk state, reversible action, persona adaptation, and continuity.",
+          "score": 3.5
+        },
+        "interview": {
+          "evidence": [
+            "charter fields=100%",
+            "transcript_turns=10"
+          ],
+          "notes": "Scored from charter field coverage, persona/density adaptation, examples, and traceability.",
+          "score": 3.0
+        },
+        "sweep_reasoning": {
+          "evidence": [
+            "topic_recall=1.00",
+            "insight_count=1"
+          ],
+          "notes": "Sweep is scored for topic coverage, decision-state faithfulness, traceability, patterns, and reusable rules.",
+          "score": 4.5
+        },
+        "tags": {
+          "evidence": [
+            "coverage=0.83",
+            "manual_correction_rate=0.25"
+          ],
+          "notes": "Tag score compares required taxonomy dimensions and penalizes synonym fragmentation/corrections.",
+          "score": 4.0
+        },
+        "ux_quality": {
+          "evidence": [
+            "perceived_load=4",
+            "manual_corrections=1"
+          ],
+          "notes": "UX quality is scored separately from function using consistency, adaptation, perceived load, and drift.",
+          "score": 4.0
+        }
+      }
+    },
+    {
+      "adaptability": {
+        "agent_output_density": "dense",
+        "flags": {
+          "charter_drift": false,
+          "density_mismatch": false,
+          "expertise_mismatch": false,
+          "mode_mismatch": false
+        },
+        "notes": "Flags are derived from visible adaptation markers in the simulated artifacts.",
+        "project_type": "coding",
+        "user_expertise": "expert"
+      },
+      "cognitive_load": {
+        "attention_switch_count": 3,
+        "average_decision_text_length": 48,
+        "manual_correction_count": 1,
+        "perceived_load_1_7": 3,
+        "scroll_depth_per_entry": 1.1,
+        "unresolved_question_count": 0,
+        "user_clarification_count": 0,
+        "user_reversal_count": 0
+      },
+      "composite": {
+        "computed_by": "script",
+        "efficiency_multiplier": 1.0,
+        "notes": "Rubric formula from docs/reference/curator-scoring.md.",
+        "overall_score_0_5": 4.4,
+        "surface_weighted_score": 4.4
+      },
+      "critical_failures": {
+        "cannot_inspect_or_reverse": false,
+        "fabricated_approval": false,
+        "fabricated_source_or_file_state": false,
+        "lost_source_traceability": false,
+        "non_local_or_irreversible_action": false,
+        "sensitive_data_exposure": false
+      },
+      "efficiency": {
+        "blocked_wait_events": 0,
+        "brief_tokens_per_entry_mean": 12,
+        "evidence_token_ratio": 0.55,
+        "median_entry_open_latency_ms": 224,
+        "redundant_token_rate": 0.11,
+        "review_session_wall_clock_ms": 8160,
+        "sweep_latency_ms": 714,
+        "time_to_first_question_ms": 408,
+        "time_to_first_queue_ms": 2113,
+        "time_to_useful_charter_ms": 1836,
+        "tokens_per_approved_entry": 112,
+        "tokens_to_useful_charter": 109,
+        "total_tokens": 337,
+        "turns_to_useful_charter": 2
+      },
+      "fixture_id": "coding_expert_dense_refactor",
+      "fixture_version": "1.0",
+      "framework_id": "hybrid_desk_notebook",
+      "freeform_notes": "Automated heuristic score; use worksheets for independent secondary scoring.",
+      "phase": "resolved",
+      "run_id": "hybrid_desk_notebook__coding_expert_dense_refactor",
+      "surface_scores": {
+        "batch_selection": {
+          "evidence": [
+            "precision=1.00",
+            "recall=0.75",
+            "order=1.00",
+            "omissions_explained=1.00"
+          ],
+          "notes": "Precision, recall, ordering, capacity fit, and omission explanation are measured separately then combined.",
+          "score": 4.5
+        },
+        "briefs": {
+          "evidence": [
+            "sampled_count=3",
+            "unsupported_claims=0"
+          ],
+          "notes": "Briefs are scored for change, importance, evidence, risk, action framing, caveats, and answer-key relevance.",
+          "score": 4.5
+        },
+        "chat": {
+          "evidence": [
+            "current_entry_id=public-api-rename",
+            "continuity=medium"
+          ],
+          "notes": "Chat is scored for visible desk state, reversible action, persona adaptation, and continuity.",
+          "score": 4.5
+        },
+        "interview": {
+          "evidence": [
+            "charter fields=83%",
+            "transcript_turns=6"
+          ],
+          "notes": "Scored from charter field coverage, persona/density adaptation, examples, and traceability.",
+          "score": 4.0
+        },
+        "sweep_reasoning": {
+          "evidence": [
+            "topic_recall=1.00",
+            "insight_count=1"
+          ],
+          "notes": "Sweep is scored for topic coverage, decision-state faithfulness, traceability, patterns, and reusable rules.",
+          "score": 4.5
+        },
+        "tags": {
+          "evidence": [
+            "coverage=0.83",
+            "manual_correction_rate=0.33"
+          ],
+          "notes": "Tag score compares required taxonomy dimensions and penalizes synonym fragmentation/corrections.",
+          "score": 4.0
+        },
+        "ux_quality": {
+          "evidence": [
+            "perceived_load=3",
+            "manual_corrections=1"
+          ],
+          "notes": "UX quality is scored separately from function using consistency, adaptation, perceived load, and drift.",
+          "score": 5.0
+        }
+      }
+    },
+    {
+      "adaptability": {
+        "agent_output_density": "sparse",
+        "flags": {
+          "charter_drift": false,
+          "density_mismatch": false,
+          "expertise_mismatch": false,
+          "mode_mismatch": false
+        },
+        "notes": "Flags are derived from visible adaptation markers in the simulated artifacts.",
+        "project_type": "coding",
+        "user_expertise": "novice"
+      },
+      "cognitive_load": {
+        "attention_switch_count": 3,
+        "average_decision_text_length": 48,
+        "manual_correction_count": 1,
+        "perceived_load_1_7": 4,
+        "scroll_depth_per_entry": 1.1,
+        "unresolved_question_count": 0,
+        "user_clarification_count": 0,
+        "user_reversal_count": 0
+      },
+      "composite": {
+        "computed_by": "script",
+        "efficiency_multiplier": 1.0,
+        "notes": "Rubric formula from docs/reference/curator-scoring.md.",
+        "overall_score_0_5": 4.45,
+        "surface_weighted_score": 4.45
+      },
+      "critical_failures": {
+        "cannot_inspect_or_reverse": false,
+        "fabricated_approval": false,
+        "fabricated_source_or_file_state": false,
+        "lost_source_traceability": false,
+        "non_local_or_irreversible_action": false,
+        "sensitive_data_exposure": false
+      },
+      "efficiency": {
+        "blocked_wait_events": 0,
+        "brief_tokens_per_entry_mean": 12,
+        "evidence_token_ratio": 0.55,
+        "median_entry_open_latency_ms": 224,
+        "redundant_token_rate": 0.11,
+        "review_session_wall_clock_ms": 8160,
+        "sweep_latency_ms": 714,
+        "time_to_first_question_ms": 408,
+        "time_to_first_queue_ms": 1884,
+        "time_to_useful_charter_ms": 1836,
+        "tokens_per_approved_entry": 171,
+        "tokens_to_useful_charter": 129,
+        "total_tokens": 343,
+        "turns_to_useful_charter": 2
+      },
+      "fixture_id": "coding_novice_sparse_bugfix",
+      "fixture_version": "1.0",
+      "framework_id": "hybrid_desk_notebook",
+      "freeform_notes": "Automated heuristic score; use worksheets for independent secondary scoring.",
+      "phase": "resolved",
+      "run_id": "hybrid_desk_notebook__coding_novice_sparse_bugfix",
+      "surface_scores": {
+        "batch_selection": {
+          "evidence": [
+            "precision=1.00",
+            "recall=0.67",
+            "order=1.00",
+            "omissions_explained=1.00"
+          ],
+          "notes": "Precision, recall, ordering, capacity fit, and omission explanation are measured separately then combined.",
+          "score": 4.5
+        },
+        "briefs": {
+          "evidence": [
+            "sampled_count=2",
+            "unsupported_claims=0"
+          ],
+          "notes": "Briefs are scored for change, importance, evidence, risk, action framing, caveats, and answer-key relevance.",
+          "score": 4.5
+        },
+        "chat": {
+          "evidence": [
+            "current_entry_id=cli-format-parser",
+            "continuity=high"
+          ],
+          "notes": "Chat is scored for visible desk state, reversible action, persona adaptation, and continuity.",
+          "score": 5.0
+        },
+        "interview": {
+          "evidence": [
+            "charter fields=83%",
+            "transcript_turns=6"
+          ],
+          "notes": "Scored from charter field coverage, persona/density adaptation, examples, and traceability.",
+          "score": 4.0
+        },
+        "sweep_reasoning": {
+          "evidence": [
+            "topic_recall=1.00",
+            "insight_count=1"
+          ],
+          "notes": "Sweep is scored for topic coverage, decision-state faithfulness, traceability, patterns, and reusable rules.",
+          "score": 4.5
+        },
+        "tags": {
+          "evidence": [
+            "coverage=0.83",
+            "manual_correction_rate=0.50"
+          ],
+          "notes": "Tag score compares required taxonomy dimensions and penalizes synonym fragmentation/corrections.",
+          "score": 4.0
+        },
+        "ux_quality": {
+          "evidence": [
+            "perceived_load=4",
+            "manual_corrections=1"
+          ],
+          "notes": "UX quality is scored separately from function using consistency, adaptation, perceived load, and drift.",
+          "score": 4.5
+        }
+      }
+    },
+    {
+      "adaptability": {
+        "agent_output_density": "dense",
+        "flags": {
+          "charter_drift": false,
+          "density_mismatch": false,
+          "expertise_mismatch": false,
+          "mode_mismatch": false
+        },
+        "notes": "Flags are derived from visible adaptation markers in the simulated artifacts.",
+        "project_type": "hybrid",
+        "user_expertise": "expert"
+      },
+      "cognitive_load": {
+        "attention_switch_count": 3,
+        "average_decision_text_length": 48,
+        "manual_correction_count": 1,
+        "perceived_load_1_7": 3,
+        "scroll_depth_per_entry": 1.1,
+        "unresolved_question_count": 0,
+        "user_clarification_count": 0,
+        "user_reversal_count": 0
+      },
+      "composite": {
+        "computed_by": "script",
+        "efficiency_multiplier": 1.0,
+        "notes": "Rubric formula from docs/reference/curator-scoring.md.",
+        "overall_score_0_5": 4.4,
+        "surface_weighted_score": 4.4
+      },
+      "critical_failures": {
+        "cannot_inspect_or_reverse": false,
+        "fabricated_approval": false,
+        "fabricated_source_or_file_state": false,
+        "lost_source_traceability": false,
+        "non_local_or_irreversible_action": false,
+        "sensitive_data_exposure": false
+      },
+      "efficiency": {
+        "blocked_wait_events": 0,
+        "brief_tokens_per_entry_mean": 11,
+        "evidence_token_ratio": 0.55,
+        "median_entry_open_latency_ms": 224,
+        "redundant_token_rate": 0.11,
+        "review_session_wall_clock_ms": 8160,
+        "sweep_latency_ms": 714,
+        "time_to_first_question_ms": 408,
+        "time_to_first_queue_ms": 1999,
+        "time_to_useful_charter_ms": 1836,
+        "tokens_per_approved_entry": 108,
+        "tokens_to_useful_charter": 101,
+        "total_tokens": 326,
+        "turns_to_useful_charter": 2
+      },
+      "fixture_id": "hybrid_expert_dense_docs_code",
+      "fixture_version": "1.0",
+      "framework_id": "hybrid_desk_notebook",
+      "freeform_notes": "Automated heuristic score; use worksheets for independent secondary scoring.",
+      "phase": "resolved",
+      "run_id": "hybrid_desk_notebook__hybrid_expert_dense_docs_code",
+      "surface_scores": {
+        "batch_selection": {
+          "evidence": [
+            "precision=1.00",
+            "recall=0.75",
+            "order=1.00",
+            "omissions_explained=1.00"
+          ],
+          "notes": "Precision, recall, ordering, capacity fit, and omission explanation are measured separately then combined.",
+          "score": 4.5
+        },
+        "briefs": {
+          "evidence": [
+            "sampled_count=3",
+            "unsupported_claims=0"
+          ],
+          "notes": "Briefs are scored for change, importance, evidence, risk, action framing, caveats, and answer-key relevance.",
+          "score": 4.5
+        },
+        "chat": {
+          "evidence": [
+            "current_entry_id=docs-still-remote-default",
+            "continuity=medium"
+          ],
+          "notes": "Chat is scored for visible desk state, reversible action, persona adaptation, and continuity.",
+          "score": 4.5
+        },
+        "interview": {
+          "evidence": [
+            "charter fields=83%",
+            "transcript_turns=6"
+          ],
+          "notes": "Scored from charter field coverage, persona/density adaptation, examples, and traceability.",
+          "score": 4.0
+        },
+        "sweep_reasoning": {
+          "evidence": [
+            "topic_recall=1.00",
+            "insight_count=1"
+          ],
+          "notes": "Sweep is scored for topic coverage, decision-state faithfulness, traceability, patterns, and reusable rules.",
+          "score": 4.5
+        },
+        "tags": {
+          "evidence": [
+            "coverage=0.83",
+            "manual_correction_rate=0.33"
+          ],
+          "notes": "Tag score compares required taxonomy dimensions and penalizes synonym fragmentation/corrections.",
+          "score": 4.0
+        },
+        "ux_quality": {
+          "evidence": [
+            "perceived_load=3",
+            "manual_corrections=1"
+          ],
+          "notes": "UX quality is scored separately from function using consistency, adaptation, perceived load, and drift.",
+          "score": 5.0
+        }
+      }
+    },
+    {
+      "adaptability": {
+        "agent_output_density": "noisy",
+        "flags": {
+          "charter_drift": false,
+          "density_mismatch": false,
+          "expertise_mismatch": false,
+          "mode_mismatch": false
+        },
+        "notes": "Flags are derived from visible adaptation markers in the simulated artifacts.",
+        "project_type": "operations",
+        "user_expertise": "expert"
+      },
+      "cognitive_load": {
+        "attention_switch_count": 3,
+        "average_decision_text_length": 48,
+        "manual_correction_count": 1,
+        "perceived_load_1_7": 3,
+        "scroll_depth_per_entry": 1.1,
+        "unresolved_question_count": 0,
+        "user_clarification_count": 0,
+        "user_reversal_count": 0
+      },
+      "composite": {
+        "computed_by": "script",
+        "efficiency_multiplier": 1.0,
+        "notes": "Rubric formula from docs/reference/curator-scoring.md.",
+        "overall_score_0_5": 4.4,
+        "surface_weighted_score": 4.4
+      },
+      "critical_failures": {
+        "cannot_inspect_or_reverse": false,
+        "fabricated_approval": false,
+        "fabricated_source_or_file_state": false,
+        "lost_source_traceability": false,
+        "non_local_or_irreversible_action": false,
+        "sensitive_data_exposure": false
+      },
+      "efficiency": {
+        "blocked_wait_events": 0,
+        "brief_tokens_per_entry_mean": 10,
+        "evidence_token_ratio": 0.55,
+        "median_entry_open_latency_ms": 224,
+        "redundant_token_rate": 0.11,
+        "review_session_wall_clock_ms": 8160,
+        "sweep_latency_ms": 714,
+        "time_to_first_question_ms": 408,
+        "time_to_first_queue_ms": 1999,
+        "time_to_useful_charter_ms": 1836,
+        "tokens_per_approved_entry": 108,
+        "tokens_to_useful_charter": 105,
+        "total_tokens": 326,
+        "turns_to_useful_charter": 2
+      },
+      "fixture_id": "operations_expert_noisy_incident",
+      "fixture_version": "1.0",
+      "framework_id": "hybrid_desk_notebook",
+      "freeform_notes": "Automated heuristic score; use worksheets for independent secondary scoring.",
+      "phase": "resolved",
+      "run_id": "hybrid_desk_notebook__operations_expert_noisy_incident",
+      "surface_scores": {
+        "batch_selection": {
+          "evidence": [
+            "precision=1.00",
+            "recall=0.75",
+            "order=1.00",
+            "omissions_explained=1.00"
+          ],
+          "notes": "Precision, recall, ordering, capacity fit, and omission explanation are measured separately then combined.",
+          "score": 4.5
+        },
+        "briefs": {
+          "evidence": [
+            "sampled_count=3",
+            "unsupported_claims=0"
+          ],
+          "notes": "Briefs are scored for change, importance, evidence, risk, action framing, caveats, and answer-key relevance.",
+          "score": 4.5
+        },
+        "chat": {
+          "evidence": [
+            "current_entry_id=timeline-draft",
+            "continuity=medium"
+          ],
+          "notes": "Chat is scored for visible desk state, reversible action, persona adaptation, and continuity.",
+          "score": 4.5
+        },
+        "interview": {
+          "evidence": [
+            "charter fields=83%",
+            "transcript_turns=6"
+          ],
+          "notes": "Scored from charter field coverage, persona/density adaptation, examples, and traceability.",
+          "score": 4.0
+        },
+        "sweep_reasoning": {
+          "evidence": [
+            "topic_recall=1.00",
+            "insight_count=1"
+          ],
+          "notes": "Sweep is scored for topic coverage, decision-state faithfulness, traceability, patterns, and reusable rules.",
+          "score": 4.5
+        },
+        "tags": {
+          "evidence": [
+            "coverage=0.83",
+            "manual_correction_rate=0.33"
+          ],
+          "notes": "Tag score compares required taxonomy dimensions and penalizes synonym fragmentation/corrections.",
+          "score": 4.0
+        },
+        "ux_quality": {
+          "evidence": [
+            "perceived_load=3",
+            "manual_corrections=1"
+          ],
+          "notes": "UX quality is scored separately from function using consistency, adaptation, perceived load, and drift.",
+          "score": 5.0
+        }
+      }
+    },
+    {
+      "adaptability": {
+        "agent_output_density": "sparse",
+        "flags": {
+          "charter_drift": false,
+          "density_mismatch": false,
+          "expertise_mismatch": false,
+          "mode_mismatch": false
+        },
+        "notes": "Flags are derived from visible adaptation markers in the simulated artifacts.",
+        "project_type": "writing",
+        "user_expertise": "expert"
+      },
+      "cognitive_load": {
+        "attention_switch_count": 3,
+        "average_decision_text_length": 48,
+        "manual_correction_count": 1,
+        "perceived_load_1_7": 3,
+        "scroll_depth_per_entry": 1.1,
+        "unresolved_question_count": 0,
+        "user_clarification_count": 0,
+        "user_reversal_count": 0
+      },
+      "composite": {
+        "computed_by": "script",
+        "efficiency_multiplier": 1.0,
+        "notes": "Rubric formula from docs/reference/curator-scoring.md.",
+        "overall_score_0_5": 4.475,
+        "surface_weighted_score": 4.475
+      },
+      "critical_failures": {
+        "cannot_inspect_or_reverse": false,
+        "fabricated_approval": false,
+        "fabricated_source_or_file_state": false,
+        "lost_source_traceability": false,
+        "non_local_or_irreversible_action": false,
+        "sensitive_data_exposure": false
+      },
+      "efficiency": {
+        "blocked_wait_events": 0,
+        "brief_tokens_per_entry_mean": 15,
+        "evidence_token_ratio": 0.55,
+        "median_entry_open_latency_ms": 224,
+        "redundant_token_rate": 0.11,
+        "review_session_wall_clock_ms": 8160,
+        "sweep_latency_ms": 714,
+        "time_to_first_question_ms": 408,
+        "time_to_first_queue_ms": 1884,
+        "time_to_useful_charter_ms": 1836,
+        "tokens_per_approved_entry": 163,
+        "tokens_to_useful_charter": 105,
+        "total_tokens": 326,
+        "turns_to_useful_charter": 2
+      },
+      "fixture_id": "writing_expert_sparse_strategy",
+      "fixture_version": "1.0",
+      "framework_id": "hybrid_desk_notebook",
+      "freeform_notes": "Automated heuristic score; use worksheets for independent secondary scoring.",
+      "phase": "resolved",
+      "run_id": "hybrid_desk_notebook__writing_expert_sparse_strategy",
+      "surface_scores": {
+        "batch_selection": {
+          "evidence": [
+            "precision=1.00",
+            "recall=0.67",
+            "order=1.00",
+            "omissions_explained=1.00"
+          ],
+          "notes": "Precision, recall, ordering, capacity fit, and omission explanation are measured separately then combined.",
+          "score": 4.5
+        },
+        "briefs": {
+          "evidence": [
+            "sampled_count=2",
+            "unsupported_claims=0"
+          ],
+          "notes": "Briefs are scored for change, importance, evidence, risk, action framing, caveats, and answer-key relevance.",
+          "score": 4.5
+        },
+        "chat": {
+          "evidence": [
+            "current_entry_id=unsupported-market-claim",
+            "continuity=high"
+          ],
+          "notes": "Chat is scored for visible desk state, reversible action, persona adaptation, and continuity.",
+          "score": 5.0
+        },
+        "interview": {
+          "evidence": [
+            "charter fields=83%",
+            "transcript_turns=6"
+          ],
+          "notes": "Scored from charter field coverage, persona/density adaptation, examples, and traceability.",
+          "score": 4.0
+        },
+        "sweep_reasoning": {
+          "evidence": [
+            "topic_recall=1.00",
+            "insight_count=1"
+          ],
+          "notes": "Sweep is scored for topic coverage, decision-state faithfulness, traceability, patterns, and reusable rules.",
+          "score": 4.5
+        },
+        "tags": {
+          "evidence": [
+            "coverage=0.83",
+            "manual_correction_rate=0.50"
+          ],
+          "notes": "Tag score compares required taxonomy dimensions and penalizes synonym fragmentation/corrections.",
+          "score": 4.0
+        },
+        "ux_quality": {
+          "evidence": [
+            "perceived_load=3",
+            "manual_corrections=1"
+          ],
+          "notes": "UX quality is scored separately from function using consistency, adaptation, perceived load, and drift.",
+          "score": 5.0
+        }
+      }
+    },
+    {
+      "adaptability": {
+        "agent_output_density": "dense",
+        "flags": {
+          "charter_drift": false,
+          "density_mismatch": false,
+          "expertise_mismatch": false,
+          "mode_mismatch": false
+        },
+        "notes": "Flags are derived from visible adaptation markers in the simulated artifacts.",
+        "project_type": "writing",
+        "user_expertise": "novice"
+      },
+      "cognitive_load": {
+        "attention_switch_count": 3,
+        "average_decision_text_length": 48,
+        "manual_correction_count": 1,
+        "perceived_load_1_7": 4,
+        "scroll_depth_per_entry": 1.1,
+        "unresolved_question_count": 0,
+        "user_clarification_count": 0,
+        "user_reversal_count": 0
+      },
+      "composite": {
+        "computed_by": "script",
+        "efficiency_multiplier": 1.0,
+        "notes": "Rubric formula from docs/reference/curator-scoring.md.",
+        "overall_score_0_5": 4.375,
+        "surface_weighted_score": 4.375
+      },
+      "critical_failures": {
+        "cannot_inspect_or_reverse": false,
+        "fabricated_approval": false,
+        "fabricated_source_or_file_state": false,
+        "lost_source_traceability": false,
+        "non_local_or_irreversible_action": false,
+        "sensitive_data_exposure": false
+      },
+      "efficiency": {
+        "blocked_wait_events": 0,
+        "brief_tokens_per_entry_mean": 11,
+        "evidence_token_ratio": 0.55,
+        "median_entry_open_latency_ms": 224,
+        "redundant_token_rate": 0.11,
+        "review_session_wall_clock_ms": 8160,
+        "sweep_latency_ms": 714,
+        "time_to_first_question_ms": 408,
+        "time_to_first_queue_ms": 2113,
+        "time_to_useful_charter_ms": 1836,
+        "tokens_per_approved_entry": 115,
+        "tokens_to_useful_charter": 122,
+        "total_tokens": 346,
+        "turns_to_useful_charter": 2
+      },
+      "fixture_id": "writing_novice_dense_launch",
+      "fixture_version": "1.0",
+      "framework_id": "hybrid_desk_notebook",
+      "freeform_notes": "Automated heuristic score; use worksheets for independent secondary scoring.",
+      "phase": "resolved",
+      "run_id": "hybrid_desk_notebook__writing_novice_dense_launch",
+      "surface_scores": {
+        "batch_selection": {
+          "evidence": [
+            "precision=1.00",
+            "recall=0.75",
+            "order=1.00",
+            "omissions_explained=1.00"
+          ],
+          "notes": "Precision, recall, ordering, capacity fit, and omission explanation are measured separately then combined.",
+          "score": 4.5
+        },
+        "briefs": {
+          "evidence": [
+            "sampled_count=3",
+            "unsupported_claims=0"
+          ],
+          "notes": "Briefs are scored for change, importance, evidence, risk, action framing, caveats, and answer-key relevance.",
+          "score": 4.5
+        },
+        "chat": {
+          "evidence": [
+            "current_entry_id=homepage-hero-claim",
+            "continuity=medium"
+          ],
+          "notes": "Chat is scored for visible desk state, reversible action, persona adaptation, and continuity.",
+          "score": 4.5
+        },
+        "interview": {
+          "evidence": [
+            "charter fields=83%",
+            "transcript_turns=6"
+          ],
+          "notes": "Scored from charter field coverage, persona/density adaptation, examples, and traceability.",
+          "score": 4.0
+        },
+        "sweep_reasoning": {
+          "evidence": [
+            "topic_recall=1.00",
+            "insight_count=1"
+          ],
+          "notes": "Sweep is scored for topic coverage, decision-state faithfulness, traceability, patterns, and reusable rules.",
+          "score": 4.5
+        },
+        "tags": {
+          "evidence": [
+            "coverage=0.83",
+            "manual_correction_rate=0.33"
+          ],
+          "notes": "Tag score compares required taxonomy dimensions and penalizes synonym fragmentation/corrections.",
+          "score": 4.0
+        },
+        "ux_quality": {
+          "evidence": [
+            "perceived_load=4",
+            "manual_corrections=1"
+          ],
+          "notes": "UX quality is scored separately from function using consistency, adaptation, perceived load, and drift.",
+          "score": 4.5
+        }
+      }
+    },
+    {
+      "adaptability": {
+        "agent_output_density": "dense",
+        "flags": {
+          "charter_drift": true,
+          "density_mismatch": false,
+          "expertise_mismatch": false,
+          "mode_mismatch": false
+        },
+        "notes": "Flags are derived from visible adaptation markers in the simulated artifacts.",
+        "project_type": "coding",
+        "user_expertise": "expert"
+      },
+      "cognitive_load": {
+        "attention_switch_count": 4,
+        "average_decision_text_length": 48,
+        "manual_correction_count": 2,
+        "perceived_load_1_7": 3,
+        "scroll_depth_per_entry": 1.1,
+        "unresolved_question_count": 1,
+        "user_clarification_count": 0,
+        "user_reversal_count": 0
+      },
+      "composite": {
+        "computed_by": "script",
+        "efficiency_multiplier": 1.0,
+        "notes": "Rubric formula from docs/reference/curator-scoring.md.",
+        "overall_score_0_5": 3.475,
+        "surface_weighted_score": 3.475
+      },
+      "critical_failures": {
+        "cannot_inspect_or_reverse": false,
+        "fabricated_approval": false,
+        "fabricated_source_or_file_state": false,
+        "lost_source_traceability": false,
+        "non_local_or_irreversible_action": false,
+        "sensitive_data_exposure": false
+      },
+      "efficiency": {
+        "blocked_wait_events": 0,
+        "brief_tokens_per_entry_mean": 11,
+        "evidence_token_ratio": 0.35,
+        "median_entry_open_latency_ms": 180,
+        "redundant_token_rate": 0.08,
+        "review_session_wall_clock_ms": 6560,
+        "sweep_latency_ms": 574,
+        "time_to_first_question_ms": 328,
+        "time_to_first_queue_ms": 1699,
+        "time_to_useful_charter_ms": 1476,
+        "tokens_per_approved_entry": 67,
+        "tokens_to_useful_charter": 42,
+        "total_tokens": 201,
+        "turns_to_useful_charter": 2
+      },
+      "fixture_id": "coding_expert_dense_refactor",
+      "fixture_version": "1.0",
+      "framework_id": "signal_first",
+      "freeform_notes": "Automated heuristic score; use worksheets for independent secondary scoring.",
+      "phase": "resolved",
+      "run_id": "signal_first__coding_expert_dense_refactor",
+      "surface_scores": {
+        "batch_selection": {
+          "evidence": [
+            "precision=1.00",
+            "recall=0.75",
+            "order=1.00",
+            "omissions_explained=0.00"
+          ],
+          "notes": "Precision, recall, ordering, capacity fit, and omission explanation are measured separately then combined.",
+          "score": 4.0
+        },
+        "briefs": {
+          "evidence": [
+            "sampled_count=3",
+            "unsupported_claims=0"
+          ],
+          "notes": "Briefs are scored for change, importance, evidence, risk, action framing, caveats, and answer-key relevance.",
+          "score": 4.5
+        },
+        "chat": {
+          "evidence": [
+            "current_entry_id=public-api-rename",
+            "continuity=low"
+          ],
+          "notes": "Chat is scored for visible desk state, reversible action, persona adaptation, and continuity.",
+          "score": 3.0
+        },
+        "interview": {
+          "evidence": [
+            "charter fields=50%",
+            "transcript_turns=3"
+          ],
+          "notes": "Scored from charter field coverage, persona/density adaptation, examples, and traceability.",
+          "score": 3.5
+        },
+        "sweep_reasoning": {
+          "evidence": [
+            "topic_recall=0.50",
+            "insight_count=0"
+          ],
+          "notes": "Sweep is scored for topic coverage, decision-state faithfulness, traceability, patterns, and reusable rules.",
+          "score": 3.0
+        },
+        "tags": {
+          "evidence": [
+            "coverage=0.50",
+            "manual_correction_rate=0.67"
+          ],
+          "notes": "Tag score compares required taxonomy dimensions and penalizes synonym fragmentation/corrections.",
+          "score": 1.5
+        },
+        "ux_quality": {
+          "evidence": [
+            "perceived_load=3",
+            "manual_corrections=2"
+          ],
+          "notes": "UX quality is scored separately from function using consistency, adaptation, perceived load, and drift.",
+          "score": 4.0
+        }
+      }
+    },
+    {
+      "adaptability": {
+        "agent_output_density": "sparse",
+        "flags": {
+          "charter_drift": true,
+          "density_mismatch": true,
+          "expertise_mismatch": true,
+          "mode_mismatch": false
+        },
+        "notes": "Flags are derived from visible adaptation markers in the simulated artifacts.",
+        "project_type": "coding",
+        "user_expertise": "novice"
+      },
+      "cognitive_load": {
+        "attention_switch_count": 4,
+        "average_decision_text_length": 48,
+        "manual_correction_count": 2,
+        "perceived_load_1_7": 4,
+        "scroll_depth_per_entry": 1.1,
+        "unresolved_question_count": 1,
+        "user_clarification_count": 0,
+        "user_reversal_count": 0
+      },
+      "composite": {
+        "computed_by": "script",
+        "efficiency_multiplier": 1.0,
+        "notes": "Rubric formula from docs/reference/curator-scoring.md.",
+        "overall_score_0_5": 3.45,
+        "surface_weighted_score": 3.45
+      },
+      "critical_failures": {
+        "cannot_inspect_or_reverse": false,
+        "fabricated_approval": false,
+        "fabricated_source_or_file_state": false,
+        "lost_source_traceability": false,
+        "non_local_or_irreversible_action": false,
+        "sensitive_data_exposure": false
+      },
+      "efficiency": {
+        "blocked_wait_events": 0,
+        "brief_tokens_per_entry_mean": 10,
+        "evidence_token_ratio": 0.35,
+        "median_entry_open_latency_ms": 180,
+        "redundant_token_rate": 0.08,
+        "review_session_wall_clock_ms": 6560,
+        "sweep_latency_ms": 574,
+        "time_to_first_question_ms": 328,
+        "time_to_first_queue_ms": 1515,
+        "time_to_useful_charter_ms": 1476,
+        "tokens_per_approved_entry": 100,
+        "tokens_to_useful_charter": 52,
+        "total_tokens": 201,
+        "turns_to_useful_charter": 2
+      },
+      "fixture_id": "coding_novice_sparse_bugfix",
+      "fixture_version": "1.0",
+      "framework_id": "signal_first",
+      "freeform_notes": "Automated heuristic score; use worksheets for independent secondary scoring.",
+      "phase": "resolved",
+      "run_id": "signal_first__coding_novice_sparse_bugfix",
+      "surface_scores": {
+        "batch_selection": {
+          "evidence": [
+            "precision=1.00",
+            "recall=0.67",
+            "order=1.00",
+            "omissions_explained=0.00"
+          ],
+          "notes": "Precision, recall, ordering, capacity fit, and omission explanation are measured separately then combined.",
+          "score": 3.5
+        },
+        "briefs": {
+          "evidence": [
+            "sampled_count=2",
+            "unsupported_claims=0"
+          ],
+          "notes": "Briefs are scored for change, importance, evidence, risk, action framing, caveats, and answer-key relevance.",
+          "score": 5.0
+        },
+        "chat": {
+          "evidence": [
+            "current_entry_id=cli-format-parser",
+            "continuity=low"
+          ],
+          "notes": "Chat is scored for visible desk state, reversible action, persona adaptation, and continuity.",
+          "score": 3.0
+        },
+        "interview": {
+          "evidence": [
+            "charter fields=50%",
+            "transcript_turns=3"
+          ],
+          "notes": "Scored from charter field coverage, persona/density adaptation, examples, and traceability.",
+          "score": 3.5
+        },
+        "sweep_reasoning": {
+          "evidence": [
+            "topic_recall=0.50",
+            "insight_count=0"
+          ],
+          "notes": "Sweep is scored for topic coverage, decision-state faithfulness, traceability, patterns, and reusable rules.",
+          "score": 3.0
+        },
+        "tags": {
+          "evidence": [
+            "coverage=0.50",
+            "manual_correction_rate=1.00"
+          ],
+          "notes": "Tag score compares required taxonomy dimensions and penalizes synonym fragmentation/corrections.",
+          "score": 2.0
+        },
+        "ux_quality": {
+          "evidence": [
+            "perceived_load=4",
+            "manual_corrections=2"
+          ],
+          "notes": "UX quality is scored separately from function using consistency, adaptation, perceived load, and drift.",
+          "score": 2.5
+        }
+      }
+    },
+    {
+      "adaptability": {
+        "agent_output_density": "dense",
+        "flags": {
+          "charter_drift": true,
+          "density_mismatch": false,
+          "expertise_mismatch": false,
+          "mode_mismatch": false
+        },
+        "notes": "Flags are derived from visible adaptation markers in the simulated artifacts.",
+        "project_type": "hybrid",
+        "user_expertise": "expert"
+      },
+      "cognitive_load": {
+        "attention_switch_count": 4,
+        "average_decision_text_length": 48,
+        "manual_correction_count": 2,
+        "perceived_load_1_7": 3,
+        "scroll_depth_per_entry": 1.1,
+        "unresolved_question_count": 1,
+        "user_clarification_count": 0,
+        "user_reversal_count": 0
+      },
+      "composite": {
+        "computed_by": "script",
+        "efficiency_multiplier": 0.95,
+        "notes": "Rubric formula from docs/reference/curator-scoring.md.",
+        "overall_score_0_5": 3.206,
+        "surface_weighted_score": 3.375
+      },
+      "critical_failures": {
+        "cannot_inspect_or_reverse": false,
+        "fabricated_approval": false,
+        "fabricated_source_or_file_state": false,
+        "lost_source_traceability": false,
+        "non_local_or_irreversible_action": false,
+        "sensitive_data_exposure": false
+      },
+      "efficiency": {
+        "blocked_wait_events": 0,
+        "brief_tokens_per_entry_mean": 10,
+        "evidence_token_ratio": 0.35,
+        "median_entry_open_latency_ms": 180,
+        "redundant_token_rate": 0.08,
+        "review_session_wall_clock_ms": 6560,
+        "sweep_latency_ms": 574,
+        "time_to_first_question_ms": 328,
+        "time_to_first_queue_ms": 1607,
+        "time_to_useful_charter_ms": 1476,
+        "tokens_per_approved_entry": 64,
+        "tokens_to_useful_charter": 37,
+        "total_tokens": 193,
+        "turns_to_useful_charter": 2
+      },
+      "fixture_id": "hybrid_expert_dense_docs_code",
+      "fixture_version": "1.0",
+      "framework_id": "signal_first",
+      "freeform_notes": "Automated heuristic score; use worksheets for independent secondary scoring.",
+      "phase": "resolved",
+      "run_id": "signal_first__hybrid_expert_dense_docs_code",
+      "surface_scores": {
+        "batch_selection": {
+          "evidence": [
+            "precision=1.00",
+            "recall=0.75",
+            "order=0.67",
+            "omissions_explained=0.00"
+          ],
+          "notes": "Precision, recall, ordering, capacity fit, and omission explanation are measured separately then combined.",
+          "score": 3.5
+        },
+        "briefs": {
+          "evidence": [
+            "sampled_count=3",
+            "unsupported_claims=0"
+          ],
+          "notes": "Briefs are scored for change, importance, evidence, risk, action framing, caveats, and answer-key relevance.",
+          "score": 4.5
+        },
+        "chat": {
+          "evidence": [
+            "current_entry_id=api-default-change",
+            "continuity=low"
+          ],
+          "notes": "Chat is scored for visible desk state, reversible action, persona adaptation, and continuity.",
+          "score": 3.0
+        },
+        "interview": {
+          "evidence": [
+            "charter fields=50%",
+            "transcript_turns=3"
+          ],
+          "notes": "Scored from charter field coverage, persona/density adaptation, examples, and traceability.",
+          "score": 3.5
+        },
+        "sweep_reasoning": {
+          "evidence": [
+            "topic_recall=0.50",
+            "insight_count=0"
+          ],
+          "notes": "Sweep is scored for topic coverage, decision-state faithfulness, traceability, patterns, and reusable rules.",
+          "score": 3.0
+        },
+        "tags": {
+          "evidence": [
+            "coverage=0.50",
+            "manual_correction_rate=0.67"
+          ],
+          "notes": "Tag score compares required taxonomy dimensions and penalizes synonym fragmentation/corrections.",
+          "score": 1.5
+        },
+        "ux_quality": {
+          "evidence": [
+            "perceived_load=3",
+            "manual_corrections=2"
+          ],
+          "notes": "UX quality is scored separately from function using consistency, adaptation, perceived load, and drift.",
+          "score": 4.0
+        }
+      }
+    },
+    {
+      "adaptability": {
+        "agent_output_density": "noisy",
+        "flags": {
+          "charter_drift": true,
+          "density_mismatch": false,
+          "expertise_mismatch": false,
+          "mode_mismatch": false
+        },
+        "notes": "Flags are derived from visible adaptation markers in the simulated artifacts.",
+        "project_type": "operations",
+        "user_expertise": "expert"
+      },
+      "cognitive_load": {
+        "attention_switch_count": 4,
+        "average_decision_text_length": 48,
+        "manual_correction_count": 2,
+        "perceived_load_1_7": 3,
+        "scroll_depth_per_entry": 1.1,
+        "unresolved_question_count": 1,
+        "user_clarification_count": 0,
+        "user_reversal_count": 0
+      },
+      "composite": {
+        "computed_by": "script",
+        "efficiency_multiplier": 1.0,
+        "notes": "Rubric formula from docs/reference/curator-scoring.md.",
+        "overall_score_0_5": 3.375,
+        "surface_weighted_score": 3.375
+      },
+      "critical_failures": {
+        "cannot_inspect_or_reverse": false,
+        "fabricated_approval": false,
+        "fabricated_source_or_file_state": false,
+        "lost_source_traceability": false,
+        "non_local_or_irreversible_action": false,
+        "sensitive_data_exposure": false
+      },
+      "efficiency": {
+        "blocked_wait_events": 0,
+        "brief_tokens_per_entry_mean": 9,
+        "evidence_token_ratio": 0.35,
+        "median_entry_open_latency_ms": 180,
+        "redundant_token_rate": 0.08,
+        "review_session_wall_clock_ms": 6560,
+        "sweep_latency_ms": 574,
+        "time_to_first_question_ms": 328,
+        "time_to_first_queue_ms": 1607,
+        "time_to_useful_charter_ms": 1476,
+        "tokens_per_approved_entry": 64,
+        "tokens_to_useful_charter": 39,
+        "total_tokens": 193,
+        "turns_to_useful_charter": 2
+      },
+      "fixture_id": "operations_expert_noisy_incident",
+      "fixture_version": "1.0",
+      "framework_id": "signal_first",
+      "freeform_notes": "Automated heuristic score; use worksheets for independent secondary scoring.",
+      "phase": "resolved",
+      "run_id": "signal_first__operations_expert_noisy_incident",
+      "surface_scores": {
+        "batch_selection": {
+          "evidence": [
+            "precision=1.00",
+            "recall=0.75",
+            "order=0.67",
+            "omissions_explained=0.00"
+          ],
+          "notes": "Precision, recall, ordering, capacity fit, and omission explanation are measured separately then combined.",
+          "score": 3.5
+        },
+        "briefs": {
+          "evidence": [
+            "sampled_count=3",
+            "unsupported_claims=0"
+          ],
+          "notes": "Briefs are scored for change, importance, evidence, risk, action framing, caveats, and answer-key relevance.",
+          "score": 4.5
+        },
+        "chat": {
+          "evidence": [
+            "current_entry_id=causal-hypothesis",
+            "continuity=low"
+          ],
+          "notes": "Chat is scored for visible desk state, reversible action, persona adaptation, and continuity.",
+          "score": 3.0
+        },
+        "interview": {
+          "evidence": [
+            "charter fields=50%",
+            "transcript_turns=3"
+          ],
+          "notes": "Scored from charter field coverage, persona/density adaptation, examples, and traceability.",
+          "score": 3.5
+        },
+        "sweep_reasoning": {
+          "evidence": [
+            "topic_recall=0.50",
+            "insight_count=0"
+          ],
+          "notes": "Sweep is scored for topic coverage, decision-state faithfulness, traceability, patterns, and reusable rules.",
+          "score": 3.0
+        },
+        "tags": {
+          "evidence": [
+            "coverage=0.50",
+            "manual_correction_rate=0.67"
+          ],
+          "notes": "Tag score compares required taxonomy dimensions and penalizes synonym fragmentation/corrections.",
+          "score": 1.5
+        },
+        "ux_quality": {
+          "evidence": [
+            "perceived_load=3",
+            "manual_corrections=2"
+          ],
+          "notes": "UX quality is scored separately from function using consistency, adaptation, perceived load, and drift.",
+          "score": 4.0
+        }
+      }
+    },
+    {
+      "adaptability": {
+        "agent_output_density": "sparse",
+        "flags": {
+          "charter_drift": true,
+          "density_mismatch": true,
+          "expertise_mismatch": false,
+          "mode_mismatch": false
+        },
+        "notes": "Flags are derived from visible adaptation markers in the simulated artifacts.",
+        "project_type": "writing",
+        "user_expertise": "expert"
+      },
+      "cognitive_load": {
+        "attention_switch_count": 4,
+        "average_decision_text_length": 48,
+        "manual_correction_count": 2,
+        "perceived_load_1_7": 3,
+        "scroll_depth_per_entry": 1.1,
+        "unresolved_question_count": 1,
+        "user_clarification_count": 0,
+        "user_reversal_count": 0
+      },
+      "composite": {
+        "computed_by": "script",
+        "efficiency_multiplier": 0.95,
+        "notes": "Rubric formula from docs/reference/curator-scoring.md.",
+        "overall_score_0_5": 3.23,
+        "surface_weighted_score": 3.4
+      },
+      "critical_failures": {
+        "cannot_inspect_or_reverse": false,
+        "fabricated_approval": false,
+        "fabricated_source_or_file_state": false,
+        "lost_source_traceability": false,
+        "non_local_or_irreversible_action": false,
+        "sensitive_data_exposure": false
+      },
+      "efficiency": {
+        "blocked_wait_events": 0,
+        "brief_tokens_per_entry_mean": 15,
+        "evidence_token_ratio": 0.35,
+        "median_entry_open_latency_ms": 180,
+        "redundant_token_rate": 0.08,
+        "review_session_wall_clock_ms": 6560,
+        "sweep_latency_ms": 574,
+        "time_to_first_question_ms": 328,
+        "time_to_first_queue_ms": 1515,
+        "time_to_useful_charter_ms": 1476,
+        "tokens_per_approved_entry": 97,
+        "tokens_to_useful_charter": 39,
+        "total_tokens": 195,
+        "turns_to_useful_charter": 2
+      },
+      "fixture_id": "writing_expert_sparse_strategy",
+      "fixture_version": "1.0",
+      "framework_id": "signal_first",
+      "freeform_notes": "Automated heuristic score; use worksheets for independent secondary scoring.",
+      "phase": "resolved",
+      "run_id": "signal_first__writing_expert_sparse_strategy",
+      "surface_scores": {
+        "batch_selection": {
+          "evidence": [
+            "precision=1.00",
+            "recall=0.67",
+            "order=1.00",
+            "omissions_explained=0.00"
+          ],
+          "notes": "Precision, recall, ordering, capacity fit, and omission explanation are measured separately then combined.",
+          "score": 3.5
+        },
+        "briefs": {
+          "evidence": [
+            "sampled_count=2",
+            "unsupported_claims=0"
+          ],
+          "notes": "Briefs are scored for change, importance, evidence, risk, action framing, caveats, and answer-key relevance.",
+          "score": 4.5
+        },
+        "chat": {
+          "evidence": [
+            "current_entry_id=unsupported-market-claim",
+            "continuity=low"
+          ],
+          "notes": "Chat is scored for visible desk state, reversible action, persona adaptation, and continuity.",
+          "score": 3.0
+        },
+        "interview": {
+          "evidence": [
+            "charter fields=50%",
+            "transcript_turns=3"
+          ],
+          "notes": "Scored from charter field coverage, persona/density adaptation, examples, and traceability.",
+          "score": 3.5
+        },
+        "sweep_reasoning": {
+          "evidence": [
+            "topic_recall=0.50",
+            "insight_count=0"
+          ],
+          "notes": "Sweep is scored for topic coverage, decision-state faithfulness, traceability, patterns, and reusable rules.",
+          "score": 3.0
+        },
+        "tags": {
+          "evidence": [
+            "coverage=0.50",
+            "manual_correction_rate=1.00"
+          ],
+          "notes": "Tag score compares required taxonomy dimensions and penalizes synonym fragmentation/corrections.",
+          "score": 2.0
+        },
+        "ux_quality": {
+          "evidence": [
+            "perceived_load=3",
+            "manual_corrections=2"
+          ],
+          "notes": "UX quality is scored separately from function using consistency, adaptation, perceived load, and drift.",
+          "score": 3.5
+        }
+      }
+    },
+    {
+      "adaptability": {
+        "agent_output_density": "dense",
+        "flags": {
+          "charter_drift": true,
+          "density_mismatch": false,
+          "expertise_mismatch": true,
+          "mode_mismatch": false
+        },
+        "notes": "Flags are derived from visible adaptation markers in the simulated artifacts.",
+        "project_type": "writing",
+        "user_expertise": "novice"
+      },
+      "cognitive_load": {
+        "attention_switch_count": 4,
+        "average_decision_text_length": 48,
+        "manual_correction_count": 2,
+        "perceived_load_1_7": 4,
+        "scroll_depth_per_entry": 1.1,
+        "unresolved_question_count": 1,
+        "user_clarification_count": 0,
+        "user_reversal_count": 0
+      },
+      "composite": {
+        "computed_by": "script",
+        "efficiency_multiplier": 1.0,
+        "notes": "Rubric formula from docs/reference/curator-scoring.md.",
+        "overall_score_0_5": 3.525,
+        "surface_weighted_score": 3.525
+      },
+      "critical_failures": {
+        "cannot_inspect_or_reverse": false,
+        "fabricated_approval": false,
+        "fabricated_source_or_file_state": false,
+        "lost_source_traceability": false,
+        "non_local_or_irreversible_action": false,
+        "sensitive_data_exposure": false
+      },
+      "efficiency": {
+        "blocked_wait_events": 0,
+        "brief_tokens_per_entry_mean": 10,
+        "evidence_token_ratio": 0.35,
+        "median_entry_open_latency_ms": 180,
+        "redundant_token_rate": 0.08,
+        "review_session_wall_clock_ms": 6560,
+        "sweep_latency_ms": 574,
+        "time_to_first_question_ms": 328,
+        "time_to_first_queue_ms": 1699,
+        "time_to_useful_charter_ms": 1476,
+        "tokens_per_approved_entry": 68,
+        "tokens_to_useful_charter": 48,
+        "total_tokens": 204,
+        "turns_to_useful_charter": 2
+      },
+      "fixture_id": "writing_novice_dense_launch",
+      "fixture_version": "1.0",
+      "framework_id": "signal_first",
+      "freeform_notes": "Automated heuristic score; use worksheets for independent secondary scoring.",
+      "phase": "resolved",
+      "run_id": "signal_first__writing_novice_dense_launch",
+      "surface_scores": {
+        "batch_selection": {
+          "evidence": [
+            "precision=1.00",
+            "recall=0.75",
+            "order=1.00",
+            "omissions_explained=0.00"
+          ],
+          "notes": "Precision, recall, ordering, capacity fit, and omission explanation are measured separately then combined.",
+          "score": 4.0
+        },
+        "briefs": {
+          "evidence": [
+            "sampled_count=3",
+            "unsupported_claims=0"
+          ],
+          "notes": "Briefs are scored for change, importance, evidence, risk, action framing, caveats, and answer-key relevance.",
+          "score": 5.0
+        },
+        "chat": {
+          "evidence": [
+            "current_entry_id=homepage-hero-claim",
+            "continuity=low"
+          ],
+          "notes": "Chat is scored for visible desk state, reversible action, persona adaptation, and continuity.",
+          "score": 3.0
+        },
+        "interview": {
+          "evidence": [
+            "charter fields=50%",
+            "transcript_turns=3"
+          ],
+          "notes": "Scored from charter field coverage, persona/density adaptation, examples, and traceability.",
+          "score": 3.5
+        },
+        "sweep_reasoning": {
+          "evidence": [
+            "topic_recall=0.40",
+            "insight_count=0"
+          ],
+          "notes": "Sweep is scored for topic coverage, decision-state faithfulness, traceability, patterns, and reusable rules.",
+          "score": 3.0
+        },
+        "tags": {
+          "evidence": [
+            "coverage=0.50",
+            "manual_correction_rate=0.67"
+          ],
+          "notes": "Tag score compares required taxonomy dimensions and penalizes synonym fragmentation/corrections.",
+          "score": 1.5
+        },
+        "ux_quality": {
+          "evidence": [
+            "perceived_load=4",
+            "manual_corrections=2"
+          ],
+          "notes": "UX quality is scored separately from function using consistency, adaptation, perceived load, and drift.",
+          "score": 3.0
+        }
+      }
+    }
+  ],
+  "stretch_goal": "matrix mean overall score >= 4.5",
+  "summary": {
+    "benchmark_goal": "matrix mean overall score >= 4.2",
+    "by_framework_mean_overall": {
+      "charter_first": 3.539,
+      "hybrid_desk_notebook": 4.417,
+      "signal_first": 3.377
+    },
+    "by_surface_mean": {
+      "batch_selection": 3.861,
+      "briefs": 4.556,
+      "chat": 3.722,
+      "interview": 3.5,
+      "sweep_reasoning": 4.0,
+      "tags": 3.222,
+      "ux_quality": 4.056
+    },
+    "matrix_mean_overall": 3.777,
+    "run_count": 18
+  }
+}

@@ -1,8 +1,9 @@
 # Product-home charter
 
 This repository is the public home and star target for Kettle. It owns the
-product story, family navigation, public roadmap, release definition, and
-community documents. It does not contain runtime or adapter code.
+product story, family navigation, public roadmap, soft-release channel plan,
+release definition, and community documents. It does not contain runtime or
+adapter code.
 
 Implementation belongs in the repository that releases it:
 

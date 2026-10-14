@@ -1,0 +1,8 @@
+diff --git a/kettle_cli/main.py b/kettle_cli/main.py
+@@
+-parser.add_argument("path")
++parser.add_argument("path")
++parser.add_argument("--format", choices=("text", "json"), default="text")
+@@
+-print(render_text(result))
++print(render_json(result) if args.format == "json" else render_text(result))

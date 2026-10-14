@@ -1,0 +1,197 @@
+{
+  "run_id": "signal_first__writing_expert_sparse_strategy",
+  "framework_id": "signal_first",
+  "fixture_id": "writing_expert_sparse_strategy",
+  "fixture_version": "1.0",
+  "created_at": "2026-08-06T00:00:00Z",
+  "model_or_agent_version": "curator-lab-sim-1",
+  "provider": "deterministic-simulator",
+  "transcript": [
+    {
+      "role": "curator",
+      "text": "I scanned artifacts for Strategic memo revision. What should approval mean on this desk?"
+    },
+    {
+      "role": "user",
+      "text": "I need a direct editorial queue for a strategy memo. Flag unsupported claims and tone drift; do not rewrite the whole memo."
+    },
+    {
+      "role": "curator",
+      "text": "Understood. I will learn from rulings."
+    }
+  ],
+  "charter": {
+    "purpose": "Identify thesis and evidence gaps without over-expanding sparse material.",
+    "audience": "local human reviewer",
+    "review_criteria": "",
+    "exclusions": "",
+    "queue_strategy": "artifact_signal",
+    "decision_rules": [],
+    "persona_adapted": true,
+    "density_adapted": true,
+    "examples_and_non_examples": false,
+    "traceability_rate": 0.55,
+    "approval_means": "accepted for this review state, not published",
+    "voice": "fast triage"
+  },
+  "queue_selection": [
+    {
+      "id": "unsupported-market-claim",
+      "rank": 1,
+      "title": "Unsupported market-size claim",
+      "risk": "high",
+      "reason": "Matches expected review value.",
+      "source_evidence": [
+        "memo.md section 2"
+      ]
+    },
+    {
+      "id": "thesis-tightening",
+      "rank": 2,
+      "title": "Tighten memo thesis",
+      "risk": "medium",
+      "reason": "Matches expected review value.",
+      "source_evidence": [
+        "memo.md section 1"
+      ]
+    }
+  ],
+  "omitted_items": [
+    {
+      "id": "tone-shift",
+      "title": "Tone shift in executive summary",
+      "reason": "omitted"
+    },
+    {
+      "id": "extra-metaphor",
+      "title": "Optional metaphor",
+      "reason": "omitted"
+    }
+  ],
+  "briefs": [
+    {
+      "entry_id": "unsupported-market-claim",
+      "title": "Unsupported market-size claim",
+      "what_changed": "Adds a market-size claim without a cited source.",
+      "why_it_matters": "Risk high affects the review goal.",
+      "source_evidence": [
+        "memo.md section 2"
+      ],
+      "risk": "high",
+      "confidence": "high",
+      "recommended_action": "comment",
+      "decision_hook": null,
+      "caveats": "",
+      "persona_note": null,
+      "text": "Adds a market-size claim without a cited source.",
+      "evidence": [
+        "memo.md section 2"
+      ],
+      "token_estimate": 13,
+      "unsupported_claims": 0
+    },
+    {
+      "entry_id": "thesis-tightening",
+      "title": "Tighten memo thesis",
+      "what_changed": "Changes the memo from broad market commentary to a focused operating bet.",
+      "why_it_matters": "Risk medium affects the review goal.",
+      "source_evidence": [
+        "memo.md section 1"
+      ],
+      "risk": "medium",
+      "confidence": "medium",
+      "recommended_action": "inspect",
+      "decision_hook": null,
+      "caveats": "",
+      "persona_note": null,
+      "text": "Changes the memo from broad market commentary to a focused operating bet.",
+      "evidence": [
+        "memo.md section 1"
+      ],
+      "token_estimate": 18,
+      "unsupported_claims": 0
+    }
+  ],
+  "tags": {
+    "unsupported-market-claim": [
+      "risk:high",
+      "action_needed:comment",
+      "confidence:high",
+      "docs",
+      "writing"
+    ],
+    "thesis-tightening": [
+      "risk:medium",
+      "action_needed:inspect",
+      "confidence:medium",
+      "docs",
+      "writing"
+    ]
+  },
+  "chat_sample": [
+    {
+      "role": "curator",
+      "current_entry_id": "unsupported-market-claim",
+      "uses_desk_state": false,
+      "captures_reversible_action": true,
+      "persona_adapted": true,
+      "continuity": "low",
+      "text": "Entry unsupported-market-claim leads because of residual risk under the charter. Approval remains a reversible ruling bookmark, not publish."
+    }
+  ],
+  "sweep_insights": {
+    "topics": [
+      "sources",
+      "thesis"
+    ],
+    "patterns": [],
+    "insights": [],
+    "preserves_decision_state": true,
+    "decision_state_preserved": true,
+    "traceability": true,
+    "cross_entry_patterns": false,
+    "reusable_rules": false,
+    "fabricated_approvals": false,
+    "summary": "Sweep across 2 entries for Strategic memo revision."
+  },
+  "efficiency_metrics": {
+    "total_tokens": 195,
+    "tokens_to_useful_charter": 39,
+    "tokens_per_approved_entry": 97,
+    "brief_tokens_per_entry_mean": 15,
+    "redundant_token_rate": 0.08,
+    "evidence_token_ratio": 0.35,
+    "time_to_first_question_ms": 328,
+    "time_to_useful_charter_ms": 1476,
+    "time_to_first_queue_ms": 1515,
+    "median_entry_open_latency_ms": 180,
+    "sweep_latency_ms": 574,
+    "review_session_wall_clock_ms": 6560,
+    "turns_to_useful_charter": 2,
+    "blocked_wait_events": 0
+  },
+  "cognitive_load": {
+    "user_clarification_count": 0,
+    "manual_correction_count": 2,
+    "attention_switch_count": 4,
+    "unresolved_question_count": 1,
+    "average_decision_text_length": 48,
+    "scroll_depth_per_entry": 1.1,
+    "user_reversal_count": 0,
+    "perceived_load_1_7": 3
+  },
+  "adaptability_flags": {
+    "mode_mismatch": false,
+    "expertise_mismatch": false,
+    "density_mismatch": true,
+    "charter_drift": true
+  },
+  "critical_failures": {
+    "fabricated_approval": false,
+    "fabricated_source_or_file_state": false,
+    "non_local_or_irreversible_action": false,
+    "lost_source_traceability": false,
+    "sensitive_data_exposure": false,
+    "cannot_inspect_or_reverse": false
+  }
+}

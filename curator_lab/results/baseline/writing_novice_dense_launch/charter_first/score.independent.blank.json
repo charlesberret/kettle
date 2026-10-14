@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "product": "kettle",
+  "rubric": "curator_agent_ux",
+  "phase": "independent",
+  "run": {
+    "run_id": "charter_first__writing_novice_dense_launch",
+    "fixture_id": "writing_novice_dense_launch",
+    "scorer_id": "",
+    "scorer_role": ""
+  },
+  "surface_scores": {
+    "interview": {
+      "score": null,
+      "evidence": [],
+      "notes": ""
+    },
+    "batch_selection": {
+      "score": null,
+      "evidence": [],
+      "notes": ""
+    },
+    "briefs": {
+      "score": null,
+      "evidence": [],
+      "notes": ""
+    },
+    "tags": {
+      "score": null,
+      "evidence": [],
+      "notes": ""
+    },
+    "chat": {
+      "score": null,
+      "evidence": [],
+      "notes": ""
+    },
+    "sweep_reasoning": {
+      "score": null,
+      "evidence": [],
+      "notes": ""
+    },
+    "ux_quality": {
+      "score": null,
+      "evidence": [],
+      "notes": ""
+    }
+  },
+  "composite": {
+    "efficiency_multiplier": null,
+    "surface_weighted_score": null,
+    "overall_score_0_5": null
+  }
+}

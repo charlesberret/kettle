@@ -1,0 +1,3 @@
+- Review agent work before it leaves your desk.
+- A local-first queue for human approval.
+- Turn raw agent output into reviewable decisions.

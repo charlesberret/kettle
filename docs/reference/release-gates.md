@@ -28,7 +28,8 @@ The first public preview is ready when:
 | Release inputs are reproducible | all publishable Git worktrees clean |
 | Source is publicly reachable | family links and clone commands work without authentication |
 
-Manual release evidence:
+Manual release evidence (executable checklist:
+[stranger-path QA](../how-to/stranger-path-qa.md)):
 
 - install from the public instructions on a clean machine or user account;
 - found or open a real Desk;
@@ -47,6 +48,9 @@ Manual release evidence:
 | Core package | wheel contents, clean virtual-environment install, supported Python matrix |
 | Editor marketplace | live activation, declared permissions, icon and listing, rollback plan |
 | macOS application | exact core provenance, packaged smoke, signing, notarization, update plan |
+
+Channel sequencing (reserve names now, announce only what installs today):
+[soft release](../explanation/soft-release.md).
 
 Viewport package versions do not need to match. Compatibility is governed by
 the API and Desk-schema contracts published by core and declared by adapters.

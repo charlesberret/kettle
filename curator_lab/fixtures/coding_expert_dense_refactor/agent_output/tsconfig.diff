@@ -1,0 +1,6 @@
+diff --git a/tsconfig.json b/tsconfig.json
+@@
+     "paths": {
++      "@services/*": ["src/services/*"],
+       "@/*": ["src/*"]
+     }

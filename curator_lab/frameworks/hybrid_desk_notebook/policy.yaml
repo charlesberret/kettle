@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "framework_id": "hybrid_desk_notebook",
+  "display_name": "Hybrid Desk Notebook",
+  "strategy": "hybrid",
+  "strengths": {
+    "interview": 4.5,
+    "batch_selection": 4.4,
+    "briefs": 4.4,
+    "tags": 4.2,
+    "chat": 4.3,
+    "sweep_reasoning": 4.4,
+    "ux_quality": 4.2
+  },
+  "queue": {
+    "max_items_offset": 0,
+    "expected_recall": 0.75,
+    "allow_extra_low_risk": false,
+    "explain_omissions": true,
+    "order_by": "risk_dependency_capacity"
+  },
+  "interview": {
+    "turn_style": "adaptive",
+    "adapts_to_expertise": true,
+    "adapts_to_density": true,
+    "decision_rule_examples": true,
+    "turn_overhead": 0
+  },
+  "brief": {
+    "evidence_depth": "high",
+    "risk_depth": "high",
+    "action_framing": "decision_hook",
+    "persona_tuning": "high"
+  },
+  "tags": {
+    "taxonomy": [
+      "domain",
+      "artifact_type",
+      "risk",
+      "action_needed",
+      "confidence",
+      "source",
+      "sweep_topic"
+    ],
+    "duplicate_synonym_rate": 0.05,
+    "manual_correction_bias": 1
+  },
+  "chat": {
+    "continuity": "high",
+    "asks_before_update": true,
+    "persona_tuning": "high"
+  },
+  "sweep": {
+    "synthesis_depth": "high",
+    "preserves_decision_state": true,
+    "cross_entry_patterns": true
+  },
+  "efficiency": {
+    "latency_factor": 1.02,
+    "token_factor": 1.05,
+    "redundant_token_rate": 0.11,
+    "blocked_wait_events": 0
+  },
+  "ux": {
+    "voice": "calm local-first co-curator",
+    "terminology_consistency": 0.88,
+    "local_first_control": true
+  }
+}

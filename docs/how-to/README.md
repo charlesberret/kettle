@@ -7,6 +7,8 @@ that, and to [reference](../reference/) for exhaustive lists.
 | Guide | Goal |
 |-------|------|
 | [Check release readiness](./check-release-readiness.md) | Run automated family gates |
+| [Stranger-path QA](./stranger-path-qa.md) | Manual dogfood: install → found → review → sweep |
+| [Run curator evaluation lab](./run-curator-eval.md) | Score curator UX frameworks with deterministic fixtures |
 | [Install git hooks](./install-git-hooks.md) | Enable commit-msg checks for a repo |
 | [Contribute a change](./contribute.md) | Pick a repo and open work correctly |
 

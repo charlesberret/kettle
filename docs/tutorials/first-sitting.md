@@ -77,12 +77,14 @@ You are not graded on a perfect charter — the goal is to **see the loop**.
 
 ```sh
 .venv/bin/kettle projects
-.venv/bin/kettle queue <project-id>
+.venv/bin/kettle queue <project>
+.venv/bin/kettle chat <project>   # optional; curator must already be authenticated
 .venv/bin/kettle doctor
 ```
 
 Shell and web should describe the **same** desk. That pairing is intentional
-product craft, not a side effect.
+product craft, not a side effect. Plugin chat (VS Code / Cursor) is the same
+stream rendered in the editor, not a second product.
 
 ---
 
@@ -93,6 +95,7 @@ product craft, not a side effect.
 - [ ] A project is registered  
 - [ ] You completed at least one approve (or a clear founding step)  
 
-**Next:** [how-to: check release readiness](../how-to/check-release-readiness.md)  
+**Next:** [how-to: stranger-path QA](../how-to/stranger-path-qa.md) for a full
+dogfood checklist; [how-to: check release readiness](../how-to/check-release-readiness.md)
 if you are contributing; [explanation: architecture](../explanation/architecture.md)
 if you want the family map.

@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "fixture_id": "hybrid_expert_dense_docs_code",
+  "fixture_version": "1.0",
+  "title": "Expert dense docs plus code examples",
+  "persona": {
+    "role": "open-source maintainer",
+    "expertise": "expert",
+    "needs": ["cross-artifact consistency", "raw evidence", "API mismatch detection"]
+  },
+  "project": {
+    "type": "hybrid",
+    "title": "Docs and code examples",
+    "review_goal": "Catch mismatches between API implementation and prose examples."
+  },
+  "density": "dense",
+  "curator_capacity": 4,
+  "founding_context": "I need a tight queue connecting docs claims to code examples. Prioritize API mismatches, runnable examples, and source evidence.",
+  "raw_agent_outputs": [
+    {
+      "id": "api-default-change",
+      "title": "API default changed to localOnly",
+      "kind": "diff",
+      "path": "agent_output/api_default.diff",
+      "domain": "coding",
+      "risk": "high",
+      "confidence": "high",
+      "signals": ["expected", "api_risk", "behavior_change"],
+      "summary": "Changes default sync mode to localOnly.",
+      "recommended_action": "inspect",
+      "source_evidence": ["src/config.ts"]
+    },
+    {
+      "id": "docs-still-remote-default",
+      "title": "Docs still claim remote default",
+      "kind": "docs",
+      "path": "agent_output/docs_mismatch.md",
+      "domain": "writing",
+      "risk": "high",
+      "confidence": "high",
+      "signals": ["expected", "cross_artifact_mismatch"],
+      "summary": "Guide says the default sync mode sends work outward.",
+      "recommended_action": "edit",
+      "source_evidence": ["docs/guide.md", "src/config.ts"]
+    },
+    {
+      "id": "example-import-broken",
+      "title": "Example import path is broken",
+      "kind": "example",
+      "path": "agent_output/example_import.diff",
+      "domain": "hybrid",
+      "risk": "medium",
+      "confidence": "medium",
+      "signals": ["expected", "test_coverage", "docs_code_link"],
+      "summary": "Example imports from package root but export moved to /client.",
+      "recommended_action": "investigate",
+      "source_evidence": ["examples/basic.ts", "src/index.ts"]
+    },
+    {
+      "id": "readme-badge",
+      "title": "README badge update",
+      "kind": "docs",
+      "path": "agent_output/badge.md",
+      "domain": "writing",
+      "risk": "low",
+      "confidence": "high",
+      "signals": ["expected_omit", "low_review_value"],
+      "summary": "Updates a CI badge URL.",
+      "recommended_action": "omit",
+      "source_evidence": ["README.md"]
+    },
+    {
+      "id": "migration-note",
+      "title": "Migration note for sync mode",
+      "kind": "docs",
+      "path": "agent_output/migration.md",
+      "domain": "writing",
+      "risk": "medium",
+      "confidence": "medium",
+      "signals": ["expected", "dependency"],
+      "summary": "Adds migration note for localOnly default.",
+      "recommended_action": "inspect",
+      "source_evidence": ["docs/migration.md", "src/config.ts"]
+    }
+  ],
+  "expected_queue": ["docs-still-remote-default", "api-default-change", "example-import-broken", "migration-note"],
+  "expected_omissions": ["readme-badge"],
+  "answer_key": {
+    "priority_order": ["docs-still-remote-default", "api-default-change", "example-import-broken", "migration-note"],
+    "required_tags": {
+      "docs-still-remote-default": ["domain:writing", "artifact_type:docs", "risk:high", "action_needed:edit", "confidence:high", "sweep_topic:docs_code_mismatch"],
+      "api-default-change": ["domain:coding", "artifact_type:diff", "risk:high", "action_needed:inspect", "confidence:high", "sweep_topic:api"],
+      "example-import-broken": ["domain:hybrid", "artifact_type:example", "risk:medium", "action_needed:investigate", "confidence:medium", "sweep_topic:examples"],
+      "migration-note": ["domain:writing", "artifact_type:docs", "risk:medium", "action_needed:inspect", "confidence:medium", "sweep_topic:migration"]
+    },
+    "sweep_topics": ["docs_code_mismatch", "api", "examples", "migration"],
+    "adaptability_expectations": ["expert_terse", "dense_deduplication", "hybrid_traceability"],
+    "critical_failures": []
+  },
+  "efficiency_targets": {
+    "turns_to_useful_charter_max": 3,
+    "time_to_first_queue_ms_max": 4300,
+    "redundant_token_rate_max": 0.14,
+    "manual_correction_count_max": 1,
+    "perceived_load_1_7_max": 3
+  }
+}

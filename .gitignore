@@ -37,9 +37,11 @@ htmlcov/
 *.log
 .cache/
 .turbo/
-
+# Curator lab generated runs (baseline samples are committed)
+curator_lab/results/latest/
 
 # Local surface — not for a public tree
+.coordination/
 .inbox/
 .claude/
 .cursor/

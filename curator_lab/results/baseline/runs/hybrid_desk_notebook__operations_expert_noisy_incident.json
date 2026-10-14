@@ -1,0 +1,267 @@
+{
+  "adaptability_flags": {
+    "charter_drift": false,
+    "density_mismatch": false,
+    "expertise_mismatch": false,
+    "mode_mismatch": false
+  },
+  "briefs": [
+    {
+      "caveats": "",
+      "confidence": "medium",
+      "decision_hook": "inspect with evidence open",
+      "entry_id": "timeline-draft",
+      "evidence": [
+        "agent_output/timeline.md",
+        "pager_export.json"
+      ],
+      "persona_note": "Compressed expert brief.",
+      "recommended_action": "inspect",
+      "risk": "high",
+      "source_evidence": [
+        "agent_output/timeline.md",
+        "pager_export.json"
+      ],
+      "text": "Orders detection, mitigation, and recovery events.",
+      "title": "Incident timeline draft",
+      "token_estimate": 9,
+      "unsupported_claims": 0,
+      "what_changed": "Orders detection, mitigation, and recovery events.",
+      "why_it_matters": "Risk high affects the review goal."
+    },
+    {
+      "caveats": "",
+      "confidence": "low",
+      "decision_hook": "inspect with evidence open",
+      "entry_id": "causal-hypothesis",
+      "evidence": [
+        "agent_output/cause.md"
+      ],
+      "persona_note": "Compressed expert brief.",
+      "recommended_action": "inspect",
+      "risk": "high",
+      "source_evidence": [
+        "agent_output/cause.md"
+      ],
+      "text": "Suggests deploy overlap caused the outage without proving it.",
+      "title": "Causal hypothesis memo",
+      "token_estimate": 11,
+      "unsupported_claims": 0,
+      "what_changed": "Suggests deploy overlap caused the outage without proving it.",
+      "why_it_matters": ""
+    },
+    {
+      "caveats": "",
+      "confidence": "medium",
+      "decision_hook": null,
+      "entry_id": "runbook-patch",
+      "evidence": [
+        "runbooks/api-latency.md",
+        "agent_output/runbook.diff"
+      ],
+      "persona_note": "Compressed expert brief.",
+      "recommended_action": "inspect",
+      "risk": "medium",
+      "source_evidence": [
+        "runbooks/api-latency.md",
+        "agent_output/runbook.diff"
+      ],
+      "text": "Adds rollback and cache-flush steps to the runbook.",
+      "title": "Runbook mitigation steps",
+      "token_estimate": 11,
+      "unsupported_claims": 0,
+      "what_changed": "Adds rollback and cache-flush steps to the runbook.",
+      "why_it_matters": ""
+    }
+  ],
+  "charter": {
+    "approval_means": "accepted for this review state, not published",
+    "audience": "local human reviewer",
+    "decision_rules": [
+      "Require evidence and residual-risk notes before approval."
+    ],
+    "density_adapted": true,
+    "examples_and_non_examples": false,
+    "exclusions": "Low-value renames and raw noise unless capacity remains.",
+    "persona_adapted": true,
+    "purpose": "Extract actionable incident truth without inventing causality from noisy logs.",
+    "queue_strategy": "risk_dependency_capacity",
+    "review_criteria": "",
+    "traceability_rate": 0.72,
+    "voice": "calm local-first co-curator"
+  },
+  "chat_sample": [
+    {
+      "captures_reversible_action": true,
+      "continuity": "medium",
+      "current_entry_id": "timeline-draft",
+      "persona_adapted": true,
+      "role": "curator",
+      "text": "Entry timeline-draft leads because of residual risk under the charter. Approval remains a reversible ruling bookmark, not publish.",
+      "uses_desk_state": true
+    }
+  ],
+  "cognitive_load": {
+    "attention_switch_count": 3,
+    "average_decision_text_length": 48,
+    "manual_correction_count": 1,
+    "perceived_load_1_7": 3,
+    "scroll_depth_per_entry": 1.1,
+    "unresolved_question_count": 0,
+    "user_clarification_count": 0,
+    "user_reversal_count": 0
+  },
+  "created_at": "2026-08-06T00:00:00Z",
+  "critical_failures": {
+    "cannot_inspect_or_reverse": false,
+    "fabricated_approval": false,
+    "fabricated_source_or_file_state": false,
+    "lost_source_traceability": false,
+    "non_local_or_irreversible_action": false,
+    "sensitive_data_exposure": false
+  },
+  "efficiency_metrics": {
+    "blocked_wait_events": 0,
+    "brief_tokens_per_entry_mean": 10,
+    "evidence_token_ratio": 0.55,
+    "median_entry_open_latency_ms": 224,
+    "redundant_token_rate": 0.11,
+    "review_session_wall_clock_ms": 8160,
+    "sweep_latency_ms": 714,
+    "time_to_first_question_ms": 408,
+    "time_to_first_queue_ms": 1999,
+    "time_to_useful_charter_ms": 1836,
+    "tokens_per_approved_entry": 108,
+    "tokens_to_useful_charter": 105,
+    "total_tokens": 326,
+    "turns_to_useful_charter": 2
+  },
+  "fixture_id": "operations_expert_noisy_incident",
+  "fixture_version": "1.0",
+  "framework_id": "hybrid_desk_notebook",
+  "model_or_agent_version": "curator-lab-sim-1",
+  "omitted_items": [
+    {
+      "id": "action-owners",
+      "reason": "lower value relative to capacity and risk ordering",
+      "title": "Follow-up owners list"
+    },
+    {
+      "id": "raw-log-spam",
+      "reason": "duplicate or lower value noise omitted from capacity",
+      "title": "Unfiltered log paste"
+    }
+  ],
+  "provider": "deterministic-simulator",
+  "queue_selection": [
+    {
+      "id": "timeline-draft",
+      "rank": 1,
+      "reason": "Matches expected review value.",
+      "risk": "high",
+      "source_evidence": [
+        "agent_output/timeline.md",
+        "pager_export.json"
+      ],
+      "title": "Incident timeline draft"
+    },
+    {
+      "id": "causal-hypothesis",
+      "rank": 2,
+      "reason": "Matches expected review value.",
+      "risk": "high",
+      "source_evidence": [
+        "agent_output/cause.md"
+      ],
+      "title": "Causal hypothesis memo"
+    },
+    {
+      "id": "runbook-patch",
+      "rank": 3,
+      "reason": "Matches expected review value.",
+      "risk": "medium",
+      "source_evidence": [
+        "runbooks/api-latency.md",
+        "agent_output/runbook.diff"
+      ],
+      "title": "Runbook mitigation steps"
+    }
+  ],
+  "run_id": "hybrid_desk_notebook__operations_expert_noisy_incident",
+  "sweep_insights": {
+    "cross_entry_patterns": true,
+    "decision_state_preserved": true,
+    "fabricated_approvals": false,
+    "insights": [
+      {
+        "entry_ids": [
+          "timeline-draft",
+          "causal-hypothesis"
+        ],
+        "text": "Batch shares a dependency chain across behavior and verification entries."
+      }
+    ],
+    "patterns": [
+      "Multiple entries share a decision dependency."
+    ],
+    "preserves_decision_state": true,
+    "reusable_rules": false,
+    "summary": "Sweep across 3 entries for Incident review and runbook update.",
+    "topics": [
+      "timeline",
+      "causality",
+      "runbook",
+      "owners"
+    ],
+    "traceability": true
+  },
+  "tags": {
+    "causal-hypothesis": [
+      "domain:operations",
+      "artifact_type:ops",
+      "risk:high",
+      "action_needed:inspect",
+      "confidence:low"
+    ],
+    "runbook-patch": [
+      "domain:operations",
+      "artifact_type:docs",
+      "risk:medium",
+      "action_needed:inspect",
+      "confidence:medium"
+    ],
+    "timeline-draft": [
+      "domain:operations",
+      "artifact_type:ops",
+      "risk:high",
+      "action_needed:inspect",
+      "confidence:medium"
+    ]
+  },
+  "transcript": [
+    {
+      "role": "curator",
+      "text": "I scanned artifacts for Incident review and runbook update. What should approval mean on this desk?"
+    },
+    {
+      "role": "user",
+      "text": "I want a tight queue: timeline claims, causal hypotheses marked speculative, runbook diffs, and ownered follow-ups. Omit raw log spam."
+    },
+    {
+      "role": "curator",
+      "text": "I will keep briefs terse and risk-ordered. Any standing hard no?"
+    },
+    {
+      "role": "user",
+      "text": "Hard no: unsupported claims and silent config risk."
+    },
+    {
+      "role": "curator",
+      "text": "Example: approve only with source evidence and residual risk stated. Non-example: approve because the summary sounds confident. Keep that?"
+    },
+    {
+      "role": "user",
+      "text": "Yes \u2014 keep that durable."
+    }
+  ]
+}

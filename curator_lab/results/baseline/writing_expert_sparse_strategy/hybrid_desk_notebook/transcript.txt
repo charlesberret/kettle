@@ -1,0 +1,6 @@
+curator: I scanned artifacts for Strategic memo revision. What should approval mean on this desk?
+user: I need a direct editorial queue for a strategy memo. Flag unsupported claims and tone drift; do not rewrite the whole memo.
+curator: I will keep briefs terse and risk-ordered. Any standing hard no?
+user: Hard no: unsupported claims and silent config risk.
+curator: Example: approve only with source evidence and residual risk stated. Non-example: approve because the summary sounds confident. Keep that?
+user: Yes — keep that durable.

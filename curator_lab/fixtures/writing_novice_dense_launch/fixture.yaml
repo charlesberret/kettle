@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "fixture_id": "writing_novice_dense_launch",
+  "fixture_version": "1.0",
+  "title": "Novice dense launch copy package",
+  "persona": {
+    "role": "marketer",
+    "expertise": "novice",
+    "needs": ["audience explanation", "tone consistency", "launch checklist"]
+  },
+  "project": {
+    "type": "writing",
+    "title": "Product launch copy package",
+    "review_goal": "Group launch copy by channel and identify claim, tone, and readiness blockers."
+  },
+  "density": "dense",
+  "curator_capacity": 4,
+  "founding_context": "I have a lot of launch copy from an agent. Please group it by channel, explain the approval choice in plain language, and keep risky claims out of approved copy.",
+  "raw_agent_outputs": [
+    {
+      "id": "homepage-hero-claim",
+      "title": "Homepage hero claim",
+      "kind": "copy",
+      "path": "agent_output/homepage.md",
+      "domain": "writing",
+      "risk": "high",
+      "confidence": "medium",
+      "signals": ["expected", "factual_risk", "audience_impact"],
+      "summary": "Claims teams cut review time by 80% without evidence.",
+      "recommended_action": "comment",
+      "source_evidence": ["homepage.md"]
+    },
+    {
+      "id": "email-sequence-tone",
+      "title": "Email sequence tone mismatch",
+      "kind": "copy",
+      "path": "agent_output/email.md",
+      "domain": "writing",
+      "risk": "medium",
+      "confidence": "high",
+      "signals": ["expected", "tone_risk"],
+      "summary": "Email copy shifts from calm desk language to hype language.",
+      "recommended_action": "edit",
+      "source_evidence": ["email_launch.md"]
+    },
+    {
+      "id": "social-thread-duplicate",
+      "title": "Duplicated social thread",
+      "kind": "copy",
+      "path": "agent_output/social_duplicate.md",
+      "domain": "writing",
+      "risk": "low",
+      "confidence": "high",
+      "signals": ["expected_omit", "duplicate"],
+      "summary": "Repeats the same social thread in two voice variants.",
+      "recommended_action": "omit",
+      "source_evidence": ["social.md"]
+    },
+    {
+      "id": "press-faq-source-gap",
+      "title": "Press FAQ source gap",
+      "kind": "claim",
+      "path": "agent_output/press_faq.md",
+      "domain": "writing",
+      "risk": "high",
+      "confidence": "medium",
+      "signals": ["expected", "source_gap"],
+      "summary": "FAQ names integrations that are not in launch notes.",
+      "recommended_action": "investigate",
+      "source_evidence": ["press_faq.md", "launch_notes.md"]
+    },
+    {
+      "id": "pricing-snippet",
+      "title": "Pricing snippet needs approval",
+      "kind": "copy",
+      "path": "agent_output/pricing.md",
+      "domain": "writing",
+      "risk": "medium",
+      "confidence": "medium",
+      "signals": ["expected", "publication_blocker"],
+      "summary": "Adds pricing language that needs business approval.",
+      "recommended_action": "comment",
+      "source_evidence": ["pricing.md"]
+    },
+    {
+      "id": "alt-headlines",
+      "title": "Low-risk alternate headlines",
+      "kind": "copy",
+      "path": "agent_output/headlines.md",
+      "domain": "writing",
+      "risk": "low",
+      "confidence": "high",
+      "signals": ["optional", "source_traceable"],
+      "summary": "Three channel-safe headline variants.",
+      "recommended_action": "approve",
+      "source_evidence": ["headlines.md"]
+    }
+  ],
+  "expected_queue": ["homepage-hero-claim", "press-faq-source-gap", "pricing-snippet", "email-sequence-tone"],
+  "expected_omissions": ["social-thread-duplicate"],
+  "answer_key": {
+    "priority_order": ["homepage-hero-claim", "press-faq-source-gap", "pricing-snippet", "email-sequence-tone"],
+    "required_tags": {
+      "homepage-hero-claim": ["domain:writing", "artifact_type:copy", "risk:high", "action_needed:comment", "confidence:medium", "sweep_topic:claims"],
+      "press-faq-source-gap": ["domain:writing", "artifact_type:claim", "risk:high", "action_needed:investigate", "confidence:medium", "sweep_topic:sources"],
+      "pricing-snippet": ["domain:writing", "artifact_type:copy", "risk:medium", "action_needed:comment", "confidence:medium", "sweep_topic:approval"],
+      "email-sequence-tone": ["domain:writing", "artifact_type:copy", "risk:medium", "action_needed:edit", "confidence:high", "sweep_topic:tone"]
+    },
+    "sweep_topics": ["claims", "sources", "approval", "tone", "launch_checklist"],
+    "adaptability_expectations": ["novice_explanation", "dense_grouping", "writing_claim_risk"],
+    "critical_failures": []
+  },
+  "efficiency_targets": {
+    "turns_to_useful_charter_max": 4,
+    "time_to_first_queue_ms_max": 4300,
+    "redundant_token_rate_max": 0.16,
+    "manual_correction_count_max": 2,
+    "perceived_load_1_7_max": 4
+  }
+}

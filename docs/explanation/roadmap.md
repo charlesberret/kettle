@@ -18,7 +18,11 @@ outside its original workshop.
 - Finish Host and Origin validation for the localhost HTTP surface.
 - Add a per-boot local authentication design before widening integrations.
 - Run a stranger-path dogfood pass: install, found a Desk, review an entry,
-  comment, approve, and sweep without maintainer-only knowledge.
+  comment, approve, and sweep without maintainer-only knowledge
+  ([checklist](../how-to/stranger-path-qa.md)).
+- Define curator excellence around the recommended
+  [Hybrid Desk Notebook](./curator-frameworks.md) and run improvement work
+  against the [curator scoring benchmark](../reference/curator-scoring.md).
 - Finish repository descriptions, topics, issue routing, and private
   vulnerability reporting.
 - Make the source repositories public only when their cross-repository links
@@ -33,6 +37,8 @@ outside its original workshop.
 - Add an explicit, dry-run-first migration command for Setsweep registries and
   `.setsweep/` Desks.
 - Stabilize API and Desk contracts at version `1` after real adapter use.
+- Keep CLI and plugin agent chat on one core spine (protocol, copy, errors);
+  see the [chat signature inventory](../reference/chat-signature-inventory.md).
 
 ## Later: evidence-led adapters
 
@@ -41,7 +47,8 @@ outside its original workshop.
 - Build an Obsidian adapter when a concrete writing workflow is ready to
   dogfood.
 - Add a narrow MCP bridge only for model-host tools that benefit from the same
-  Desk. It should not replace the CLI or a full sitting.
+  Desk. It should not replace the CLI or a full sitting. Threat, use, and
+  scope: [MCP bridge](./mcp-bridge.md).
 - Consider remote or multi-user use only after a separate threat model.
 
 ## Permanent constraints
@@ -53,3 +60,9 @@ outside its original workshop.
 5. Core owns semantics and adapters remain thin.
 6. Breaking contracts advance versions and ship with migrations.
 7. New repositories need a real implementation and release path.
+
+## Soft release channels
+
+For package-name reservations, marketplace accounts, dogfood-vs-announce
+criteria, and where to post once installable, see
+[soft release](./soft-release.md).

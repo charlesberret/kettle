@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "fixture_id": "writing_expert_sparse_strategy",
+  "fixture_version": "1.0",
+  "title": "Expert sparse strategic memo revision",
+  "persona": {
+    "role": "operator",
+    "expertise": "expert",
+    "needs": ["concise editorial judgment", "claim gaps", "no padding"]
+  },
+  "project": {
+    "type": "writing",
+    "title": "Strategic memo revision",
+    "review_goal": "Identify thesis and evidence gaps without over-expanding sparse material."
+  },
+  "density": "sparse",
+  "curator_capacity": 3,
+  "founding_context": "I need a direct editorial queue for a strategy memo. Flag unsupported claims and tone drift; do not rewrite the whole memo.",
+  "raw_agent_outputs": [
+    {
+      "id": "thesis-tightening",
+      "title": "Tighten memo thesis",
+      "kind": "draft",
+      "path": "agent_output/thesis.md",
+      "domain": "writing",
+      "risk": "medium",
+      "confidence": "medium",
+      "signals": ["expected", "thesis_impact"],
+      "summary": "Changes the memo from broad market commentary to a focused operating bet.",
+      "recommended_action": "inspect",
+      "source_evidence": ["memo.md section 1"]
+    },
+    {
+      "id": "unsupported-market-claim",
+      "title": "Unsupported market-size claim",
+      "kind": "claim",
+      "path": "agent_output/claim_gap.md",
+      "domain": "writing",
+      "risk": "high",
+      "confidence": "high",
+      "signals": ["expected", "source_gap", "factual_risk"],
+      "summary": "Adds a market-size claim without a cited source.",
+      "recommended_action": "comment",
+      "source_evidence": ["memo.md section 2"]
+    },
+    {
+      "id": "tone-shift",
+      "title": "Tone shift in executive summary",
+      "kind": "draft",
+      "path": "agent_output/tone.md",
+      "domain": "writing",
+      "risk": "medium",
+      "confidence": "medium",
+      "signals": ["expected", "tone_risk"],
+      "summary": "Moves from decisive operator voice to promotional language.",
+      "recommended_action": "edit",
+      "source_evidence": ["memo.md executive summary"]
+    },
+    {
+      "id": "extra-metaphor",
+      "title": "Optional metaphor",
+      "kind": "note",
+      "path": "agent_output/metaphor.md",
+      "domain": "writing",
+      "risk": "low",
+      "confidence": "low",
+      "signals": ["expected_omit", "low_review_value"],
+      "summary": "Suggests a sports metaphor not tied to the memo goal.",
+      "recommended_action": "omit",
+      "source_evidence": ["agent note"]
+    }
+  ],
+  "expected_queue": ["unsupported-market-claim", "thesis-tightening", "tone-shift"],
+  "expected_omissions": ["extra-metaphor"],
+  "answer_key": {
+    "priority_order": ["unsupported-market-claim", "thesis-tightening", "tone-shift"],
+    "required_tags": {
+      "unsupported-market-claim": ["domain:writing", "artifact_type:claim", "risk:high", "action_needed:comment", "confidence:high", "sweep_topic:sources"],
+      "thesis-tightening": ["domain:writing", "artifact_type:draft", "risk:medium", "action_needed:inspect", "confidence:medium", "sweep_topic:thesis"],
+      "tone-shift": ["domain:writing", "artifact_type:draft", "risk:medium", "action_needed:edit", "confidence:medium", "sweep_topic:tone"]
+    },
+    "sweep_topics": ["sources", "thesis", "tone", "uncertainty"],
+    "adaptability_expectations": ["expert_terse", "sparse_uncertainty", "writing_claim_risk"],
+    "critical_failures": []
+  },
+  "efficiency_targets": {
+    "turns_to_useful_charter_max": 3,
+    "time_to_first_queue_ms_max": 3300,
+    "redundant_token_rate_max": 0.14,
+    "manual_correction_count_max": 1,
+    "perceived_load_1_7_max": 3
+  }
+}

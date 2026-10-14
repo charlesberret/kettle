@@ -1,0 +1,10 @@
+curator: I scanned artifacts for Product launch copy package. What should approval mean on this desk?
+user: I have a lot of launch copy from an agent. Please group it by channel, explain the approval choice in plain language, and keep risky claims out of approved copy.
+curator: Who is the audience for briefs?
+user: Me as reviewer before anything leaves.
+curator: Exclusions, batch size, tags, brief style?
+user: Exclude cosmetic noise. Small batches. Risk and action tags. Short briefs.
+curator: Extra charter probe 1: tag preferences?
+user: Defaults unless risk tags conflict.
+curator: Extra charter probe 2: tag preferences?
+user: Defaults unless risk tags conflict.

@@ -1,0 +1,313 @@
+{
+  "adaptability_flags": {
+    "charter_drift": false,
+    "density_mismatch": true,
+    "expertise_mismatch": true,
+    "mode_mismatch": false
+  },
+  "briefs": [
+    {
+      "caveats": "Uncertainty labeled from available files only.",
+      "confidence": "high",
+      "decision_hook": null,
+      "entry_id": "docs-still-remote-default",
+      "evidence": [
+        "docs/guide.md",
+        "src/config.ts"
+      ],
+      "persona_note": null,
+      "recommended_action": "edit",
+      "risk": "high",
+      "source_evidence": [
+        "docs/guide.md",
+        "src/config.ts"
+      ],
+      "text": "Guide says the default sync mode sends work outward.",
+      "title": "Docs still claim remote default",
+      "token_estimate": 13,
+      "unsupported_claims": 0,
+      "what_changed": "Guide says the default sync mode sends work outward.",
+      "why_it_matters": "Risk high affects the review goal."
+    },
+    {
+      "caveats": "Uncertainty labeled from available files only.",
+      "confidence": "high",
+      "decision_hook": null,
+      "entry_id": "api-default-change",
+      "evidence": [
+        "src/config.ts"
+      ],
+      "persona_note": null,
+      "recommended_action": "inspect",
+      "risk": "high",
+      "source_evidence": [
+        "src/config.ts"
+      ],
+      "text": "Changes default sync mode to localOnly.",
+      "title": "API default changed to localOnly",
+      "token_estimate": 7,
+      "unsupported_claims": 0,
+      "what_changed": "Changes default sync mode to localOnly.",
+      "why_it_matters": "Risk high affects the review goal."
+    },
+    {
+      "caveats": "Uncertainty labeled from available files only.",
+      "confidence": "medium",
+      "decision_hook": null,
+      "entry_id": "example-import-broken",
+      "evidence": [
+        "examples/basic.ts",
+        "src/index.ts"
+      ],
+      "persona_note": null,
+      "recommended_action": "investigate",
+      "risk": "medium",
+      "source_evidence": [
+        "examples/basic.ts",
+        "src/index.ts"
+      ],
+      "text": "Example imports from package root but export moved to /client.",
+      "title": "Example import path is broken",
+      "token_estimate": 14,
+      "unsupported_claims": 0,
+      "what_changed": "Example imports from package root but export moved to /client.",
+      "why_it_matters": "Risk medium affects the review goal."
+    },
+    {
+      "caveats": "Uncertainty labeled from available files only.",
+      "confidence": "high",
+      "decision_hook": null,
+      "entry_id": "readme-badge",
+      "evidence": [
+        "README.md"
+      ],
+      "persona_note": null,
+      "recommended_action": "omit",
+      "risk": "low",
+      "source_evidence": [
+        "README.md"
+      ],
+      "text": "Updates a CI badge URL.",
+      "title": "README badge update",
+      "token_estimate": 6,
+      "unsupported_claims": 0,
+      "what_changed": "Updates a CI badge URL.",
+      "why_it_matters": "Risk low affects the review goal."
+    }
+  ],
+  "charter": {
+    "approval_means": "accepted for this review state, not published",
+    "audience": "local human reviewer",
+    "decision_rules": [
+      "Require evidence and residual-risk notes before approval."
+    ],
+    "density_adapted": false,
+    "examples_and_non_examples": false,
+    "exclusions": "Low-value renames and raw noise unless capacity remains.",
+    "persona_adapted": false,
+    "purpose": "Catch mismatches between API implementation and prose examples.",
+    "queue_strategy": "charter_priority",
+    "review_criteria": "Source-backed risk notes; no invented CI/file state; approve is a ruling not publish.",
+    "traceability_rate": 0.75,
+    "voice": "careful desk charter"
+  },
+  "chat_sample": [
+    {
+      "captures_reversible_action": true,
+      "continuity": "medium",
+      "current_entry_id": "docs-still-remote-default",
+      "persona_adapted": false,
+      "role": "curator",
+      "text": "Entry docs-still-remote-default leads because of residual risk under the charter. Approval remains a reversible ruling bookmark, not publish.",
+      "uses_desk_state": true
+    }
+  ],
+  "cognitive_load": {
+    "attention_switch_count": 3,
+    "average_decision_text_length": 48,
+    "manual_correction_count": 1,
+    "perceived_load_1_7": 4,
+    "scroll_depth_per_entry": 1.1,
+    "unresolved_question_count": 0,
+    "user_clarification_count": 4,
+    "user_reversal_count": 0
+  },
+  "created_at": "2026-08-06T00:00:00Z",
+  "critical_failures": {
+    "cannot_inspect_or_reverse": false,
+    "fabricated_approval": false,
+    "fabricated_source_or_file_state": false,
+    "lost_source_traceability": false,
+    "non_local_or_irreversible_action": false,
+    "sensitive_data_exposure": false
+  },
+  "efficiency_metrics": {
+    "blocked_wait_events": 0,
+    "brief_tokens_per_entry_mean": 10,
+    "evidence_token_ratio": 0.35,
+    "median_entry_open_latency_ms": 246,
+    "redundant_token_rate": 0.16,
+    "review_session_wall_clock_ms": 8960,
+    "sweep_latency_ms": 784,
+    "time_to_first_question_ms": 448,
+    "time_to_first_queue_ms": 2195,
+    "time_to_useful_charter_ms": 6048,
+    "tokens_per_approved_entry": 95,
+    "tokens_to_useful_charter": 122,
+    "total_tokens": 382,
+    "turns_to_useful_charter": 6
+  },
+  "fixture_id": "hybrid_expert_dense_docs_code",
+  "fixture_version": "1.0",
+  "framework_id": "charter_first",
+  "model_or_agent_version": "curator-lab-sim-1",
+  "omitted_items": [
+    {
+      "id": "migration-note",
+      "reason": "lower value relative to capacity and risk ordering",
+      "title": "Migration note for sync mode"
+    }
+  ],
+  "provider": "deterministic-simulator",
+  "queue_selection": [
+    {
+      "id": "docs-still-remote-default",
+      "rank": 1,
+      "reason": "Matches expected review value.",
+      "risk": "high",
+      "source_evidence": [
+        "docs/guide.md",
+        "src/config.ts"
+      ],
+      "title": "Docs still claim remote default"
+    },
+    {
+      "id": "api-default-change",
+      "rank": 2,
+      "reason": "Matches expected review value.",
+      "risk": "high",
+      "source_evidence": [
+        "src/config.ts"
+      ],
+      "title": "API default changed to localOnly"
+    },
+    {
+      "id": "example-import-broken",
+      "rank": 3,
+      "reason": "Matches expected review value.",
+      "risk": "medium",
+      "source_evidence": [
+        "examples/basic.ts",
+        "src/index.ts"
+      ],
+      "title": "Example import path is broken"
+    },
+    {
+      "id": "readme-badge",
+      "rank": 4,
+      "reason": "Matches expected review value.",
+      "risk": "low",
+      "source_evidence": [
+        "README.md"
+      ],
+      "title": "README badge update"
+    }
+  ],
+  "run_id": "charter_first__hybrid_expert_dense_docs_code",
+  "sweep_insights": {
+    "cross_entry_patterns": true,
+    "decision_state_preserved": true,
+    "fabricated_approvals": false,
+    "insights": [
+      {
+        "entry_ids": [
+          "docs-still-remote-default",
+          "api-default-change"
+        ],
+        "text": "Batch shares a dependency chain across behavior and verification entries."
+      }
+    ],
+    "patterns": [
+      "Multiple entries share a decision dependency."
+    ],
+    "preserves_decision_state": true,
+    "reusable_rules": false,
+    "summary": "Sweep across 4 entries for Docs and code examples.",
+    "topics": [
+      "docs_code_mismatch",
+      "api",
+      "examples",
+      "migration"
+    ],
+    "traceability": true
+  },
+  "tags": {
+    "api-default-change": [
+      "domain:coding",
+      "artifact_type:diff",
+      "risk:high",
+      "action_needed:inspect",
+      "confidence:high",
+      "action:review"
+    ],
+    "docs-still-remote-default": [
+      "domain:writing",
+      "artifact_type:docs",
+      "risk:high",
+      "action_needed:edit",
+      "confidence:high",
+      "action:review"
+    ],
+    "example-import-broken": [
+      "domain:hybrid",
+      "artifact_type:example",
+      "risk:medium",
+      "action_needed:investigate",
+      "confidence:medium",
+      "action:review"
+    ],
+    "readme-badge": []
+  },
+  "transcript": [
+    {
+      "role": "curator",
+      "text": "I scanned artifacts for Docs and code examples. What should approval mean on this desk?"
+    },
+    {
+      "role": "user",
+      "text": "I need a tight queue connecting docs claims to code examples. Prioritize API mismatches, runnable examples, and source evidence."
+    },
+    {
+      "role": "curator",
+      "text": "Who is the audience for briefs?"
+    },
+    {
+      "role": "user",
+      "text": "Me as reviewer before anything leaves."
+    },
+    {
+      "role": "curator",
+      "text": "Exclusions, batch size, tags, brief style?"
+    },
+    {
+      "role": "user",
+      "text": "Exclude cosmetic noise. Small batches. Risk and action tags. Short briefs."
+    },
+    {
+      "role": "curator",
+      "text": "Extra charter probe 1: tag preferences?"
+    },
+    {
+      "role": "user",
+      "text": "Defaults unless risk tags conflict."
+    },
+    {
+      "role": "curator",
+      "text": "Extra charter probe 2: tag preferences?"
+    },
+    {
+      "role": "user",
+      "text": "Defaults unless risk tags conflict."
+    }
+  ]
+}

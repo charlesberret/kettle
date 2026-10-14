@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "product": "kettle",
+  "rubric": "curator_agent_ux",
+  "phase": "independent",
+  "run": {
+    "run_id": "hybrid_desk_notebook__operations_expert_noisy_incident",
+    "fixture_id": "operations_expert_noisy_incident",
+    "scorer_id": "scorer_b",
+    "scorer_role": "engineering"
+  },
+  "surface_scores": {
+    "interview": {
+      "score": 3.5,
+      "evidence": [
+        "Strong incident queue and causal caution; tags too generic; sweep not an SRE handoff."
+      ],
+      "notes": "Strong incident queue and causal caution; tags too generic; sweep not an SRE handoff."
+    },
+    "batch_selection": {
+      "score": 4.0,
+      "evidence": [
+        "Strong incident queue and causal caution; tags too generic; sweep not an SRE handoff."
+      ],
+      "notes": "Strong incident queue and causal caution; tags too generic; sweep not an SRE handoff."
+    },
+    "briefs": {
+      "score": 4.0,
+      "evidence": [
+        "Strong incident queue and causal caution; tags too generic; sweep not an SRE handoff."
+      ],
+      "notes": "Strong incident queue and causal caution; tags too generic; sweep not an SRE handoff."
+    },
+    "tags": {
+      "score": 3.0,
+      "evidence": [
+        "Strong incident queue and causal caution; tags too generic; sweep not an SRE handoff."
+      ],
+      "notes": "Strong incident queue and causal caution; tags too generic; sweep not an SRE handoff."
+    },
+    "chat": {
+      "score": 3.0,
+      "evidence": [
+        "Strong incident queue and causal caution; tags too generic; sweep not an SRE handoff."
+      ],
+      "notes": "Strong incident queue and causal caution; tags too generic; sweep not an SRE handoff."
+    },
+    "sweep_reasoning": {
+      "score": 3.0,
+      "evidence": [
+        "Strong incident queue and causal caution; tags too generic; sweep not an SRE handoff."
+      ],
+      "notes": "Strong incident queue and causal caution; tags too generic; sweep not an SRE handoff."
+    },
+    "ux_quality": {
+      "score": 3.5,
+      "evidence": [
+        "Strong incident queue and causal caution; tags too generic; sweep not an SRE handoff."
+      ],
+      "notes": "Strong incident queue and causal caution; tags too generic; sweep not an SRE handoff."
+    }
+  },
+  "composite": {
+    "efficiency_multiplier": 1.0,
+    "surface_weighted_score": 3.5,
+    "overall_score_0_5": 3.5,
+    "computed_by": "scorer",
+    "notes": "Independent engineering pass from run.json + transcript.txt only."
+  },
+  "freeform_notes": "Strong incident queue and causal caution; tags too generic; sweep not an SRE handoff."
+}

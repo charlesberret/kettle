@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "product": "kettle",
+  "rubric": "curator_agent_ux",
+  "phase": "independent",
+  "run": {
+    "run_id": "hybrid_desk_notebook__writing_novice_dense_launch",
+    "fixture_id": "writing_novice_dense_launch",
+    "scorer_id": "scorer_b",
+    "scorer_role": "engineering"
+  },
+  "surface_scores": {
+    "interview": {
+      "score": 3.0,
+      "evidence": [
+        "Good dense filtering; coding-flavored leak in charter/sweep; tags lack channel/audience dimensions."
+      ],
+      "notes": "Good dense filtering; coding-flavored leak in charter/sweep; tags lack channel/audience dimensions."
+    },
+    "batch_selection": {
+      "score": 4.0,
+      "evidence": [
+        "Good dense filtering; coding-flavored leak in charter/sweep; tags lack channel/audience dimensions."
+      ],
+      "notes": "Good dense filtering; coding-flavored leak in charter/sweep; tags lack channel/audience dimensions."
+    },
+    "briefs": {
+      "score": 3.5,
+      "evidence": [
+        "Good dense filtering; coding-flavored leak in charter/sweep; tags lack channel/audience dimensions."
+      ],
+      "notes": "Good dense filtering; coding-flavored leak in charter/sweep; tags lack channel/audience dimensions."
+    },
+    "tags": {
+      "score": 3.0,
+      "evidence": [
+        "Good dense filtering; coding-flavored leak in charter/sweep; tags lack channel/audience dimensions."
+      ],
+      "notes": "Good dense filtering; coding-flavored leak in charter/sweep; tags lack channel/audience dimensions."
+    },
+    "chat": {
+      "score": 3.0,
+      "evidence": [
+        "Good dense filtering; coding-flavored leak in charter/sweep; tags lack channel/audience dimensions."
+      ],
+      "notes": "Good dense filtering; coding-flavored leak in charter/sweep; tags lack channel/audience dimensions."
+    },
+    "sweep_reasoning": {
+      "score": 2.5,
+      "evidence": [
+        "Good dense filtering; coding-flavored leak in charter/sweep; tags lack channel/audience dimensions."
+      ],
+      "notes": "Good dense filtering; coding-flavored leak in charter/sweep; tags lack channel/audience dimensions."
+    },
+    "ux_quality": {
+      "score": 2.5,
+      "evidence": [
+        "Good dense filtering; coding-flavored leak in charter/sweep; tags lack channel/audience dimensions."
+      ],
+      "notes": "Good dense filtering; coding-flavored leak in charter/sweep; tags lack channel/audience dimensions."
+    }
+  },
+  "composite": {
+    "efficiency_multiplier": 1.0,
+    "surface_weighted_score": 3.2,
+    "overall_score_0_5": 3.2,
+    "computed_by": "scorer",
+    "notes": "Independent engineering pass from run.json + transcript.txt only."
+  },
+  "freeform_notes": "Good dense filtering; coding-flavored leak in charter/sweep; tags lack channel/audience dimensions."
+}
