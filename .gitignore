@@ -40,3 +40,7 @@ htmlcov/
 
 # Curator lab generated runs (baseline samples are committed)
 curator_lab/results/latest/
+
+# Agent working files (kept on disk, never published)
+.coordination/
+.inbox/
