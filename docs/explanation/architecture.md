@@ -9,12 +9,15 @@ flowchart LR
     U["Human reviewer"]
     C["kettle-core<br/>Desk, API, CLI, web UI"]
     D["project/.kettle/<br/>ordinary files"]
+    T["kettle-tui<br/>terminal and Herdr"]
     V["kettle-vscode<br/>VS Code and Cursor"]
     M["kettle-desktop<br/>macOS shell"]
 
     U <--> C
+    U <--> T
     U <--> V
     U <--> M
+    T --> C
     V --> C
     M --> C
     C <--> D
@@ -26,6 +29,7 @@ flowchart LR
 |---|---|---|
 | `kettle` | Public story, family map, roadmap, release definition | Runtime or adapter code |
 | `kettle-core` | Product semantics, Desk format and migrations, localhost API, curator runtime, CLI, kits, reference web UI | Editor or Electron lifecycle |
+| `kettle-tui` | Terminal viewport and Herdr plugin | Desk migrations or product semantics |
 | `kettle-vscode` | VS Code/Cursor activation, commands, views, packaging | Desk migrations or product semantics |
 | `kettle-desktop` | Electron lifecycle, bundled-core provenance, native packaging | A separate frontend or product rules |
 

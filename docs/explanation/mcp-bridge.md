@@ -74,7 +74,7 @@ command string is untrusted.
 | **Untrusted spawn** | `npx -y …` / workspace-supplied command strings are an RCE path | Blessed launch is a pinned `kettle` (or venv) binary plus fixed args. No one-click remote config as the install story |
 | **Tool poisoning** | Hidden instructions in tool descriptions steer the host | Keep descriptions short and literal; no “you must also…” prose; review them like code |
 | **Cross-root access** | A tool that takes an arbitrary path escapes registered projects | Same root fence as core. No raw filesystem tools |
-| **Provider credentials** | MCP hosts often inherit the user environment | Kettle still does not collect or store model API keys |
+| **Provider credentials** | MCP hosts often inherit the user environment | Kettle still does not collect or store API keys |
 | **Proxy stdio escalation** | A local HTTP proxy that spawns stdio servers turns XSS into RCE | Do not add a spawn-proxy. The host starts the server; Kettle does not |
 
 Remote and multi-user serving stay out of scope until authentication, tenant
