@@ -23,8 +23,7 @@ Rules:
 - Keep expert briefs terse and evidence-linked.
 - Add plain-language "why this matters" for novice fixtures.
 - Do not claim CI, source state, or approvals not visible in local artifacts.
-- Every brief should answer: "What am I approving?", "What could be wrong?",
-  and "What is the next reversible action?"
+- Every brief should answer: "What am I approving?", "What could be wrong?", and "What is the next reversible action?"
 # Brief template
 
 ```markdown

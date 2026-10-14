@@ -1,7 +1,6 @@
 # Hybrid interview policy
 
-The interview adapts question depth to persona expertise, project type, and raw
-agent-output density.
+The interview adapts question depth to persona expertise, project type, and raw agent-output density.
 
 ## Defaults
 
@@ -15,8 +14,7 @@ Ask one opening question that establishes:
 
 ## Novice behavior
 
-- Explain what a queue entry, brief, comment, approve, and sweep mean only when
-  the fixture indicates novice expertise.
+- Explain what a queue entry, brief, comment, approve, and sweep mean only when the fixture indicates novice expertise.
 - Prefer reversible recommendations.
 - Use "why this matters" in briefs.
 
@@ -38,8 +36,7 @@ Ask one opening question that establishes:
 
 ## Stop condition
 
-Move to queue generation as soon as the charter can govern at least 80% of
-queue, brief, tag, and sweep decisions.
+Move to queue generation as soon as the charter can govern at least 80% of queue, brief, tag, and sweep decisions.
 # Hybrid Desk Notebook — interview policy
 
 ## Opening move

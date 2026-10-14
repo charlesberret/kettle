@@ -1,7 +1,6 @@
 # Explanation
 
-**Understanding-oriented.** Background, boundaries, and sequencing — why the
-system is shaped this way. Not step-by-step instructions.
+**Understanding-oriented.** Background, boundaries, and sequencing — why the system is shaped this way. Not step-by-step instructions.
 
 | Document | Contents |
 |----------|----------|
@@ -13,7 +12,4 @@ system is shaped this way. Not step-by-step instructions.
 | [MCP bridge](./mcp-bridge.md) | Later: threat, use, and narrow scope — not a sitting |
 | [Soft release](./soft-release.md) | Names, registries, dogfood bar, when to post |
 
-Deep core invariants: `kettle-core/ARCHITECTURE.md`. Platform matrix and
-viewport parity: `kettle-core/docs/PLATFORMS.md` (when present). CLI × plugin
-chat pairing: [architecture](./architecture.md#cli-and-plugin-chat); remaining
-gaps: [`docs/reference/chat-signature-inventory.md`](../reference/chat-signature-inventory.md).
+Deep core invariants: `kettle-core/ARCHITECTURE.md`. Platform matrix and viewport parity: `kettle-core/docs/PLATFORMS.md` (when present). CLI × plugin chat pairing: [architecture](./architecture.md#cli-and-plugin-chat); remaining gaps: [`docs/reference/chat-signature-inventory.md`](../reference/chat-signature-inventory.md).

@@ -86,14 +86,4 @@ The plan assumes next year is still a local single-user desk with thin viewports
 
 ## Evaluation record
 
-Date: 2026-10-12
-Chair: director
-Advisor: scholar (Futurist)
-Committee: security (Skeptic), operator (Operator), designer (Designer), builder (Economist)
-Candidate: live owner
-Result: Pass
-Points: green 3 · yellow 0 · red 0
-Positions: green 12 · yellow 0 · red 0
-Count: procedural, not cryptographic (one uid on this house)
-Ballot: sha256 dc7f2049c17019de5537e4857ab7d70555f206c09070237578999cd49c923d61
-Open questions: 26 (ids added when courier files them)
+Date: 2026-10-12 Chair: director Advisor: scholar (Futurist) Committee: security (Skeptic), operator (Operator), designer (Designer), builder (Economist) Candidate: live owner Result: Pass Points: green 3 · yellow 0 · red 0 Positions: green 12 · yellow 0 · red 0 Count: procedural, not cryptographic (one uid on this house) Ballot: sha256 dc7f2049c17019de5537e4857ab7d70555f206c09070237578999cd49c923d61 Open questions: 26 (ids added when courier files them)

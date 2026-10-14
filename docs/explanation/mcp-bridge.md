@@ -1,25 +1,16 @@
 # MCP bridge — threat, use, and scope
 
-This is a **Later** boundary note, not a ship plan. It exists so a Model
-Context Protocol (MCP) adapter cannot quietly become a second product.
+This is a **Later** boundary note, not a ship plan. It exists so a Model Context Protocol (MCP) adapter cannot quietly become a second product.
 
-Kettle already has a sitting (web, CLI, editor, desktop) and a first-class
-CLI in `kettle-core`. An MCP bridge is justified only when a **model-host
-tool** needs the **same Desk** the human will sit with later. It is not a
-replacement for `kettle` commands, and it is not a sitting.
+Kettle already has a sitting (web, CLI, editor, desktop) and a first-class CLI in `kettle-core`. An MCP bridge is justified only when a **model-host tool** needs the **same Desk** the human will sit with later. It is not a replacement for `kettle` commands, and it is not a sitting.
 
-Linear: [LAB-34](https://linear.app/isruna/issue/LAB-34/mcp-bridge-narrow-desk-aligned-not-a-sitting-replacement).
-Sequencing: [roadmap](./roadmap.md). Family rules: [architecture](./architecture.md).
+Linear: [LAB-34](https://linear.app/isruna/issue/LAB-34/mcp-bridge-narrow-desk-aligned-not-a-sitting-replacement). Sequencing: [roadmap](./roadmap.md). Family rules: [architecture](./architecture.md).
 
 ## Use that would justify work
 
 The only use that survives the product constraints:
 
-A model-host session (Cursor, Claude Code, VS Code Copilot Chat, or similar)
-is already producing agent work against a **registered project**. It needs to
-land that work on the Desk the reviewer will open, or to read just enough
-queue and charter state to format that handoff. The human still sits
-elsewhere.
+A model-host session (Cursor, Claude Code, VS Code Copilot Chat, or similar) is already producing agent work against a **registered project**. It needs to land that work on the Desk the reviewer will open, or to read just enough queue and charter state to format that handoff. The human still sits elsewhere.
 
 Concrete operations that fit:
 
@@ -34,32 +25,20 @@ That is a **handoff adapter**, not a review surface.
 
 ### Uses that do not justify work
 
-- Sitting inside the model host (approve, comment-as-ruling, sweep, founding
-  interview, curator chat).
-- Replacing the CLI for humans (`kettle queue`, `kettle add`, `kettle
-  doctor`).
+- Sitting inside the model host (approve, comment-as-ruling, sweep, founding interview, curator chat).
+- Replacing the CLI for humans (`kettle queue`, `kettle add`, `kettle doctor`).
 - Remote or multi-user queues (separate [threat model](./roadmap.md)).
 - Autopilot: the producing agent reviewing or applying its own work.
 - A public remote MCP (Linear-style hosted HTTP) in front of a local Desk.
 - Wrapping provider CLIs or holding model API keys.
 
-If the only demand is “let the agent sit instead of the human,” **cancel**
-the adapter. The sitting is the product.
+If the only demand is “let the agent sit instead of the human,” **cancel** the adapter. The sitting is the product.
 
 ## Threat note
 
-MCP is a tool protocol for model hosts. A Kettle bridge would sit next to
-the Desk and, if it used HTTP, next to the localhost API. That is a new
-confused-deputy surface: the host calls tools with the user's ambient
-authority, and tool results often leave the machine into a remote model
-context.
+MCP is a tool protocol for model hosts. A Kettle bridge would sit next to the Desk and, if it used HTTP, next to the localhost API. That is a new confused-deputy surface: the host calls tools with the user's ambient authority, and tool results often leave the machine into a remote model context.
 
-Official MCP guidance treats local servers as ordinary child processes, not
-a sandbox, and calls out confused-deputy, local-server compromise, and
-stdio-proxy escalation
-([security best practices](https://modelcontextprotocol.io/docs/tutorials/security/security_best_practices)).
-STDIO launch-from-config is a known supply-chain and RCE pattern when the
-command string is untrusted.
+Official MCP guidance treats local servers as ordinary child processes, not a sandbox, and calls out confused-deputy, local-server compromise, and stdio-proxy escalation ([security best practices](https://modelcontextprotocol.io/docs/tutorials/security/security_best_practices)). STDIO launch-from-config is a known supply-chain and RCE pattern when the command string is untrusted.
 
 | Threat | Why it matters here | Refusal or mitigation |
 |---|---|---|
@@ -77,24 +56,17 @@ command string is untrusted.
 | **Provider credentials** | MCP hosts often inherit the user environment | Kettle still does not collect or store model API keys |
 | **Proxy stdio escalation** | A local HTTP proxy that spawns stdio servers turns XSS into RCE | Do not add a spawn-proxy. The host starts the server; Kettle does not |
 
-Remote and multi-user serving stay out of scope until authentication, tenant
-isolation, and session ownership are designed together
-([architecture](./architecture.md)). This note is not that threat model.
+Remote and multi-user serving stay out of scope until authentication, tenant isolation, and session ownership are designed together ([architecture](./architecture.md)). This note is not that threat model.
 
 ## Scope sketch
 
-Do not implement until a named model-host workflow has been dogfooded and
-cannot be done well with the CLI or ordinary files.
+Do not implement until a named model-host workflow has been dogfooded and cannot be done well with the CLI or ordinary files.
 
 ### In
 
-- A **thin kit inside `kettle-core`**, in the same spirit as the CLI: one
-  process, core-owned semantics, no forked Desk format.
-- **Local stdio** transport only. The model host already trusted on the
-  machine spawns it.
-- Talk to the Desk through core (in-process APIs or the versioned localhost
-  contract). If HTTP is used, Host/Origin and the future per-boot local
-  token apply; MCP is another client, not a bypass.
+- A **thin kit inside `kettle-core`**, in the same spirit as the CLI: one process, core-owned semantics, no forked Desk format.
+- **Local stdio** transport only. The model host already trusted on the machine spawns it.
+- Talk to the Desk through core (in-process APIs or the versioned localhost contract). If HTTP is used, Host/Origin and the future per-boot local token apply; MCP is another client, not a bypass.
 - Tool surface, first cut:
 
   | Tool | Direction | Notes |
@@ -105,31 +77,24 @@ cannot be done well with the CLI or ordinary files.
   | `enqueue_entry` | write | Stage agent work; never approve |
   | optional `attach_path` | write | Path must already sit under the registered root |
 
-- Compatibility via the existing API and Desk-schema integers, not a
-  parallel schema.
-- A new repository only if the kit later needs a distinct host lifecycle
-  **and** it has a concrete workflow, an owner, and a release path
-  ([architecture](./architecture.md)).
+- Compatibility via the existing API and Desk-schema integers, not a parallel schema.
+- A new repository only if the kit later needs a distinct host lifecycle **and** it has a concrete workflow, an owner, and a release path ([architecture](./architecture.md)).
 
 ### Out
 
 - Approve, reject, sweep, found, interview, curator chat.
 - Egress transmit, apply, execute, merge, or “land this PR.”
 - Arbitrary file read/write, shell, or provider-CLI wrappers.
-- Remote / Streamable HTTP MCP, OAuth proxy, or marketplace “connect
-  Kettle” hosted server.
+- Remote / Streamable HTTP MCP, OAuth proxy, or marketplace “connect Kettle” hosted server.
 - A TUI or web sitting hosted behind MCP.
 - An empty `kettle-mcp` product presented as shipped.
-- Blocking public preview or dependable distribution on this work
-  ([soft release](./soft-release.md)).
+- Blocking public preview or dependable distribution on this work ([soft release](./soft-release.md)).
 
 ### Prerequisites before any write tool
 
 1. Host/Origin validation on the localhost HTTP surface (preview work).
 2. The per-boot local authentication design on the Now roadmap.
-3. One written dogfood story: which host, which handoff, why CLI or files
-   failed, and confirmation that a human sitting still happened in web,
-   CLI, or editor.
+3. One written dogfood story: which host, which handoff, why CLI or files failed, and confirmation that a human sitting still happened in web, CLI, or editor.
 
 ### Ownership
 
@@ -140,8 +105,7 @@ cannot be done well with the CLI or ordinary files.
 | Host spawn / MCP client UX | The model host, not Kettle |
 | Public story | This repository |
 
-Core never imports an adapter. If a contract change is required, it lands
-in core first.
+Core never imports an adapter. If a contract change is required, it lands in core first.
 
 ## Cancel, keep Later, or build
 
@@ -151,5 +115,4 @@ in core first.
 | No named host workflow after preview | Stay **Later**; do not open a repo |
 | Handoff-from-host is real, CLI/files are awkward, sitting stays human | **Build** the kit above, still not a sitting |
 
-This issue is satisfied by the note. Implementation is a later Linear issue
-with a dogfood pointer, not a follow-on in the same sitting.
+This issue is satisfied by the note. Implementation is a later Linear issue with a dogfood pointer, not a follow-on in the same sitting.

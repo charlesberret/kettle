@@ -1,20 +1,12 @@
 # How to run a stranger-path dogfood pass
 
-**Goal:** Prove a newcomer can install Kettle from public instructions, found a
-Desk, review an entry, comment, approve, and sweep — without maintainer-only
-knowledge, private workshop notes, or unpublished tooling.
+**Goal:** Prove a newcomer can install Kettle from public instructions, found a Desk, review an entry, comment, approve, and sweep — without maintainer-only knowledge, private workshop notes, or unpublished tooling.
 
-**Audience:** Contributors preparing a public preview, or anyone verifying the
-roadmap’s stranger-path bar.
+**Audience:** Contributors preparing a public preview, or anyone verifying the roadmap’s stranger-path bar.
 
-**Not this guide:** A first lesson ([tutorial: first sitting](../tutorials/first-sitting.md))
-or automated family gates ([check release readiness](./check-release-readiness.md)).
-This is a **manual checklist**. Record pass/fail and notes; do not treat a green
-`release-ready.sh` as a substitute.
+**Not this guide:** A first lesson ([tutorial: first sitting](../tutorials/first-sitting.md)) or automated family gates ([check release readiness](./check-release-readiness.md)). This is a **manual checklist**. Record pass/fail and notes; do not treat a green `release-ready.sh` as a substitute.
 
-**Port note:** Starting the web sitting binds `127.0.0.1:4242`. Run that step
-yourself on your machine. Do **not** start servers on port 4242 from agent or CI
-automation.
+**Port note:** Starting the web sitting binds `127.0.0.1:4242`. Run that step yourself on your machine. Do **not** start servers on port 4242 from agent or CI automation.
 
 ---
 
@@ -29,20 +21,15 @@ Use only what a stranger can clone and read:
 | Public clone of **kettle-core** | [github.com/charlesberret/kettle-core](https://github.com/charlesberret/kettle-core) |
 | Product story / family map (optional context) | This repo’s [docs map](../README.md) |
 
-Do **not** rely on: shared workshop machines, private `.local/` notes, pre-seeded
-registries, or hand-copied Desk trees from a maintainer.
+Do **not** rely on: shared workshop machines, private `.local/` notes, pre-seeded registries, or hand-copied Desk trees from a maintainer.
 
-Pick a **throwaway project folder** under your home directory that you do not
-mind Kettle writing Desk files into (`.kettle/`, or an existing `.setsweep/` if
-you are exercising legacy fallback).
+Pick a **throwaway project folder** under your home directory that you do not mind Kettle writing Desk files into (`.kettle/`, or an existing `.setsweep/` if you are exercising legacy fallback).
 
 ---
 
 ## 1. Clean install (editable + canonical venv)
 
-Follow the durable install in
-[kettle-core `INSTALL.md`](https://github.com/charlesberret/kettle-core/blob/main/INSTALL.md)
-(preferred over a one-off repo `.venv` when dogfooding “installable”).
+Follow the durable install in [kettle-core `INSTALL.md`](https://github.com/charlesberret/kettle-core/blob/main/INSTALL.md) (preferred over a one-off repo `.venv` when dogfooding “installable”).
 
 ```sh
 git clone https://github.com/charlesberret/kettle-core.git
@@ -78,12 +65,10 @@ kettle doctor
 Checklist:
 
 - [ ] Doctor runs and reports which `kettle` wins on `PATH`
-- [ ] Doctor reports the install is usable (or clearly states what to fix in
-      public terms — PATH hygiene, reinstall after `py-modules` change)
+- [ ] Doctor reports the install is usable (or clearly states what to fix in    public terms — PATH hygiene, reinstall after `py-modules` change)
 - [ ] Doctor never deletes PATH entries or “repairs” the machine silently
 
-If doctor fails in a way public docs do not explain, that is a **product docs
-bug** — file it (see [Reporting failures](#reporting-failures)).
+If doctor fails in a way public docs do not explain, that is a **product docs bug** — file it (see [Reporting failures](#reporting-failures)).
 
 ---
 
@@ -96,8 +81,7 @@ kettle add ~/path/to/a-real-project
 kettle projects
 ```
 
-**Founding** creates the Desk charter and content queue. Prefer the path a
-stranger sees first:
+**Founding** creates the Desk charter and content queue. Prefer the path a stranger sees first:
 
 1. Start the web sitting **yourself** (user-run only):
 
@@ -107,10 +91,8 @@ stranger sees first:
 
    Open [http://127.0.0.1:4242](http://127.0.0.1:4242).
 
-2. Select the project and complete the **founding interview** in the agent pane
-   until you accept a proposal and found the Desk.
-3. Confirm Desk files appear under the project (`.kettle/` for new desks;
-   existing `.setsweep/` remains in place until an explicit migration).
+2. Select the project and complete the **founding interview** in the agent pane until you accept a proposal and found the Desk.
+3. Confirm Desk files appear under the project (`.kettle/` for new desks; existing `.setsweep/` remains in place until an explicit migration).
 
 Terminal-only alternative (if the CLI surface is what you are validating):
 
@@ -168,8 +150,7 @@ Checklist:
 
 ## 5. Optional viewport checks
 
-Core CLI + browser are enough to pass the stranger-path bar. Adapters are
-extra evidence for a fuller preview.
+Core CLI + browser are enough to pass the stranger-path bar. Adapters are extra evidence for a fuller preview.
 
 ### Web sitting (`:4242`) — user-run only
 
@@ -192,8 +173,7 @@ code --install-extension kettle-0.1.0.vsix --force   # or cursor --install-exten
 
 - [ ] Extension installs from the built VSIX
 - [ ] **Kettle: Ping Core** succeeds (auto-start or attach to a healthy local core)
-- [ ] If auto-start cannot find the CLI, setting `kettle.command` to
-      `~/.kettle-venv/bin/kettle` (absolute path) is documented and works
+- [ ] If auto-start cannot find the CLI, setting `kettle.command` to    `~/.kettle-venv/bin/kettle` (absolute path) is documented and works
 - [ ] Queue, comment, approve, and sweep are usable against the same Desk
 
 ### Desktop (macOS)
@@ -216,8 +196,7 @@ npm start
 
 ## Pass criteria (summary)
 
-You may mark the stranger-path dogfood **PASS** when all of the following are true
-from public docs alone:
+You may mark the stranger-path dogfood **PASS** when all of the following are true from public docs alone:
 
 - [ ] Clean editable install + usable `kettle doctor`
 - [ ] Real project registered; Desk founded with interview notes / charter on disk
@@ -225,8 +204,7 @@ from public docs alone:
 - [ ] Approve-vs-sweep semantics hold (ruling ≠ outward execution)
 - [ ] Failures, if any, are reportable via public channels below
 
-Optional adapter checks may be **SKIP** for a core-only pass; note that explicitly
-when filing release evidence ([release gates](../reference/release-gates.md)).
+Optional adapter checks may be **SKIP** for a core-only pass; note that explicitly when filing release evidence ([release gates](../reference/release-gates.md)).
 
 ---
 
@@ -239,9 +217,7 @@ when filing release evidence ([release gates](../reference/release-gates.md)).
 | Product bug or docs gap (stranger blocked) | Public issue on the **owning** repo — see [contribute](./contribute.md) |
 | Release-bar evidence | Attach this checklist’s pass/fail notes when cutting a preview |
 
-When filing a stranger-path failure, include: OS, Python version, commit or clone
-date of kettle-core, exact public command sequence, and where public docs were
-silent or wrong. Do not paste private project contents unless essential.
+When filing a stranger-path failure, include: OS, Python version, commit or clone date of kettle-core, exact public command sequence, and where public docs were silent or wrong. Do not paste private project contents unless essential.
 
 ---
 
