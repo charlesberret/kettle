@@ -160,7 +160,7 @@ if curl -sf --max-time 2 \
   "http://127.0.0.1:4242/api/ping" \
   -o "$PING_JSON" 2>/dev/null; then
   if python3 -c \
-    'import json,sys; data=json.load(open(sys.argv[1])); assert data.get("app") in ("kettle", "setsweep")' \
+    'import json,sys; data=json.load(open(sys.argv[1])); assert data.get("app") == "kettle"' \
     "$PING_JSON" 2>/dev/null; then
     pass G-core-ping "compatible live core found on port 4242"
   else
@@ -170,6 +170,20 @@ elif [[ "$REQUIRE_LIVE" -eq 1 ]]; then
   fail G-core-ping "no compatible live core on port 4242"
 else
   skip G-core-ping "live core not required for source validation"
+fi
+
+APPROVE_OUT="$REPORT_DIR/approve-scope.txt"
+if bash -c 'cd "$1" && PYTHONDONTWRITEBYTECODE=1 python3 -m pytest kettle/tests/test_server.py::test_approve_writes_only_queue -rs -p no:cacheprovider' \
+  bash "$CORE_REPO" >"$APPROVE_OUT" 2>&1; then
+  if grep -E -q 'SKIPPED|XFAIL' "$APPROVE_OUT"; then
+    fail G-approve-scope "test_approve_writes_only_queue was skipped or xfailed"
+  elif grep -E -q '^1 passed' "$APPROVE_OUT"; then
+    pass G-approve-scope "test_approve_writes_only_queue passed once"
+  else
+    fail G-approve-scope "test_approve_writes_only_queue did not pass exactly once"
+  fi
+else
+  fail G-approve-scope "test_approve_writes_only_queue did not pass"
 fi
 
 echo
